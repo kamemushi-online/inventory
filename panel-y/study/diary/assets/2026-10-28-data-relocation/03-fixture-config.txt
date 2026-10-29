@@ -1,0 +1,58 @@
+The following is a diff from the previous accessibility tree for Window: "Panel-y v3.0" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 57-89
+~		5 text (settable) full view 0.000000..2.000000s: 2 rows, 3 ch, 300003 visible samples, built 0 envelope(s), raw step 0, edge step 1, dense step 0, env h/m 2/0, ctx 1/0, clips 0, tile h/b 0/0, edge h/b 1/0, cache 2, edge cache 1, hints 0
+~		6 text (settable) full frame 0.8ms visible 0.1ms draw 0.1ms input 0.0ms rows 2 ch 3 points 11310 buckets 831/831 env h/m 2/0 ctx 1/0 tile h/b 0/0 edge h/b 1/0
+~		11 text (settable) #1 multi_source_validation_1.parquet
+~		13 text field (settable) /Users/ochiba/newspace/life/factory/panel-y/data/multi_source_validation_1.parquet
+~		15 text (settable) Ready: /Users/ochiba/newspace/life/factory/panel-y/data/multi_source_validation_1.parquet
+~		21 text (settable) display time range: 0.000000 .. 2.000000 s
+~		22 text (settable) schema: ready, time: ready, channels: 3 loaded
+~		37 text (settable) 2 row(s), 3 channel(s), 3 visible load(s)
+~		38 button Load / Add torque #1 to Row 1
+~		48 text (settable) #1 multi_source_validation_1.parquet
+~		49 text (settable) Rows: 100001
+~		50 text (settable) Row groups: 1
+~		51 text (settable) Columns: 4
+~		52 text (settable) Numeric channels: 3
+~		54 text (settable) Time range: 0.000000 .. 2.000000 s
+~		55 text (settable) Estimated sample rate: 50.000 kHz
+~		56 text (settable) 3 / 3 channels in this source
++		108 button Add
++		109 text (settable) loaded
++		110 text (settable) #01
++		111 button iu #1
++		112 button Add
++		113 text (settable) loaded
++		114 text (settable) #02
++		115 button torque #1
++		116 button Add
++		117 text (settable) loaded
++		118 text (settable) #03
++		119 button gate_pwm #1
+~		91 text (settable) torque #1
+~		92 text (settable) Source: #1 multi_source_validation_1.parquet
+~		94 text (settable) Rows: Row 1
+~		95 text (settable) Index: #2
+~		97 text (settable) Cache: 100001 samples, 0.4 MiB, read 0.002s
+~		98 text (settable) Path: torque
++		120 button Add Row
++		121 text (settable) Load target: Row 1
++		122 button Row 1
++		123 button Delete
++		124 text (settable) Y
++		125 pop up button (settable) Auto
++		126 checkbox (settable, boolean) on
++		127 color well
++		128 text (settable) iu #1
++		129 pop up button (settable) Line
++		130 stepper (settable) w 1.5
++		131 button Reset color
++		132 button Remove
++		133 checkbox (settable, boolean) on
++		134 color well
++		135 text (settable) torque #1
++		136 pop up button (settable) Line
++		137 stepper (settable) w 1.5
++		138 button Reset color
++		139 button Remove
++		140 button Row 2

@@ -1,0 +1,86 @@
+{
+  "scope": "Separate-process visible-range envelope extraction, not native GUI or long-session qualification. Each process loads one Ia_phys channel and performs 2000 existing stress iterations.",
+  "runs": [
+    {
+      "name": "input",
+      "returncode": 0,
+      "wall_seconds": 0.9355909160076408,
+      "stdout": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/stress-input.txt",
+      "stderr": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/stress-input.stderr.txt",
+      "command": [
+        "./code/rust_phase1/run_macos.sh",
+        "--stress-channel",
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+        "Ia_phys",
+        "2000"
+      ],
+      "reported_summary": {
+        "iterations": 2000,
+        "requested_buckets": 1200,
+        "wall_seconds": 0.037,
+        "measured_envelope_seconds": 0.025,
+        "reported_mean_seconds_rounded": 0.0,
+        "reported_max_seconds_rounded": 0.0,
+        "rss_available": false
+      }
+    },
+    {
+      "name": "reversal",
+      "returncode": 0,
+      "wall_seconds": 0.1021421250043204,
+      "stdout": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/stress-reversal.txt",
+      "stderr": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/stress-reversal.stderr.txt",
+      "command": [
+        "./code/rust_phase1/run_macos.sh",
+        "--stress-channel",
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+        "Ia_phys",
+        "2000"
+      ],
+      "reported_summary": {
+        "iterations": 2000,
+        "requested_buckets": 1200,
+        "wall_seconds": 0.066,
+        "measured_envelope_seconds": 0.052,
+        "reported_mean_seconds_rounded": 0.0,
+        "reported_max_seconds_rounded": 0.0001,
+        "rss_available": false
+      }
+    },
+    {
+      "name": "speed",
+      "returncode": 0,
+      "wall_seconds": 0.09904637500585523,
+      "stdout": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/stress-speed.txt",
+      "stderr": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/stress-speed.stderr.txt",
+      "command": [
+        "./code/rust_phase1/run_macos.sh",
+        "--stress-channel",
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+        "Ia_phys",
+        "2000"
+      ],
+      "reported_summary": {
+        "iterations": 2000,
+        "requested_buckets": 1200,
+        "wall_seconds": 0.067,
+        "measured_envelope_seconds": 0.053,
+        "reported_mean_seconds_rounded": 0.0,
+        "reported_max_seconds_rounded": 0.0002,
+        "rss_available": false
+      }
+    }
+  ],
+  "rss_note": "All RSS fields were n/a because process RSS was unavailable in this execution environment; these runs do not establish memory stability.",
+  "binary_sha256": "90c0fc8abb58a60a7de4ff8f277d272f30c31faca58f2fb264590ed387796897",
+  "integrity": {
+    "input_validation_script_parses": true,
+    "validation_script_hash_matches_report": true,
+    "generation_manifest_hash_matches_report": true,
+    "validation_report_passed": true,
+    "all_stress_exit_zero_and_stderr_empty": true,
+    "source_repository": "/Users/ochiba/newspace/yamatoshi-ops/no9-tm_261025",
+    "source_revision": "27c5c36b42c18d17aebb99d4e0131e39c8f28448",
+    "source_repository_clean": true
+  }
+}

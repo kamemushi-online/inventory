@@ -1,0 +1,22 @@
+--- a/code/rust_phase1/src/main.rs
++++ b/code/rust_phase1/src/main.rs
+@@ -6,0 +7 @@
++mod cold_render_bench;
+@@ -129,0 +131 @@
++            CliCommand::BenchColdRender { config_path } => cold_render_bench::run(config_path),
+@@ -217,0 +220,3 @@
++    BenchColdRender {
++        config_path: String,
++    },
+@@ -229,0 +235,3 @@
++        Some("--bench-cold-render") => args
++            .next()
++            .map(|config_path| CliCommand::BenchColdRender { config_path }),
+@@ -1054,0 +1063,2 @@
++    step_edge_scan_elapsed: Duration,
++    step_edge_aborts: usize,
+@@ -1068,0 +1079,2 @@
++        self.step_edge_scan_elapsed += other.step_edge_scan_elapsed;
++        self.step_edge_aborts = self.step_edge_aborts.saturating_add(other.step_edge_aborts);
+@@ -4619,0 +4632 @@
++            self.last_envelope_stats.step_edge_scan_elapsed += edge_cache.elapsed;

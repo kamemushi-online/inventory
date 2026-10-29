@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Data files (potentially large)
+proto_1/data/
+*.parquet
+*.mat
+*.h5
+*.hdf5
+*.mp3
+
+# PyInstaller (multiconverter ビルド出力)
+tools/preprocess/build/
+tools/preprocess/dist/
+*.spec
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+.claude/settings.local.json
+
+build/
+dist/
+
+# Serena
+.serena/

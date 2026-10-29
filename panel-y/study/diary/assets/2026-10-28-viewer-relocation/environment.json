@@ -1,0 +1,40 @@
+{
+  "verified_at": "2026-10-28T07:43:14.727703+09:00",
+  "base_revision": "0a1e51f7d2bc711eefa556468b43c3ff3e9a12d7",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "package": "panel-y",
+  "executable": "apps/panel-y/target/release/panel-y",
+  "binary_sha256": "13d616376c8288d6956ac8ecadea7e62bcb98fc2c127fd9c53177d04cf386727",
+  "default_tests": 240,
+  "feature_enabled_tests": 243,
+  "feature": "soak-validation",
+  "release_build": "passed (--offline --locked)",
+  "format_check": "passed",
+  "dependency_changes": "local package name only; dependency versions and checksums unchanged",
+  "fixtures_present_and_unchanged": true,
+  "cli_checks": 5,
+  "native_smoke": {
+    "bundle": "/tmp/panel-y-relocation-20261028/Panel-y Migration Check.app",
+    "bundle_executable": "symlink to apps/panel-y/target/release/panel-y",
+    "malloc_large_cache": "0 via LSEnvironment",
+    "sample_rows": 100000,
+    "sample_channel": "sine_50Hz",
+    "config_rows": 5,
+    "config_unique_channels": 4,
+    "quit_after_check": true
+  },
+  "source_sha256": {
+    "apps/panel-y/src/cold_render_bench.rs": "f3283b95d5d91eb8e5d6a23f5addbe782ea2fb80b66dc7b0560f412c05700621",
+    "apps/panel-y/src/fft_analysis.rs": "6453847e224d0386cf4047e9c987f7c7a81456b88dc4b8a3c323c7e9f320a5a3",
+    "apps/panel-y/src/interval_stats.rs": "ba96850f6e59d2799ad47b27357daad2e78c15abfdfed2bba6d8de8264972b55",
+    "apps/panel-y/src/interval_stats_bench.rs": "bd224899fffcb3d3af48363dd1a4a80ce9373d295538726b58336e396cecebe5",
+    "apps/panel-y/src/interval_stats_multi_bench.rs": "9f806acb411dd8831a06e186f2fc54a1bb70d4ea235a14a6059cb0dca55f25a5",
+    "apps/panel-y/src/main.rs": "ff82ab6a85534f2a3d334ce86f2df42af1e27315d067e2cf29d283a66ec52d48",
+    "apps/panel-y/src/parquet_schema.rs": "f2e52df80ca618afc4f7eef0875b289db4fb52ef83207167bcf40745d0d8753f",
+    "apps/panel-y/src/parquet_waveform.rs": "3929c04a9cc320770eb2ea11612ca598a4de5e4b0e9c95b1bcd9aed77444b255",
+    "apps/panel-y/src/plot_config.rs": "393d4b9fc5a66debecd6a49e95d879f93f44c5960ec33d902d0c1b9386a3c37a",
+    "apps/panel-y/src/soak_validation.rs": "2eb050e30eaaef15ab7dfdfdd9d393178725e3185ef46484f89f5d96127f0974",
+    "apps/panel-y/src/workspace_data.rs": "eeb5afccc3e9bc6624cfc9a4e1aac819de80ae3466ff64031608b3823d9cec47"
+  },
+  "local_links_checked": 145
+}

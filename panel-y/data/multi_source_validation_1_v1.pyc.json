@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "data_path": "multi_source_validation_1.parquet",
+  "rows": [
+    {
+      "channels": [
+        "iu",
+        "torque"
+      ],
+      "ymin": null,
+      "ymax": null,
+      "step_channels": []
+    },
+    {
+      "channels": [
+        "gate_pwm"
+      ],
+      "ymin": null,
+      "ymax": null,
+      "step_channels": [
+        "gate_pwm"
+      ]
+    }
+  ],
+  "ch_styles": {
+    "iu": {
+      "color": "#50beff",
+      "width": 1.5
+    },
+    "torque": {
+      "color": "#e450ff",
+      "width": 1.5
+    },
+    "gate_pwm": {
+      "color": "#dfff50",
+      "width": 1.25
+    }
+  },
+  "theme": "dark",
+  "scroll_zoom": false,
+  "rust": {
+    "version": 1,
+    "visual_mode": "plain",
+    "rows": [
+      {
+        "channels": [
+          {
+            "path": "iu",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#50beff",
+            "line_width": 1.5,
+            "color_index": 0
+          },
+          {
+            "path": "torque",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#e450ff",
+            "line_width": 1.5,
+            "color_index": 1
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "path": "gate_pwm",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#dfff50",
+            "line_width": 1.25,
+            "color_index": 0
+          }
+        ]
+      }
+    ]
+  }
+}

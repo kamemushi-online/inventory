@@ -1,0 +1,51 @@
+[
+  {
+    "target": "windows-x64",
+    "archive": "/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-converters-windows-x64.zip",
+    "bytes": 182892152,
+    "sha256": "65d1d60606e4848acfe5dc0532cddfd9bddcbcfdf4c655e1ba1500ae0414eab8",
+    "build_info": {
+      "revision": "2b53fd9",
+      "platform": "Windows-2022Server-10.0.20348-SP0",
+      "architecture": "x64",
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "signed_for_distribution": false,
+      "versions": {
+        "pyinstaller": "6.22.3",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "scipy": "1.18.1",
+        "pyarrow": "26.0.0",
+        "h5py": "3.16.0"
+      },
+      "source_sha256": {
+        "tools\\preprocess\\convert.py": "b143b184e0fa9cf3e2d22ccc1363e56bca4b4e7ef341ed2eeaa1fcd93887826b",
+        "tools\\preprocess\\multiconverter.py": "71f308cc2f7fa785d5f443413c372cc841b788b19c56fa7e47801ce5173eb4e0",
+        "tools\\preprocess\\utils\\__init__.py": "b6b4b244208dec3f5b9a413a9f18139f535ceea4dbf3501a33406841cbb6f1ae",
+        "tools\\preprocess\\utils\\column_filter.py": "c6629d3d231874fef3c841c90e56f8194c78e0790d528f5b3e0cdb76e943f8e1",
+        "tools\\preprocess\\utils\\converter.py": "70eac1730f71eb6ff762228b5360fc3cac41fc2ca1806ab81bdf9f8fc26327ba",
+        "tools\\preprocess\\utils\\reader_csv.py": "1a025087bdeef6b7359a4cb0a062c1acab2b51c60d47ed06041b31a035efb039",
+        "tools\\preprocess\\utils\\reader_mat.py": "614a83462b875b673046772f1e36442de2001e6ce507f9c9ad56a3a4ccf89a12",
+        "tools\\preprocess\\utils\\resampler.py": "fc9c5f1cb305dbec3fad2352affbee660c9e9387e5e5c68418ea60c85f4caec0",
+        "tools\\preprocess\\utils\\time_normalizer.py": "635d77788d6af46fad0e85c59769276c2f2c3981db3a044a9b3d1119a7bb720a"
+      },
+      "executables_sha256": {
+        "panel-y-convert.exe": "9a79e3dd58b919760eafbe18f1699fd84b9bfcad1fea7694b0eee26b490de7b5",
+        "multiconverter.exe": "fe3d7bc92f5c44b9b706109e098b6e75b0cc3041cc88522c860968e602ceab38"
+      },
+      "packaged_test_suites_passed": 6
+    },
+    "windows_crlf_sources": [
+      "tools\\preprocess\\convert.py",
+      "tools\\preprocess\\multiconverter.py",
+      "tools\\preprocess\\utils\\__init__.py",
+      "tools\\preprocess\\utils\\column_filter.py",
+      "tools\\preprocess\\utils\\converter.py",
+      "tools\\preprocess\\utils\\reader_csv.py",
+      "tools\\preprocess\\utils\\reader_mat.py",
+      "tools\\preprocess\\utils\\resampler.py",
+      "tools\\preprocess\\utils\\time_normalizer.py"
+    ],
+    "verified": true
+  }
+]

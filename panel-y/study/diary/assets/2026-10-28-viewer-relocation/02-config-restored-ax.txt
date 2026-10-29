@@ -1,0 +1,109 @@
+Window: "Panel-y v3.0", App: Panel-y Migration Check.
+0 standard window Panel-y v3.0, Secondary Actions: Raise
+	1 container (showing 0-100 of 195 items)
+		2 text (settable) Panel-y
+		3 text (settable) v3.0
+		4 button About
+		5 text (settable) full view 0.000000..0.999990s: 5 rows, 5 ch, 500000 visible samples, built 0 envelope(s), raw step 0, edge step 0, dense step 2, env h/m 5/0, ctx 1/0, clips 0, tile h/b 0/0, edge h/b 0/0, cache 4, edge cache 0, hints 2
+		6 text (settable) full frame 1.4ms visible 0.1ms draw 0.2ms input 0.0ms rows 5 ch 5 points 8270 buckets 831/831 env h/m 5/0 ctx 1/0 tile h/b 0/0 edge h/b 0/0
+		7 text (settable) Data Sources
+		8 text (settable) 1 source(s)
+		9 button Start all at zero
+		10 button Add Source
+		11 text (settable) #1 test_100k.parquet
+		12 text (settable) Path
+		13 text field (settable) /Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/../../code/proto_3_1b/data/test_100k.parquet
+		14 button Browse
+		15 text (settable) Ready: /Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/../../code/proto_3_1b/data/test_100k.parquet
+		16 text (settable) Time alignment
+		17 text (settable) Offset
+		18 stepper (settable) 0.000 s
+		19 button (disabled) Reset
+		20 button Start at zero
+		21 text (settable) display time range: 0.000000 .. 0.999990 s
+		22 text (settable) schema: ready, time: ready, channels: 4 loaded
+		23 button Load Schema
+		24 button Remove
+		25 text (settable) Recent
+		26 pop up button (settable) Choose...
+		27 text (settable) Plot config
+		28 text (settable) .pyc.json compatible view config.
+		29 text (settable) Path
+		30 text field (settable) /Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/../../code/proto_3_1b/data/test_100k.pyc.json
+		31 button Browse
+		32 button Load
+		33 button Apply to Current Data
+		34 button Save
+		35 button Save As...
+		36 text (settable) Save includes all sources and offsets (v2). Apply keeps current data and offsets; v2 matches file paths.
+		37 text (settable) 5 row(s), 5 channel(s), 4 visible load(s)
+		38 button Load / Add sine_50Hz #1 to Row 1
+		39 text (settable) Channel browser
+		40 text (settable) Target row
+		41 pop up button (settable) Row 1
+		42 text (settable) Filter
+		43 text field (settable) channel name or path
+		44 text (settable) State
+		45 pop up button (settable) All
+		46 text (settable) Sort
+		47 pop up button (settable) Schema order
+		48 text (settable) #1 test_100k.parquet
+		49 text (settable) Rows: 100000
+		50 text (settable) Row groups: 1
+		51 text (settable) Columns: 5
+		52 text (settable) Numeric channels: 4
+		53 text (settable) Time column: time
+		54 text (settable) Time range: 0.000000 .. 0.999990 s
+		55 text (settable) Estimated sample rate: 100.000 kHz
+		56 text (settable) 4 / 4 channels in this source
+		57 button Add
+		58 text (settable) loaded
+		59 text (settable) #01
+		60 button sine_50Hz #1
+		61 button Add
+		62 text (settable) loaded
+		63 text (settable) #02
+		64 button pwm_1kHz #1
+		65 button Add
+		66 text (settable) loaded
+		67 text (settable) #03
+		68 button noise #1
+		69 button Add
+		70 text (settable) loaded
+		71 text (settable) #04
+		72 button chirp_1_500Hz #1
+		73 scroll bar
+		74 text (settable) Selected channel
+		75 text (settable) sine_50Hz #1
+		76 text (settable) Source: #1 test_100k.parquet
+		77 text (settable) State: loaded
+		78 text (settable) Rows: Row 1, Row 5
+		79 text (settable) Index: #1
+		80 text (settable) Type: DOUBLE / -
+		81 text (settable) Cache: 100000 samples, 0.4 MiB, read 0.003s
+		82 text (settable) Path: sine_50Hz
+		83 button Add matching channel from all sources
+		84 button Raw columns
+		85 text (settable) Rows
+		86 button Add Row
+		87 text (settable) Load target: Row 1
+		88 button Row 1
+		89 button Delete
+		90 text (settable) Y
+		91 pop up button (settable) Auto
+		92 checkbox (settable, boolean) on
+		93 color well
+		94 text (settable) sine_50Hz #1
+		95 pop up button (settable) Step
+		96 stepper (settable) w 1.25
+		97 button Reset color
+		98 button Remove
+		99 button Row 2
+		100 button Delete
+		101 text (settable) Y
+	102 close button
+	103 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	104 minimize button
+	105 text Panel-y v3.0
+106 menu bar
+	107 Panel-y v3.0

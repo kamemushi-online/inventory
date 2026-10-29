@@ -1,0 +1,207 @@
+{
+  "ch_styles": {
+    "Hi_a": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "Ia_phys": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "Te": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "Trq_cmd": {
+      "color": "#50beff",
+      "width": 1.25
+    }
+  },
+  "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+  "rows": [
+    {
+      "channels": [
+        "Ia_phys"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "Te",
+        "Trq_cmd"
+      ],
+      "step_channels": [
+        "Trq_cmd"
+      ],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "Hi_a"
+      ],
+      "step_channels": [
+        "Hi_a"
+      ],
+      "ymax": null,
+      "ymin": null
+    }
+  ],
+  "rust": {
+    "rows": [
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "Ia_phys",
+            "source_key": "source-1",
+            "visible": true
+          },
+          {
+            "color": "#ffb347",
+            "color_index": 1,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "Ia_phys",
+            "source_key": "source-2",
+            "visible": true
+          },
+          {
+            "color": "#7ee787",
+            "color_index": 2,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "Ia_phys",
+            "source_key": "source-3",
+            "visible": true
+          }
+        ],
+        "ymax": null,
+        "ymin": null
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "Te",
+            "source_key": "source-1",
+            "visible": true
+          },
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "step",
+            "line_width": 1.25,
+            "path": "Trq_cmd",
+            "source_key": "source-1",
+            "visible": true
+          },
+          {
+            "color": "#ffb347",
+            "color_index": 1,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "Te",
+            "source_key": "source-2",
+            "visible": true
+          },
+          {
+            "color": "#ffb347",
+            "color_index": 1,
+            "draw_mode": "step",
+            "line_width": 1.25,
+            "path": "Trq_cmd",
+            "source_key": "source-2",
+            "visible": true
+          },
+          {
+            "color": "#7ee787",
+            "color_index": 2,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "Te",
+            "source_key": "source-3",
+            "visible": true
+          },
+          {
+            "color": "#7ee787",
+            "color_index": 2,
+            "draw_mode": "step",
+            "line_width": 1.25,
+            "path": "Trq_cmd",
+            "source_key": "source-3",
+            "visible": true
+          }
+        ],
+        "ymax": null,
+        "ymin": null
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "step",
+            "line_width": 1.25,
+            "path": "Hi_a",
+            "source_key": "source-1",
+            "visible": true
+          },
+          {
+            "color": "#ffb347",
+            "color_index": 1,
+            "draw_mode": "step",
+            "line_width": 1.25,
+            "path": "Hi_a",
+            "source_key": "source-2",
+            "visible": true
+          },
+          {
+            "color": "#7ee787",
+            "color_index": 2,
+            "draw_mode": "step",
+            "line_width": 1.25,
+            "path": "Hi_a",
+            "source_key": "source-3",
+            "visible": true
+          }
+        ],
+        "ymax": null,
+        "ymin": null
+      }
+    ],
+    "sources": [
+      {
+        "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+        "key": "source-1",
+        "label": "input",
+        "time_offset_seconds": 0.0
+      },
+      {
+        "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+        "key": "source-2",
+        "label": "reversal",
+        "time_offset_seconds": 0.0
+      },
+      {
+        "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+        "key": "source-3",
+        "label": "speed",
+        "time_offset_seconds": 0.0
+      }
+    ],
+    "version": 2,
+    "visual_mode": "plain"
+  },
+  "scroll_zoom": true,
+  "theme": "dark",
+  "version": 1
+}

@@ -1,0 +1,59 @@
+The following is a diff from the previous accessibility tree for Window: "Panel-y v3.0" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 56, 91-102
+~		5 text (settable) full view 0.000000..19.999990s: 8 rows, 8 ch, 16000000 visible samples, built 8 envelope(s), raw step 0, edge step 0, dense step 0, env h/m 0/8, ctx 0/1, clips 0, tile h/b 6/2, edge h/b 0/0, cache 8, edge cache 0, hints 0
+~		6 text (settable) full frame 6.8ms visible 5.3ms draw 0.3ms input 0.0ms rows 8 ch 8 points 13296 buckets 831/831 env h/m 0/8 ctx 0/1 tile h/b 6/2 edge h/b 0/0
+~		11 text (settable) #1 panely_medium_2m_8ch.parquet
+~		13 text field (settable) /Users/ochiba/newspace/life/factory/panel-y/data/panely_medium_2m_8ch.parquet
+~		15 text (settable) Ready: /Users/ochiba/newspace/life/factory/panel-y/data/panely_medium_2m_8ch.parquet
+~		21 text (settable) display time range: 0.000000 .. 19.999990 s
+~		22 text (settable) schema: ready, time: ready, channels: 8 loaded
+~		37 text (settable) 8 row(s), 8 channel(s), 8 visible load(s)
+~		38 button Load / Add step_signal #1 to Row 1
+~		81 text (settable) #1 panely_medium_2m_8ch.parquet
+~		49 text (settable) Rows: 2000000
+~		50 text (settable) Row groups: 10
+~		82 text (settable) Columns: 9
+~		52 text (settable) Numeric channels: 8
+~		84 text (settable) Time range: 0.000000 .. 19.999990 s
+~		86 text (settable) 8 / 8 channels in this source
+~		116 button Add
+~		117 text (settable) loaded
+~		118 text (settable) #02
+~		119 button sine_1kHz #1
+~		120 button Add
+~		121 text (settable) loaded
+~		122 text (settable) #03
+~		123 button pwm_1kHz #1
+~		124 button Add
+~		125 text (settable) loaded
+~		126 text (settable) #04
+~		127 button pwm_10kHz #1
+~		128 button Add
+~		129 text (settable) loaded
+~		130 text (settable) #05
++		131 button noise #1
++		132 button Add
++		133 text (settable) loaded
++		134 text (settable) #06
++		135 button chirp_1_500Hz #1
++		136 button Add
++		137 text (settable) loaded
++		138 text (settable) #07
++		139 button step_signal #1
++		140 button Add
++		141 text (settable) loaded
++		142 text (settable) #08
++		143 button spike_signal #1
++		103 scroll bar
++		104 text (settable) Selected channel
++		105 text (settable) step_signal #1
++		106 text (settable) Source: #1 panely_medium_2m_8ch.parquet
++		107 text (settable) State: loaded
++		108 text (settable) Rows: Row 7
++		109 text (settable) Index: #7
++		110 text (settable) Type: FLOAT / -
++		111 text (settable) Cache: 2000000 samples, 7.6 MiB, read 0.017s
++		112 text (settable) Path: step_signal
++		113 button Add matching channel from all sources
++		114 button Raw columns
++		115 text (settable) Rows

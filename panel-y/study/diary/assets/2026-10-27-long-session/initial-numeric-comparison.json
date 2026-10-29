@@ -1,0 +1,134 @@
+{
+  "events_path": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-27-long-session/longsession-events.jsonl",
+  "events_sha256": "03f3952c67f17d3d537467ee79cb87e37cee139340246b81bc3626d7ac692f4a",
+  "reference_sha256": "12a3f58d2edcf4831d022f8537a11e7391b47ab44c7c925fb4246d67fb41fe5c",
+  "allow_incomplete": true,
+  "tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-10
+  },
+  "counts_and_indices": "exact; statistics indices/counts only when emitted; FFT indices/counts required",
+  "driver_completed": false,
+  "scope": "all observed statistics and FFT events; full spectrum equality is not independently compared",
+  "event_counts": {
+    "initialization": 1,
+    "loaded": 1,
+    "statistics": 1,
+    "fft": 1,
+    "heartbeat": 1
+  },
+  "numeric_events_after_restore": 0,
+  "first_numeric_checkpoint": {
+    "event": "statistics",
+    "cycle": 1,
+    "session_elapsed_seconds": 0.029830791,
+    "completed_cycles": 0
+  },
+  "last_numeric_checkpoint": {
+    "event": "fft",
+    "cycle": 1,
+    "session_elapsed_seconds": 0.06218175,
+    "completed_cycles": 0
+  },
+  "numeric_cycles": [
+    1
+  ],
+  "ignored_trailing_partial_record": false,
+  "passed_observed_comparisons": true,
+  "numeric_comparisons": 126,
+  "exact_comparisons": 51,
+  "max_errors": {
+    "statistics.value_a": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.value_b": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.delta": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.mean": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.min": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.max": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.peak_to_peak": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "statistics.rms": {
+      "count": 12,
+      "max_absolute": 1.7852386235972517e-13,
+      "max_relative_nonzero_reference": 3.3140865769770276e-14,
+      "max_tolerance_fraction": 0.00010703540443113082
+    },
+    "statistics.slope_per_second": {
+      "count": 12,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "fft.cursor_a": {
+      "count": 3,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "fft.cursor_b": {
+      "count": 3,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "fft.dt": {
+      "count": 3,
+      "max_absolute": 0.0,
+      "max_relative_nonzero_reference": 0.0,
+      "max_tolerance_fraction": 0.0
+    },
+    "fft.peak_frequency_hz": {
+      "count": 3,
+      "max_absolute": 7.105427357601002e-15,
+      "max_relative_nonzero_reference": 1.184261577684326e-16,
+      "max_tolerance_fraction": 1.0150784520775632e-06
+    },
+    "fft.peak_amplitude": {
+      "count": 3,
+      "max_absolute": 8.881784197001252e-16,
+      "max_relative_nonzero_reference": 1.675676887524472e-16,
+      "max_tolerance_fraction": 5.804929965024477e-07
+    },
+    "fft.peak_db": {
+      "count": 3,
+      "max_absolute": 1.7763568394002505e-15,
+      "max_relative_nonzero_reference": 1.2262408314121793e-16,
+      "max_tolerance_fraction": 7.254522671502291e-07
+    }
+  },
+  "failure_count": 0,
+  "failure_examples": []
+}

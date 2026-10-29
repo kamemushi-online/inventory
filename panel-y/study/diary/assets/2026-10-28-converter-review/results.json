@@ -1,0 +1,662 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0"
+  },
+  "cases": [
+    {
+      "name": "seconds_1200_autodetect",
+      "input": {
+        "time": [
+          0,
+          600,
+          1200
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "unit_argument": null,
+      "input_check_uniform": true,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          0.6,
+          1.2
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] seconds_1200_autodetect.parquet  shape=(3, 2)\n[時間変換] 'time' を ms → s に変換します\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/seconds_1200_autodetect-out.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 1.7 Hz (Ts=600.0000 ms)\n"
+    },
+    {
+      "name": "milliseconds_500_autodetect",
+      "input": {
+        "time": [
+          0,
+          250,
+          500
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "unit_argument": null,
+      "input_check_uniform": true,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0,
+          250,
+          500
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "int64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] milliseconds_500_autodetect.parquet  shape=(3, 2)\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/milliseconds_500_autodetect-out.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 0.0 Hz (Ts=250000.0000 ms)\n"
+    },
+    {
+      "name": "milliseconds_explicit",
+      "input": {
+        "time": [
+          1000,
+          1001,
+          1003,
+          1006
+        ],
+        "value": [
+          0,
+          2,
+          6,
+          12
+        ]
+      },
+      "unit_argument": "ms",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          1.0,
+          1.002,
+          1.004,
+          1.006
+        ],
+        "value": [
+          0.0,
+          4.000000000000222,
+          8.000000000000147,
+          12.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] milliseconds_explicit.parquet  shape=(4, 2)\n[時間変換] 'time' を ms → s に変換します\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/milliseconds_explicit-out.parquet\n  チャンネル: ['value']\n  サンプル数: 4 点\n  サンプリング: 500.0 Hz (Ts=2.0000 ms)\n"
+    },
+    {
+      "name": "digital",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          3.0,
+          6.0
+        ],
+        "value": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          2.0,
+          4.0,
+          6.0
+        ],
+        "value": [
+          0.0,
+          0.5,
+          1.0,
+          1.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] digital.parquet  shape=(4, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/digital-out.parquet\n  チャンネル: ['value']\n  サンプル数: 4 点\n  サンプリング: 0.5 Hz (Ts=2000.0000 ms)\n"
+    },
+    {
+      "name": "peak",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          3.0,
+          6.0
+        ],
+        "value": [
+          0,
+          10,
+          0,
+          0
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          2.0,
+          4.0,
+          6.0
+        ],
+        "value": [
+          0.0,
+          5.0,
+          0.0,
+          0.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] peak.parquet  shape=(4, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/peak-out.parquet\n  チャンネル: ['value']\n  サンプル数: 4 点\n  サンプリング: 0.5 Hz (Ts=2000.0000 ms)\n"
+    },
+    {
+      "name": "gap",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          2.0,
+          100.0
+        ],
+        "value": [
+          0,
+          1,
+          2,
+          100
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          33.333333333333336,
+          66.66666666666667,
+          100.0
+        ],
+        "value": [
+          0.0,
+          33.333333333333336,
+          66.66666666666667,
+          100.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] gap.parquet  shape=(4, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/gap-out.parquet\n  チャンネル: ['value']\n  サンプル数: 4 点\n  サンプリング: 0.0 Hz (Ts=33333.3333 ms)\n"
+    },
+    {
+      "name": "descending_irregular",
+      "input": {
+        "time": [
+          3.0,
+          2.0,
+          0.0
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": true,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          3.0,
+          2.0,
+          0.0
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] descending_irregular.parquet  shape=(3, 2)\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/descending_irregular-out.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 0.0 Hz (Ts=-1000.0000 ms)\n"
+    },
+    {
+      "name": "unsorted",
+      "input": {
+        "time": [
+          0.0,
+          2.0,
+          1.0,
+          3.0
+        ],
+        "value": [
+          0,
+          20,
+          10,
+          30
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "value": [
+          0.0,
+          10.0,
+          20.0,
+          30.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] unsorted.parquet  shape=(4, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/unsorted-out.parquet\n  チャンネル: ['value']\n  サンプル数: 4 点\n  サンプリング: 1.0 Hz (Ts=1000.0000 ms)\n"
+    },
+    {
+      "name": "duplicate",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          1.0,
+          2.0
+        ],
+        "value": [
+          0,
+          10,
+          20,
+          30
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          0.6666666666666666,
+          1.3333333333333333,
+          2.0
+        ],
+        "value": [
+          0.0,
+          6.666666666666666,
+          23.333333333333332,
+          30.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] duplicate.parquet  shape=(4, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/duplicate-out.parquet\n  チャンネル: ['value']\n  サンプル数: 4 点\n  サンプリング: 1.5 Hz (Ts=666.6667 ms)\n"
+    },
+    {
+      "name": "constant_time",
+      "input": {
+        "time": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value": [
+          10,
+          20,
+          30
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "value": [
+          30.0,
+          30.0,
+          30.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": false,
+      "warnings": [],
+      "log": "[読み込み完了] constant_time.parquet  shape=(3, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/constant_time-out.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 0.0 Hz (Ts=0.0000 ms)\n"
+    },
+    {
+      "name": "missing_time",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          "nan",
+          3.0,
+          4.0
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": true,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          1.0,
+          "nan",
+          3.0,
+          4.0
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] missing_time.parquet  shape=(5, 2)\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/missing_time-out.parquet\n  チャンネル: ['value']\n  サンプル数: 5 点\n  サンプリング: 1.0 Hz (Ts=1000.0000 ms)\n"
+    },
+    {
+      "name": "infinite_endpoint",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          "inf"
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          "nan",
+          "inf",
+          "inf"
+        ],
+        "value": [
+          "nan",
+          2.0,
+          2.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": false,
+      "warnings": [
+        "invalid value encountered in scalar divide",
+        "invalid value encountered in scalar divide",
+        "invalid value encountered in multiply"
+      ],
+      "log": "[読み込み完了] infinite_endpoint.parquet  shape=(3, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/infinite_endpoint-out.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 0.0 Hz (Ts=nan ms)\n"
+    },
+    {
+      "name": "one_row",
+      "input": {
+        "time": [
+          0.0
+        ],
+        "value": [
+          7.0
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "error",
+      "error": "IndexError: single positional indexer is out-of-bounds",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0
+        ],
+        "value": [
+          7.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": false,
+      "warnings": [],
+      "log": "[読み込み完了] one_row.parquet  shape=(1, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n"
+    },
+    {
+      "name": "empty",
+      "input": {
+        "time": [],
+        "value": []
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "error",
+      "error": "IndexError: single positional indexer is out-of-bounds",
+      "output_exists": false,
+      "warnings": [],
+      "log": "[読み込み完了] empty.parquet  shape=(0, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n"
+    },
+    {
+      "name": "epoch_microsecond_grid",
+      "input": {
+        "time": [
+          1700000000.0,
+          1700000000.000001,
+          1700000000.000002,
+          1700000000.000003,
+          1700000000.000004,
+          1700000000.000005,
+          1700000000.000006,
+          1700000000.000007,
+          1700000000.000008,
+          1700000000.000009
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": false,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          1700000000.0,
+          1700000000.000001,
+          1700000000.000002,
+          1700000000.000003,
+          1700000000.000004,
+          1700000000.000005,
+          1700000000.000006,
+          1700000000.0000072,
+          1700000000.000008,
+          1700000000.000009
+        ],
+        "value": [
+          0.0,
+          1.0,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.2,
+          8.0,
+          9.0
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "float64"
+      },
+      "output_check_uniform": false,
+      "warnings": [],
+      "log": "[読み込み完了] epoch_microsecond_grid.parquet  shape=(10, 2)\n[警告] 非等時間間隔データを検出。線形補間でリサンプリングします\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/epoch_microsecond_grid-out.parquet\n  チャンネル: ['value']\n  サンプル数: 10 点\n  サンプリング: 1,048,576.0 Hz (Ts=0.0010 ms)\n"
+    },
+    {
+      "name": "boolean_channel",
+      "input": {
+        "time": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "value": [
+          false,
+          true,
+          false
+        ]
+      },
+      "unit_argument": "s",
+      "input_check_uniform": true,
+      "status": "success",
+      "output_exists": true,
+      "output": {
+        "time": [
+          0.0,
+          1.0,
+          2.0
+        ],
+        "value": [
+          false,
+          true,
+          false
+        ]
+      },
+      "output_dtypes": {
+        "time": "float64",
+        "value": "bool"
+      },
+      "output_check_uniform": true,
+      "warnings": [],
+      "log": "[読み込み完了] boolean_channel.parquet  shape=(3, 2)\n[出力完了] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-review-1prvlhlc/boolean_channel-out.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 1.0 Hz (Ts=1000.0000 ms)\n"
+    }
+  ],
+  "mat_scalar_truncation": {
+    "time": [
+      0.0
+    ],
+    "signal": [
+      0.0
+    ],
+    "scalar": [
+      100
+    ]
+  }
+}

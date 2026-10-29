@@ -1,0 +1,23 @@
+{
+  "base_revision": "03a0e814cd39f205c137456833096dc834e583fb",
+  "sources": {
+    "code/proto_3_1b/multiconverter.py": "76087b0282fb9527a0a6c9d2b966e3679e854af60e66c97a068e903a46e15137",
+    "code/proto_3_1b/build_macos.sh": "a8717fbf8de2da2db2827042869503cad43b7a9eb92c75760a6103620ec09734",
+    "code/proto_3_1b/build_windows.bat": "ed835e95a114a64f2e7f56da9fa75b32940d2bc322f3a3d870ef4e4993e9797b",
+    "code/proto_3_1b/multiconverter.spec": "7bee240328626bdee375514f310111ad95465f777e443e720bb698f4acd7e866",
+    "code/proto_3_1b/validate_interval_statistics.py": "45d5841361a375faa254b1697d5b81c3cce55c2cbec4f3dfcacf0e9e514ef40a",
+    "code/proto_3_1b/generate_interval_statistics_sources.py": "c0597f50eb50018f645af544231c0c86169bffe252d0ae80736e9557cff7baa7",
+    "code/proto_3_1b/generate_multi_source_validation_data.py": "7a736707e34a5841846a79f482653cb18c1afed93e7f5758e54054c6853b224e",
+    "code/proto_3_1b/generate_phase1_datasets.py": "10d0c3f5c72a0eb5b4ff4cce7403383d03d9b46e643f3605a51eec4bcb410eea",
+    "code/proto_3_1b/generate_ripple_validation_data.py": "b3592b716282a06e3632dd465b81b4a3b6b556142b3919eecca60b0cadb0ce2c",
+    "code/proto_3_1b/generate_step_validation_data.py": "4eaf964dec66c5e0c3fbb7a6ce224511bfd771de89f9273dc85f2dbe83875b33",
+    "code/proto_3_1b/generate_test_data.py": "29f2047a5a61f5fc585d8e9d7201797d4ee878f816e74f2a07fa741b29dfe5a7",
+    "code/proto_3_1b/utils/__init__.py": "3e213845ea1f3f58d706847b5490e0d5dbd3f790b5b27b24b130f358e5e12fe8",
+    "code/proto_3_1b/utils/column_filter.py": "c309af104dc3bb3601d44ddb992ff219ab5c62904b6055048c4c23563a637d48",
+    "code/proto_3_1b/utils/converter.py": "5a8cc4f020a54fb5d6ddc892d85cb9e4bfa5c35b0312075e386636234f63ca66",
+    "code/proto_3_1b/utils/reader_csv.py": "1a56134ad6bcad030b1e90a17eba58d535e2fe115f0b4223defc5fd963553e5f",
+    "code/proto_3_1b/utils/reader_mat.py": "e87e3b7a031d677f5667253bffb246fe19a1085d5f4d718c8d61e9e41c6c04ea",
+    "code/proto_3_1b/utils/resampler.py": "2f9b7a92154d789af830c1392296e5938a7ec7646e97b5859fe73b38263073a5",
+    "code/proto_3_1b/utils/time_normalizer.py": "006e054d9ad2636eef2127da87bee6d6b609cfc14957ff1cab856dffda1ebcf6"
+  }
+}

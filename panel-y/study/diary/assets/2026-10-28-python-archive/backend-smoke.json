@@ -1,0 +1,187 @@
+{
+  "verified_at": "2026-10-28T18:38:59.273822+09:00",
+  "versions": {
+    "dash": "4.4.1",
+    "plotly": "7.1.0",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.0",
+    "scipy": "1.18.1",
+    "h5py": "3.16.0"
+  },
+  "prototypes": [
+    {
+      "prototype": "proto_3_1",
+      "default_data_dir": "/Users/ochiba/newspace/life/factory/panel-y/archive/proto_3_1/data",
+      "http": [
+        {
+          "path": "/",
+          "status": 200,
+          "bytes": 6714
+        },
+        {
+          "path": "/_dash-layout",
+          "status": 200,
+          "bytes": 8932
+        },
+        {
+          "path": "/_dash-dependencies",
+          "status": 200,
+          "bytes": 12665
+        },
+        {
+          "path": "/assets/style.css",
+          "status": 200,
+          "bytes": 13927
+        },
+        {
+          "path": "/assets/resize_sync.js",
+          "status": 200,
+          "bytes": 1483
+        }
+      ],
+      "sample_status": "✓ test_100k.parquet (4 ch, 100,000 点, 100,000 Hz)",
+      "sample_rows": 100000,
+      "sample_channels": [
+        "sine_50Hz",
+        "pwm_1kHz",
+        "noise",
+        "chirp_1_500Hz"
+      ],
+      "figure_traces": 3,
+      "fft_peak_hz": 49.99937500783179,
+      "archived_config_check": {
+        "status": "✓ 作図ロード: sample_waveform.pyc.json",
+        "plot_rows": 3,
+        "scope": "temporary synthetic 1000-row fixture matching the historical schema, not the original dataset"
+      }
+    },
+    {
+      "prototype": "proto_3_1b",
+      "default_data_dir": "/Users/ochiba/newspace/life/factory/panel-y/data",
+      "http": [
+        {
+          "path": "/",
+          "status": 200,
+          "bytes": 6714
+        },
+        {
+          "path": "/_dash-layout",
+          "status": 200,
+          "bytes": 8904
+        },
+        {
+          "path": "/_dash-dependencies",
+          "status": 200,
+          "bytes": 13043
+        },
+        {
+          "path": "/assets/style.css",
+          "status": 200,
+          "bytes": 12076
+        },
+        {
+          "path": "/assets/resize_sync.js",
+          "status": 200,
+          "bytes": 1483
+        }
+      ],
+      "sample_status": "✓ test_100k.parquet (4 ch, 100,000 点, 100,000 Hz, 2 MB)",
+      "sample_rows": 100000,
+      "sample_channels": [
+        "sine_50Hz",
+        "pwm_1kHz",
+        "noise",
+        "chirp_1_500Hz"
+      ],
+      "figure_traces": 3,
+      "fft_peak_hz": 49.99937500783179
+    }
+  ],
+  "medium_benchmark": {
+    "dataset": "panely_medium_2m_8ch.parquet",
+    "path": "/Users/ochiba/newspace/life/factory/panel-y/data/panely_medium_2m_8ch.parquet",
+    "load_sec": 0.09221904198057018,
+    "rss_after_load_mib": 318.609375,
+    "load_status": "✓ panely_medium_2m_8ch.parquet (8 ch, 2,000,000 点, 100,000 Hz, 76 MB)",
+    "rows": 2000000,
+    "channels": [
+      "sine_50Hz",
+      "sine_1kHz",
+      "pwm_1kHz",
+      "pwm_10kHz",
+      "noise",
+      "chirp_1_500Hz",
+      "step_signal",
+      "spike_signal"
+    ],
+    "initial_update_sec": 0.1786892079981044,
+    "initial_fig_json_sec": 0.09027816701564007,
+    "initial_json_bytes": 747381,
+    "rss_after_initial_mib": 346.515625,
+    "zoom_sec": 0.08826141699682921,
+    "zoom_json_bytes": 738676,
+    "rss_after_zoom_mib": 347.03125,
+    "continuous_zoom_total_sec": 0.8909936659911182,
+    "continuous_zoom_max_sec": 0.11174837499856949,
+    "continuous_zoom_runs": [
+      0.08831791699049063,
+      0.08969629200873896,
+      0.0873980830074288,
+      0.0859954170009587,
+      0.11174837499856949,
+      0.08478829200612381,
+      0.08691833401098847,
+      0.08586937500513159,
+      0.08482379198540002,
+      0.08535024998127483
+    ],
+    "rss_after_continuous_zoom_mib": 348.734375,
+    "reset_sec": 0.08671233299537562,
+    "reset_json_bytes": 747381,
+    "hover_sec": 0.0086660000088159,
+    "cursor_stats_sec": 0.013828750001266599,
+    "fft_sec": 0.0409892080060672,
+    "fft_json_bytes": 2280433,
+    "rss_after_analysis_mib": 374.453125,
+    "run": 1
+  },
+  "medium_benchmark_stderr": "",
+  "relocation": {
+    "base_revision": "7432d5bd733c66c36df152b6e77689961902ed9e",
+    "source": "code",
+    "destination": "archive",
+    "tracked_files": 21,
+    "total_files_including_existing_caches": 24,
+    "byte_identical_files": 23,
+    "intentional_change": "proto_3_1/data/sample_waveform.pyc.json data_path changed to data/sample_waveform.parquet",
+    "old_directory_absent": true
+  },
+  "browser_smoke": {
+    "proto_3_1": {
+      "rows": 100000,
+      "channels": 4,
+      "waveform_display": "passed"
+    },
+    "proto_3_1b": {
+      "rows": 2000000,
+      "channels": 8,
+      "waveform_display": "passed"
+    },
+    "console_errors": [],
+    "test_servers_stopped": true,
+    "test_tab_closed": true,
+    "scope": "127.0.0.1 temporary ports, archived Dash WSGI apps with debug disabled"
+  },
+  "active_checks": {
+    "rust_tests": 240,
+    "python_tests": 9,
+    "release_build": "passed (--offline --locked)",
+    "format_check": "passed",
+    "viewer_cli": "sample channel loaded via macOS launcher from /private/tmp"
+  },
+  "archived_app_sha256": {
+    "archive/proto_3_1b/app.py": "68a0390ff254dc2e8da6cf5b9b593452309f500e329346ece240788579aa2b53",
+    "archive/proto_3_1/app.py": "6b0da038138634a8d4006edbf3bb88ecae5b127daeafd5328d91df60753c3195"
+  }
+}

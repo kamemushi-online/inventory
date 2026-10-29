@@ -1,0 +1,35 @@
+ABI malloc_size=32 vm_rev1_words=38 reusable_offset=80 footprint_offset=144
+start in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1359872 footprint=934176 reusable=0 internal=720896 compressed=0
+  1328
+allocated_256MiB in_use=268450288 allocated=276824064 blocks=192
+vm_status=0 resident=269926400 footprint=269631968 reusable=0 internal=269287424 compressed=0
+263600
+freed in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1490944 footprint=934176 reusable=131072 internal=720896 compressed=0
+  1456
+freed_100ms in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1490944 footprint=934176 reusable=131072 internal=720896 compressed=0
+  1456
+pressure_relief_bytes=0
+relieved in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1490944 footprint=934176 reusable=131072 internal=720896 compressed=0
+  1456
+reused_256MiB in_use=268450288 allocated=276824064 blocks=192
+vm_status=0 resident=269926400 footprint=269500896 reusable=131072 internal=269156352 compressed=0
+263600
+refreed in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1490944 footprint=934176 reusable=131072 internal=720896 compressed=0
+  1456
+reused_256MiB in_use=268450288 allocated=276824064 blocks=192
+vm_status=0 resident=269926400 footprint=269500896 reusable=131072 internal=269156352 compressed=0
+263600
+refreed in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1490944 footprint=934176 reusable=131072 internal=720896 compressed=0
+  1472
+reused_256MiB in_use=268450288 allocated=276824064 blocks=192
+vm_status=0 resident=269942784 footprint=269517280 reusable=131072 internal=269172736 compressed=0
+263616
+refreed in_use=14832 allocated=8388608 blocks=184
+vm_status=0 resident=1507328 footprint=950560 reusable=131072 internal=737280 compressed=0
+  1472

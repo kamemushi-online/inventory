@@ -1,0 +1,83 @@
+{
+  "prepared_at": "2026-10-27T08:28:08.173614+09:00",
+  "base_revision": "519bda495dbe2a48dec6b152e4842deaf42597c8",
+  "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434",
+  "architecture": "arm64",
+  "input_kind": "motor-control simulation, not physical measurements",
+  "inputs": [
+    {
+      "path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+      "bytes": 7507409,
+      "sha256": "bf5e1ecb0c8a25ce20136c3809d66967ddaaa7ffc4c5e62ba9be9cffaa6dc761"
+    },
+    {
+      "path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+      "bytes": 22961335,
+      "sha256": "9e21e257fa8ecbec80f702d54fa061421fec762d65cee13e96a0cbbeb385be68"
+    },
+    {
+      "path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+      "bytes": 23404618,
+      "sha256": "46ae606cc531db6e4e92d28cffd907199dfcdbf69d1e54ad2edb62f91d3d086e"
+    }
+  ],
+  "plot_config": {
+    "path": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/saved-motor.pyc.json",
+    "sha256": "377430e808c0e6c626caa41a735aa99b6cd8590f130c04660104b70e84c9e476"
+  },
+  "planned": {
+    "duration_seconds": 3600,
+    "cycles": 30,
+    "final_quiet_seconds": 120,
+    "rss_interval_seconds": 2,
+    "MallocLargeCache": "0"
+  },
+  "verification_mode": "feature-gated scripted native lifecycle and rendered frames; not pointer input for every cycle",
+  "binary_sha256": "ae256db035865d0bf8d3a0b99fa7739a459f5d7b2b1456552efe33caf84505cf",
+  "source_sha256": {
+    "code/rust_phase1/Cargo.toml": "ba0ddded1a7c12b1f8615401a2360ab9edb4f9fada7430b54ff1f3919a784888",
+    "code/rust_phase1/src/cold_render_bench.rs": "f3283b95d5d91eb8e5d6a23f5addbe782ea2fb80b66dc7b0560f412c05700621",
+    "code/rust_phase1/src/fft_analysis.rs": "47e6aff29c5d7d047e21f22f09db2ff28071dae86e5d6af8cd84a336b9495759",
+    "code/rust_phase1/src/interval_stats.rs": "ba96850f6e59d2799ad47b27357daad2e78c15abfdfed2bba6d8de8264972b55",
+    "code/rust_phase1/src/interval_stats_bench.rs": "bd224899fffcb3d3af48363dd1a4a80ce9373d295538726b58336e396cecebe5",
+    "code/rust_phase1/src/interval_stats_multi_bench.rs": "9f806acb411dd8831a06e186f2fc54a1bb70d4ea235a14a6059cb0dca55f25a5",
+    "code/rust_phase1/src/main.rs": "0be0c8931bf24cf72c2da4bf30fe9dd96eb234435a00e671caf9688a6762bc0f",
+    "code/rust_phase1/src/parquet_schema.rs": "545f665d3556e86dc87feee1d9865bf6562f4688885db6b352a88b850ceca09b",
+    "code/rust_phase1/src/parquet_waveform.rs": "37e63c212d3f127ca4b16082b68a35e9b308642bfac0d765dccac23ca631a82d",
+    "code/rust_phase1/src/plot_config.rs": "393d4b9fc5a66debecd6a49e95d879f93f44c5960ec33d902d0c1b9386a3c37a",
+    "code/rust_phase1/src/soak_validation.rs": "2eb050e30eaaef15ab7dfdfdd9d393178725e3185ef46484f89f5d96127f0974",
+    "code/rust_phase1/src/workspace_data.rs": "eeb5afccc3e9bc6624cfc9a4e1aac819de80ae3466ff64031608b3823d9cec47"
+  },
+  "build_command": "cargo build --release --offline --locked --manifest-path code/rust_phase1/Cargo.toml --features soak-validation",
+  "native_bundle": "/private/tmp/PanelY-SoakSession.app",
+  "run": {
+    "pid": 79377,
+    "initialized_unix_seconds": 1793101608.188203,
+    "loaded_unix_seconds": 1793101608.330337,
+    "initial_window_pixels": [
+      1280,
+      832
+    ],
+    "window_after_native_zoom_pixels": [
+      1920,
+      960
+    ],
+    "native_zoom_note": "Native window zoom action during the first minute; remainder uses expanded window. Screenshots are evidence of displayed state, not every scripted action.",
+    "idle_sleep_assertion": "caffeinate -i -t 3900 -w 79377; scoped to verification process and timeout",
+    "external_sampler_note": "Started approximately16 seconds after loaded; initial driver checkpoints retain startup RSS.",
+    "preparation_note": "Computer-use launch response was delayed before process initialization. That delay is excluded from run duration.",
+    "screen_capture_limit": {
+      "condition": "Mac locked; CUA could not capture the45-minute screenshot. Actual lock onset is unknown. Driver frames and independent RSS sampling continue. No OS/GPU presentation claim is made for this run.",
+      "detected_at_approx": "2026-10-27T21:32:00+09:00"
+    },
+    "completed_at": "2026-10-27T21:48:50+09:00",
+    "result": "completed; record consistency and independent numerical comparisons passed",
+    "post_unlock_observation": {
+      "metadata": "post-unlock-capture.json",
+      "captured_at_jst": "2026-10-27T22:52:25+09:00",
+      "cache_captured_at_jst": "2026-10-27T22:52:39+09:00",
+      "same_pid_verified": 79377,
+      "scope": "Separate post-run screenshots; not included in measured duration or RSS series and does not fill the locked-screen interval."
+    }
+  }
+}

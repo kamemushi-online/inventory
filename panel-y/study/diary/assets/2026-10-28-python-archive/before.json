@@ -1,0 +1,127 @@
+{
+  "base_revision": "7432d5b",
+  "source": "code",
+  "destination": "archive",
+  "files": [
+    {
+      "path": "proto_3_1/app.py",
+      "bytes": 64638,
+      "sha256": "6b0da038138634a8d4006edbf3bb88ecae5b127daeafd5328d91df60753c3195"
+    },
+    {
+      "path": "proto_3_1/assets/resize_sync.js",
+      "bytes": 1483,
+      "sha256": "4b7fb26fd21cd0799062f546cf10b3b88dad1b160dc62c094a7cbb83bb02db4f"
+    },
+    {
+      "path": "proto_3_1/assets/style.css",
+      "bytes": 13927,
+      "sha256": "6f795d41dc02fb580610f4a2c2c9e9b63d865fb2aa5c571d9eae74547c88e81a"
+    },
+    {
+      "path": "proto_3_1/build_exe.sh",
+      "bytes": 374,
+      "sha256": "209fba6847fe72c48bdbd68f00e6ba9d7694265cb2f774c2e5a4203262c92d44"
+    },
+    {
+      "path": "proto_3_1/data/sample_waveform.pyc.json",
+      "bytes": 740,
+      "sha256": "9e919f36a6a4ef1d09edbe7fe8beebeb823eb10904dd56f86ee9088cb4bb330c"
+    },
+    {
+      "path": "proto_3_1/generate_test_data.py",
+      "bytes": 1305,
+      "sha256": "29f2047a5a61f5fc585d8e9d7201797d4ee878f816e74f2a07fa741b29dfe5a7"
+    },
+    {
+      "path": "proto_3_1/multiconverter.py",
+      "bytes": 3485,
+      "sha256": "6a258bc6828adf4c2981f05ef71b0b73f5d2ac485aaae76983f8858238045c06"
+    },
+    {
+      "path": "proto_3_1/requirements.txt",
+      "bytes": 99,
+      "sha256": "5c31c7da668bfeed72ff38366d0f08ed0ffd1a40ebe142159a665d9944a4f6f4"
+    },
+    {
+      "path": "proto_3_1/utils/__init__.py",
+      "bytes": 76,
+      "sha256": "3e213845ea1f3f58d706847b5490e0d5dbd3f790b5b27b24b130f358e5e12fe8"
+    },
+    {
+      "path": "proto_3_1/utils/column_filter.py",
+      "bytes": 816,
+      "sha256": "c309af104dc3bb3601d44ddb992ff219ab5c62904b6055048c4c23563a637d48"
+    },
+    {
+      "path": "proto_3_1/utils/converter.py",
+      "bytes": 3656,
+      "sha256": "5a8cc4f020a54fb5d6ddc892d85cb9e4bfa5c35b0312075e386636234f63ca66"
+    },
+    {
+      "path": "proto_3_1/utils/reader_csv.py",
+      "bytes": 240,
+      "sha256": "1a56134ad6bcad030b1e90a17eba58d535e2fe115f0b4223defc5fd963553e5f"
+    },
+    {
+      "path": "proto_3_1/utils/reader_mat.py",
+      "bytes": 1896,
+      "sha256": "e87e3b7a031d677f5667253bffb246fe19a1085d5f4d718c8d61e9e41c6c04ea"
+    },
+    {
+      "path": "proto_3_1/utils/resampler.py",
+      "bytes": 913,
+      "sha256": "2f9b7a92154d789af830c1392296e5938a7ec7646e97b5859fe73b38263073a5"
+    },
+    {
+      "path": "proto_3_1/utils/time_normalizer.py",
+      "bytes": 1676,
+      "sha256": "006e054d9ad2636eef2127da87bee6d6b609cfc14957ff1cab856dffda1ebcf6"
+    },
+    {
+      "path": "proto_3_1b/__pycache__/generate_phase1_datasets.cpython-312.pyc",
+      "bytes": 12455,
+      "sha256": "c436cde9c28db9ffb77693964d5739a115921b857ba0d90058645fe1cf262e67"
+    },
+    {
+      "path": "proto_3_1b/__pycache__/validate_interval_statistics.cpython-312.pyc",
+      "bytes": 8638,
+      "sha256": "656e65cf885e9eab9f7a829615a0629c6e74cebd3bade43c18860149934e1a02"
+    },
+    {
+      "path": "proto_3_1b/__pycache__/validate_interval_statistics.cpython-313.pyc",
+      "bytes": 8807,
+      "sha256": "b020d7aeb593877ae2fafc05ff2b43f45c5468c9b94a4d156574d5d566f58adb"
+    },
+    {
+      "path": "proto_3_1b/app.py",
+      "bytes": 70321,
+      "sha256": "68a0390ff254dc2e8da6cf5b9b593452309f500e329346ece240788579aa2b53"
+    },
+    {
+      "path": "proto_3_1b/assets/resize_sync.js",
+      "bytes": 1483,
+      "sha256": "4b7fb26fd21cd0799062f546cf10b3b88dad1b160dc62c094a7cbb83bb02db4f"
+    },
+    {
+      "path": "proto_3_1b/assets/style.css",
+      "bytes": 12076,
+      "sha256": "0eaaac279e1d38a6dfad55f42650c7e9ebb7985e9da67714c87740c633c52ee7"
+    },
+    {
+      "path": "proto_3_1b/benchmark_phase1_datasets.py",
+      "bytes": 5804,
+      "sha256": "840c22c13c9eccda4e1157034ba580a8b449646dd5ef66f7a2efd91fc5e28a3b"
+    },
+    {
+      "path": "proto_3_1b/requirements.txt",
+      "bytes": 99,
+      "sha256": "5c31c7da668bfeed72ff38366d0f08ed0ffd1a40ebe142159a665d9944a4f6f4"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 99,
+      "sha256": "5c31c7da668bfeed72ff38366d0f08ed0ffd1a40ebe142159a665d9944a4f6f4"
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "created_utc": "2026-10-26T21:21:00.849558+00:00",
+  "case": "post-five-cycle-native-gui-fft",
+  "provenance": "No8/Prius closed-loop simulation, not physical measurement",
+  "cursors_seconds_as_displayed": [
+    0.040485555,
+    0.089966673
+  ],
+  "window": "Hanning / symmetric Hann: 0.5 - 0.5*cos(2*pi*n/(N-1))",
+  "processing": "Parquet float32 values promoted to float64; subtract unweighted mean; apply NumPy hanning; NumPy rfft without padding; amplitudes abs(rfft)*2/N, including DC/Nyquist; no coherent-gain correction or resampling.",
+  "sampling_interval": "First consecutive time difference in the inclusive nearest-sample interval, matching the current viewer contract.",
+  "comparison_scope": "Sample counts plus GUI-transcribed peak frequencies at 3 decimals and amplitudes at 6 decimals. Full native spectra and physical motor accuracy are not compared.",
+  "viewer_contract": "code/rust_phase1/src/fft_analysis.rs: prepare_fft_input, compute_fft, fft_window_value; inspected without changes.",
+  "viewer_fft_source_sha256": "758f978a36c6e5b3fbfd26fc5df1c308b3e27778107e3a7a44091b8c9329b4a2",
+  "script_sha256": "be7112653e783ca7a92c769b75bdec1c10c5bb10b03b48dd530aacc474281a97",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0"
+  },
+  "runs": [
+    {
+      "name": "input",
+      "parquet": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+      "parquet_sha256": "bf5e1ecb0c8a25ce20136c3809d66967ddaaa7ffc4c5e62ba9be9cffaa6dc761",
+      "channel": "Ia_phys",
+      "offset_seconds": 0.0,
+      "indices_zero_based_inclusive": [
+        40485,
+        89966
+      ],
+      "sample_times_seconds": [
+        0.040486,
+        0.08996699999999999
+      ],
+      "sample_count": 49482,
+      "dt_seconds": 9.999999999940612e-07,
+      "max_dt_deviation_seconds": 6.938893903907228e-18,
+      "frequency_spacing_hz": 20.209369063617856,
+      "removed_unweighted_mean": 1.3263262514208431,
+      "peak_bin": 2,
+      "peak_frequency_hz": 40.41873812723571,
+      "peak_amplitude": 4.849870212711156,
+      "peak_db": 13.714602332220272,
+      "expected_formatted_peak": {
+        "frequency_hz": "40.419",
+        "amplitude": "4.849870"
+      },
+      "gui_observed": {
+        "samples": 49482,
+        "peak_hz": "40.419",
+        "peak_amplitude": "4.849870"
+      },
+      "comparisons": {
+        "sample_count": true,
+        "peak_frequency_three_decimals": true,
+        "peak_amplitude_six_decimals": true
+      },
+      "passed": true,
+      "first_ten_bins": [
+        {
+          "index": 0,
+          "frequency_hz": 0.0,
+          "amplitude": 2.37608331165778
+        },
+        {
+          "index": 1,
+          "frequency_hz": 20.209369063617856,
+          "amplitude": 4.809429016365858
+        },
+        {
+          "index": 2,
+          "frequency_hz": 40.41873812723571,
+          "amplitude": 4.849870212711156
+        },
+        {
+          "index": 3,
+          "frequency_hz": 60.62810719085357,
+          "amplitude": 1.2262055723328873
+        },
+        {
+          "index": 4,
+          "frequency_hz": 80.83747625447143,
+          "amplitude": 0.11933442038880347
+        },
+        {
+          "index": 5,
+          "frequency_hz": 101.04684531808928,
+          "amplitude": 0.05706812821610768
+        },
+        {
+          "index": 6,
+          "frequency_hz": 121.25621438170714,
+          "amplitude": 0.03565969652426121
+        },
+        {
+          "index": 7,
+          "frequency_hz": 141.465583445325,
+          "amplitude": 0.07699653985606537
+        },
+        {
+          "index": 8,
+          "frequency_hz": 161.67495250894285,
+          "amplitude": 0.05376919110453854
+        },
+        {
+          "index": 9,
+          "frequency_hz": 181.8843215725607,
+          "amplitude": 0.02788373525762698
+        }
+      ]
+    },
+    {
+      "name": "reversal",
+      "parquet": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+      "parquet_sha256": "9e21e257fa8ecbec80f702d54fa061421fec762d65cee13e96a0cbbeb385be68",
+      "channel": "Ia_phys",
+      "offset_seconds": 0.0,
+      "indices_zero_based_inclusive": [
+        40485,
+        89966
+      ],
+      "sample_times_seconds": [
+        0.040486,
+        0.08996699999999999
+      ],
+      "sample_count": 49482,
+      "dt_seconds": 9.999999999940612e-07,
+      "max_dt_deviation_seconds": 6.938893903907228e-18,
+      "frequency_spacing_hz": 20.209369063617856,
+      "removed_unweighted_mean": 1.4692588058100007,
+      "peak_bin": 1,
+      "peak_frequency_hz": 20.209369063617856,
+      "peak_amplitude": 4.625901452698551,
+      "peak_db": 13.303927531921156,
+      "expected_formatted_peak": {
+        "frequency_hz": "20.209",
+        "amplitude": "4.625901"
+      },
+      "gui_observed": {
+        "samples": 49482,
+        "peak_hz": "20.209",
+        "peak_amplitude": "4.625901"
+      },
+      "comparisons": {
+        "sample_count": true,
+        "peak_frequency_three_decimals": true,
+        "peak_amplitude_six_decimals": true
+      },
+      "passed": true,
+      "first_ten_bins": [
+        {
+          "index": 0,
+          "frequency_hz": 0.0,
+          "amplitude": 2.3844698735746372
+        },
+        {
+          "index": 1,
+          "frequency_hz": 20.209369063617856,
+          "amplitude": 4.625901452698551
+        },
+        {
+          "index": 2,
+          "frequency_hz": 40.41873812723571,
+          "amplitude": 4.569681946915678
+        },
+        {
+          "index": 3,
+          "frequency_hz": 60.62810719085357,
+          "amplitude": 1.106289499828434
+        },
+        {
+          "index": 4,
+          "frequency_hz": 80.83747625447143,
+          "amplitude": 0.13053826796701298
+        },
+        {
+          "index": 5,
+          "frequency_hz": 101.04684531808928,
+          "amplitude": 0.058088344775462444
+        },
+        {
+          "index": 6,
+          "frequency_hz": 121.25621438170714,
+          "amplitude": 0.023795569807394477
+        },
+        {
+          "index": 7,
+          "frequency_hz": 141.465583445325,
+          "amplitude": 0.04435862599255887
+        },
+        {
+          "index": 8,
+          "frequency_hz": 161.67495250894285,
+          "amplitude": 0.08528472205825396
+        },
+        {
+          "index": 9,
+          "frequency_hz": 181.8843215725607,
+          "amplitude": 0.04653333288813498
+        }
+      ]
+    },
+    {
+      "name": "speed",
+      "parquet": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+      "parquet_sha256": "46ae606cc531db6e4e92d28cffd907199dfcdbf69d1e54ad2edb62f91d3d086e",
+      "channel": "Ia_phys",
+      "offset_seconds": 0.0,
+      "indices_zero_based_inclusive": [
+        40485,
+        89966
+      ],
+      "sample_times_seconds": [
+        0.040486,
+        0.08996699999999999
+      ],
+      "sample_count": 49482,
+      "dt_seconds": 9.999999999940612e-07,
+      "max_dt_deviation_seconds": 6.938893903907228e-18,
+      "frequency_spacing_hz": 20.209369063617856,
+      "removed_unweighted_mean": 0.12187404400935571,
+      "peak_bin": 3,
+      "peak_frequency_hz": 60.62810719085357,
+      "peak_amplitude": 5.32702119106051,
+      "peak_db": 14.529688488511836,
+      "expected_formatted_peak": {
+        "frequency_hz": "60.628",
+        "amplitude": "5.327021"
+      },
+      "gui_observed": {
+        "samples": 49482,
+        "peak_hz": "60.628",
+        "peak_amplitude": "5.327021"
+      },
+      "comparisons": {
+        "sample_count": true,
+        "peak_frequency_three_decimals": true,
+        "peak_amplitude_six_decimals": true
+      },
+      "passed": true,
+      "first_ten_bins": [
+        {
+          "index": 0,
+          "frequency_hz": 0.0,
+          "amplitude": 0.19638354880210263
+        },
+        {
+          "index": 1,
+          "frequency_hz": 20.209369063617856,
+          "amplitude": 0.1971268441688476
+        },
+        {
+          "index": 2,
+          "frequency_hz": 40.41873812723571,
+          "amplitude": 2.2170766958259263
+        },
+        {
+          "index": 3,
+          "frequency_hz": 60.62810719085357,
+          "amplitude": 5.32702119106051
+        },
+        {
+          "index": 4,
+          "frequency_hz": 80.83747625447143,
+          "amplitude": 3.185558664071861
+        },
+        {
+          "index": 5,
+          "frequency_hz": 101.04684531808928,
+          "amplitude": 0.2615027155655121
+        },
+        {
+          "index": 6,
+          "frequency_hz": 121.25621438170714,
+          "amplitude": 0.04866543504692094
+        },
+        {
+          "index": 7,
+          "frequency_hz": 141.465583445325,
+          "amplitude": 0.006268518426962729
+        },
+        {
+          "index": 8,
+          "frequency_hz": 161.67495250894285,
+          "amplitude": 0.00634588158187068
+        },
+        {
+          "index": 9,
+          "frequency_hz": 181.8843215725607,
+          "amplitude": 0.006801343771591085
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

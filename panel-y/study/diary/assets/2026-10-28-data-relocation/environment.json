@@ -1,0 +1,49 @@
+{
+  "verified_at": "2026-10-28T08:29:15.558172+09:00",
+  "base_revision": "d05818bea160070f00f164bc527c2f929818ab21",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "rust_tests": 240,
+  "feature_tests": 243,
+  "python_tests": 9,
+  "feature": "soak-validation",
+  "release_build": "passed (--offline --locked)",
+  "format_check": "passed",
+  "move": {
+    "from": "code/proto_3_1b/data",
+    "to": "data",
+    "files": 21,
+    "bytes": 2433593832,
+    "unchanged_files": 20,
+    "intentional_change": "midium.pyc.json data_path only"
+  },
+  "new_default_outputs": [
+    "panely_medium_2m_8ch.parquet",
+    "step_validation_100k.parquet",
+    "ripple_validation_2_4m.parquet"
+  ],
+  "native_gui": {
+    "initial_sample_path": "apps/panel-y/../../data/test_100k.parquet",
+    "sample_rows": 100000,
+    "sample_plot_rows": 5,
+    "sample_unique_channels": 4,
+    "medium_rows": 2000000,
+    "medium_plot_rows": 8,
+    "medium_channels": 8,
+    "v1_fixture_rows": 100001,
+    "v1_fixture_plot_rows": 2,
+    "v1_fixture_channels": 3,
+    "quit_after_check": true
+  },
+  "source_sha256": {
+    "apps/panel-y/src/fft_analysis.rs": "da348e8ff918d682416f1652a85e9823e26920e03618c25f53c59ff8fe416d7a",
+    "apps/panel-y/src/main.rs": "71727e099448d8cc097224b8ead751aba9e1e270e935d5abf1ee720cb6032008",
+    "apps/panel-y/src/parquet_schema.rs": "ba96884ae1b47b637f2d9d9cee6ceac5d1e9ebe9a9e7711525907e4673070a1d",
+    "apps/panel-y/src/parquet_waveform.rs": "a0f7eff17aaf7ac461dafd4d0c43a9325af706966614fd9687d38b4a42b44635",
+    "code/proto_3_1b/app.py": "68a0390ff254dc2e8da6cf5b9b593452309f500e329346ece240788579aa2b53",
+    "code/proto_3_1b/benchmark_phase1_datasets.py": "840c22c13c9eccda4e1157034ba580a8b449646dd5ef66f7a2efd91fc5e28a3b",
+    "data/midium.pyc.json": "b0621003e2797d552769c9f13c192869965425e3a3156456df4f0dee87677aba",
+    "data/multi_source_validation_1_v1.pyc.json": "1f3a792db8464eaf7bbbe297d4fa631081708fa4b74d8788d3e63b47214ab519",
+    "data/test_100k.pyc.json": "d42e40e083827b5e5e0e4351436d5a57189ba8d81014519cbf77bc91ef373c83",
+    "tools/data_generation/_paths.py": "31ae71e41621ac15f5f689833e023f148a76daf43af43ed407dc58eee1b11cbb"
+  }
+}

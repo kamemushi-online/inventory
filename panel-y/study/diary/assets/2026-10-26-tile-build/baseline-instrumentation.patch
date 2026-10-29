@@ -1,0 +1,11 @@
+--- a/code/rust_phase1/src/main.rs
++++ b/code/rust_phase1/src/main.rs
+@@ -1064,0 +1065,2 @@
++    tile_build_wall: Duration,
++    tile_build_workers: usize,
+@@ -1075,0 +1078,2 @@
++        self.tile_build_wall += other.tile_build_wall;
++        self.tile_build_workers = self.tile_build_workers.max(other.tile_build_workers);
+@@ -4617,0 +4622,2 @@
++            self.last_envelope_stats.tile_build_wall += tile_cache.elapsed;
++            self.last_envelope_stats.tile_build_workers = self.last_envelope_stats.tile_build_workers.max(1);

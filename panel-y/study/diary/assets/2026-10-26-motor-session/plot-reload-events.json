@@ -1,0 +1,38 @@
+[
+  {
+    "round": 2,
+    "completedAt": "2026-10-26T21:18:17.063Z",
+    "actions": [
+      "wheel zoom",
+      "pan",
+      "Plot config Load"
+    ]
+  },
+  {
+    "round": 3,
+    "completedAt": "2026-10-26T21:18:20.233Z",
+    "actions": [
+      "wheel zoom",
+      "pan",
+      "Plot config Load"
+    ]
+  },
+  {
+    "round": 4,
+    "completedAt": "2026-10-26T21:18:23.393Z",
+    "actions": [
+      "wheel zoom",
+      "pan",
+      "Plot config Load"
+    ]
+  },
+  {
+    "round": 5,
+    "completedAt": "2026-10-26T21:18:26.573Z",
+    "actions": [
+      "wheel zoom",
+      "pan",
+      "Plot config Load"
+    ]
+  }
+]

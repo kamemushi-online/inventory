@@ -1,0 +1,235 @@
+{
+  "verified_at": "2026-10-28T08:25:53.635568+09:00",
+  "working_directory": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+  "commands": [
+    {
+      "name": "default-output-generate_phase1_datasets.py",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_phase1_datasets.py",
+        "medium"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+      "returncode": 0,
+      "seconds": 0.8466322500025854,
+      "stdout": "medium: wrote 200,000/2,000,000 rows\nmedium: wrote 400,000/2,000,000 rows\nmedium: wrote 600,000/2,000,000 rows\nmedium: wrote 800,000/2,000,000 rows\nmedium: wrote 1,000,000/2,000,000 rows\nmedium: wrote 1,200,000/2,000,000 rows\nmedium: wrote 1,400,000/2,000,000 rows\nmedium: wrote 1,600,000/2,000,000 rows\nmedium: wrote 1,800,000/2,000,000 rows\nmedium: wrote 2,000,000/2,000,000 rows\nmedium: done path=/Users/ochiba/newspace/life/factory/panel-y/data/panely_medium_2m_8ch.parquet rows=2,000,000 columns=9 size=18,426,601 sha256=932589b8552fc09e4ffce33d98c617038b206ad72e27cac3cca9f9d9c14d975c\n",
+      "stderr": ""
+    },
+    {
+      "name": "default-output-generate_step_validation_data.py",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_step_validation_data.py"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+      "returncode": 0,
+      "seconds": 0.45740879100048915,
+      "stdout": "generated: /Users/ochiba/newspace/life/factory/panel-y/data/step_validation_100k.parquet (100,000 rows, 3 channels)\n",
+      "stderr": ""
+    },
+    {
+      "name": "default-output-generate_ripple_validation_data.py",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_ripple_validation_data.py"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+      "returncode": 0,
+      "seconds": 0.875862542015966,
+      "stdout": "wrote 240,000/2,400,000 rows\nwrote 480,000/2,400,000 rows\nwrote 720,000/2,400,000 rows\nwrote 960,000/2,400,000 rows\nwrote 1,200,000/2,400,000 rows\nwrote 1,440,000/2,400,000 rows\nwrote 1,680,000/2,400,000 rows\nwrote 1,920,000/2,400,000 rows\nwrote 2,160,000/2,400,000 rows\nwrote 2,400,000/2,400,000 rows\ngenerated: /Users/ochiba/newspace/life/factory/panel-y/data/ripple_validation_2_4m.parquet (2,400,000 rows, 5 channels, 39,063,837 bytes, sha256=8d85ff04b6b29f9de4b8701851e9f4637fcc3fe2a90f46c3ce43d40ba995bca7)\nchannels:\n  - ripple_low_amp_80kHz\n  - ripple_am_60kHz\n  - ripple_noise_70kHz\n  - ripple_bucket_near_2048samples\n  - ripple_on_sine_80kHz\n",
+      "stderr": ""
+    },
+    {
+      "name": "existing-default-output-guard-generate_test_data.py",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_test_data.py"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+      "returncode": 2,
+      "seconds": 1.2539618749869987,
+      "stdout": "",
+      "stderr": "usage: generate_test_data.py [-h] [--output-dir OUTPUT_DIR] [--force]\ngenerate_test_data.py: error: /Users/ochiba/newspace/life/factory/panel-y/data/test_100k.parquet already exists; pass --force to overwrite\n"
+    },
+    {
+      "name": "existing-default-output-guard-generate_multi_source_validation_data.py",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_multi_source_validation_data.py"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+      "returncode": 2,
+      "seconds": 0.16582341698813252,
+      "stdout": "",
+      "stderr": "usage: generate_multi_source_validation_data.py [-h] [--force]\n                                                [--output-dir OUTPUT_DIR]\ngenerate_multi_source_validation_data.py: error: output already exists; pass --force to overwrite: /Users/ochiba/newspace/life/factory/panel-y/data/multi_source_validation_1.parquet, /Users/ochiba/newspace/life/factory/panel-y/data/multi_source_validation_2.parquet\n"
+    },
+    {
+      "name": "interval-configs-from-moved-data",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_interval_statistics_sources.py",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h/interval-configs"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h",
+      "returncode": 0,
+      "seconds": 0.9277266249991953,
+      "stdout": "reusing /Users/ochiba/newspace/life/factory/panel-y/data/panely_interval_source_1_10m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/data/panely_interval_source_2_8m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/data/panely_interval_source_3_12m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/data/panely_interval_source_4_6m.parquet\n",
+      "stderr": ""
+    }
+  ],
+  "interval_configs": [
+    {
+      "path": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h/interval-configs/config-1-sources.json",
+      "source_count": 1
+    },
+    {
+      "path": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h/interval-configs/config-2-sources.json",
+      "source_count": 2
+    },
+    {
+      "path": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-data-relocation-eq1u5z0h/interval-configs/config-4-sources.json",
+      "source_count": 4
+    }
+  ],
+  "unchanged_files": [
+    "motor_control_validation_20261026/.gitignore",
+    "motor_control_validation_20261026/input.log",
+    "motor_control_validation_20261026/motor_input.csv",
+    "motor_control_validation_20261026/motor_input.parquet",
+    "motor_control_validation_20261026/motor_reversal.csv",
+    "motor_control_validation_20261026/motor_reversal.parquet",
+    "motor_control_validation_20261026/motor_speed.csv",
+    "motor_control_validation_20261026/motor_speed.parquet",
+    "motor_control_validation_20261026/reversal.log",
+    "motor_control_validation_20261026/speed.log",
+    "multi_source_validation_1.parquet",
+    "multi_source_validation_1_v1.pyc.json",
+    "multi_source_validation_2.parquet",
+    "panely_interval_source_1_10m.parquet",
+    "panely_interval_source_2_8m.parquet",
+    "panely_interval_source_3_12m.parquet",
+    "panely_interval_source_4_6m.parquet",
+    "panely_large_10s_1mhz_9ch.parquet",
+    "test_100k.parquet",
+    "test_100k.pyc.json"
+  ],
+  "intentional_config_change": "midium.pyc.json data_path only: relative to config folder",
+  "parquets": [
+    {
+      "path": "data/motor_control_validation_20261026/motor_input.parquet",
+      "rows": 100000,
+      "columns": 95,
+      "bytes": 7507409
+    },
+    {
+      "path": "data/motor_control_validation_20261026/motor_reversal.parquet",
+      "rows": 320000,
+      "columns": 95,
+      "bytes": 22961335
+    },
+    {
+      "path": "data/motor_control_validation_20261026/motor_speed.parquet",
+      "rows": 320000,
+      "columns": 95,
+      "bytes": 23404618
+    },
+    {
+      "path": "data/multi_source_validation_1.parquet",
+      "rows": 100001,
+      "columns": 4,
+      "bytes": 600180
+    },
+    {
+      "path": "data/multi_source_validation_2.parquet",
+      "rows": 80001,
+      "columns": 4,
+      "bytes": 367803
+    },
+    {
+      "path": "data/panely_interval_source_1_10m.parquet",
+      "rows": 10000000,
+      "columns": 10,
+      "bytes": 292253842
+    },
+    {
+      "path": "data/panely_interval_source_2_8m.parquet",
+      "rows": 8000000,
+      "columns": 10,
+      "bytes": 175284108
+    },
+    {
+      "path": "data/panely_interval_source_3_12m.parquet",
+      "rows": 12000000,
+      "columns": 10,
+      "bytes": 328606289
+    },
+    {
+      "path": "data/panely_interval_source_4_6m.parquet",
+      "rows": 6000000,
+      "columns": 10,
+      "bytes": 113501308
+    },
+    {
+      "path": "data/panely_large_10s_1mhz_9ch.parquet",
+      "rows": 10000000,
+      "columns": 10,
+      "bytes": 292253458
+    },
+    {
+      "path": "data/panely_medium_2m_8ch.parquet",
+      "rows": 2000000,
+      "columns": 9,
+      "bytes": 18426601
+    },
+    {
+      "path": "data/ripple_validation_2_4m.parquet",
+      "rows": 2400000,
+      "columns": 6,
+      "bytes": 39063837
+    },
+    {
+      "path": "data/step_validation_100k.parquet",
+      "rows": 100000,
+      "columns": 4,
+      "bytes": 976778
+    },
+    {
+      "path": "data/test_100k.parquet",
+      "rows": 100000,
+      "columns": 5,
+      "bytes": 3705374
+    }
+  ],
+  "plot_configs": [
+    {
+      "path": "data/midium.pyc.json",
+      "data_path": "panely_medium_2m_8ch.parquet",
+      "rows": 8,
+      "columns_present": true
+    },
+    {
+      "path": "data/multi_source_validation_1_v1.pyc.json",
+      "data_path": "multi_source_validation_1.parquet",
+      "rows": 2,
+      "columns_present": true
+    },
+    {
+      "path": "data/test_100k.pyc.json",
+      "data_path": "test_100k.parquet",
+      "rows": 5,
+      "columns_present": true
+    }
+  ],
+  "legacy_path_checks": [
+    {
+      "path": "code/proto_3_1b/app.py",
+      "resolved_data_dir": "/Users/ochiba/newspace/life/factory/panel-y/data",
+      "scope": "parse and evaluate DATA_DIR without importing Dash"
+    },
+    {
+      "path": "code/proto_3_1b/benchmark_phase1_datasets.py",
+      "resolved_data_dir": "/Users/ochiba/newspace/life/factory/panel-y/data",
+      "scope": "parse and evaluate DATA_DIR without importing Dash"
+    }
+  ]
+}

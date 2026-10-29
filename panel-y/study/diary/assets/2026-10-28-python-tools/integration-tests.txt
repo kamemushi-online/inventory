@@ -1,0 +1,14 @@
+test_batch_skip_force_and_continue_after_failure (test_tools.ToolIntegrationTests.test_batch_skip_force_and_continue_after_failure) ... ok
+test_csv_time_normalization_filter_and_interpolation (test_tools.ToolIntegrationTests.test_csv_time_normalization_filter_and_interpolation) ... ok
+test_importing_generators_has_no_output_side_effect (test_tools.ToolIntegrationTests.test_importing_generators_has_no_output_side_effect) ... ok
+test_mat_classic_and_hdf5_conversion (test_tools.ToolIntegrationTests.test_mat_classic_and_hdf5_conversion) ... ok
+test_multi_source_outputs_and_pair_overwrite_protection (test_tools.ToolIntegrationTests.test_multi_source_outputs_and_pair_overwrite_protection) ... ok
+test_parquet_input (test_tools.ToolIntegrationTests.test_parquet_input) ... ok
+test_ripple_chunked_output (test_tools.ToolIntegrationTests.test_ripple_chunked_output) ... ok
+test_sample_generation_and_overwrite_protection (test_tools.ToolIntegrationTests.test_sample_generation_and_overwrite_protection) ... ok
+test_step_generation_keeps_one_sample_offsets (test_tools.ToolIntegrationTests.test_step_generation_keeps_one_sample_offsets) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 15.568s
+
+OK

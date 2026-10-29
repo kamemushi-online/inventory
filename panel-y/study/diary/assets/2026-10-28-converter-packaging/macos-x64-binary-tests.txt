@@ -1,0 +1,11 @@
+test_csv_time_normalization_filter_and_interpolation (tools.tests.test_tools.ToolIntegrationTests.test_csv_time_normalization_filter_and_interpolation) ... ok
+test_mat_classic_and_hdf5_conversion (tools.tests.test_tools.ToolIntegrationTests.test_mat_classic_and_hdf5_conversion) ... ok
+test_parquet_input (tools.tests.test_tools.ToolIntegrationTests.test_parquet_input) ... ok
+test_single_file_default_unit_is_seconds (tools.tests.test_tools.ToolIntegrationTests.test_single_file_default_unit_is_seconds) ... ok
+test_explicit_time_units_single_and_batch (tools.tests.test_tools.ToolIntegrationTests.test_explicit_time_units_single_and_batch) ... ok
+test_batch_skip_force_and_continue_after_failure (tools.tests.test_tools.ToolIntegrationTests.test_batch_skip_force_and_continue_after_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 95.044s
+
+OK

@@ -1,0 +1,162 @@
+{
+  "date_jst": "2026-10-26",
+  "baseline_commit": "b092a3d786e2f4fb9be53fad459cb8fc3eb7c9bb",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434\n",
+  "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "memory_bytes": 17179869184,
+  "logical_cpus": 10,
+  "executables_sha256": {
+    "baseline": "9185f8f58f5c2567a54703f19bf174662cb2192e7ce7c5f8f1f246d071b028ac",
+    "candidate": "90c0fc8abb58a60a7de4ff8f277d272f30c31faca58f2fb264590ed387796897"
+  },
+  "benchmark_source_sha256": "f3283b95d5d91eb8e5d6a23f5addbe782ea2fb80b66dc7b0560f412c05700621",
+  "candidate_main_sha256": "14ed14f32b39b350ce928dc56374e5819ab8fac8505f869bc7e7c12d5998bc8a",
+  "candidate_parquet_waveform_sha256": "37e63c212d3f127ca4b16082b68a35e9b308642bfac0d765dccac23ca631a82d",
+  "baseline_instrumented_main_sha256": "72cdadcb579a46afec447d6feddf3219199bea36318fd6f6cb9dfa8399da075e",
+  "inputs": [
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_1_10m.parquet",
+      "size_bytes": 292253842,
+      "sha256": "bc0afb0d87a3be4c525fef9cba3d60321f1800d28175bffc6f9343392818c8bb"
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_2_8m.parquet",
+      "size_bytes": 175284108,
+      "sha256": "b3f7f147d381b0503082680b034cbf40ece993c31a3706afe99800f03bb1a552"
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_3_12m.parquet",
+      "size_bytes": 328606289,
+      "sha256": "e56c3df5066f653b30748dc8471e719d3c7ea46e7f186dd6999f5dd0c6ac66ca"
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_4_6m.parquet",
+      "size_bytes": 113501308,
+      "sha256": "8fcfba72526865a84d5bea1bc4cd7fa2e82b6474ad021ba36591f48e3164945d"
+    }
+  ],
+  "runs": [
+    {
+      "file": "baseline-4-sources-1.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 7.103378332998545
+    },
+    {
+      "file": "candidate-4-sources-1.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 5.851294290994701
+    },
+    {
+      "file": "candidate-4-sources-2.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 5.368236957998306
+    },
+    {
+      "file": "baseline-4-sources-2.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.2083457080007065
+    },
+    {
+      "file": "baseline-4-sources-3.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.134748707998369
+    },
+    {
+      "file": "candidate-4-sources-3.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 5.35481154199806
+    },
+    {
+      "file": "candidate-4-sources-4.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 5.314346291997936
+    },
+    {
+      "file": "baseline-4-sources-4.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.105296666995855
+    },
+    {
+      "file": "baseline-4-sources-5.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.135906583993346
+    },
+    {
+      "file": "candidate-4-sources-5.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 5.5896127079977305
+    },
+    {
+      "file": "baseline-1-sources.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-1-sources.json",
+      "wall_seconds": 1.8240810409988626
+    },
+    {
+      "file": "candidate-1-sources.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-1-sources.json",
+      "wall_seconds": 1.633466833998682
+    },
+    {
+      "file": "baseline-2-sources.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-2-sources.json",
+      "wall_seconds": 3.221583124999597
+    },
+    {
+      "file": "candidate-2-sources.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-2-sources.json",
+      "wall_seconds": 2.7499401660024887
+    },
+    {
+      "file": "baseline-4-sources-tall.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-26-tile-build/config-4-sources-tall.json",
+      "wall_seconds": 6.202359167000395
+    },
+    {
+      "file": "candidate-4-sources-tall.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-26-tile-build/config-4-sources-tall.json",
+      "wall_seconds": 5.483320083003491
+    }
+  ],
+  "scope": "Sequential release builds; MallocLargeCache=0. Baseline production HEAD plus identical CLI benchmark and tile wall timing counters. Five independent 4-source processes each; alternating order. In-process rebuild/zoom trials recorded separately. CPU egui/tessellation only; no OS/GPU.",
+  "regression_statistics": {
+    "files": [
+      "baseline-statistics-4-sources.json",
+      "candidate-statistics-4-sources.json"
+    ],
+    "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+    "MallocLargeCache": "0",
+    "PANEL_Y_MEMORY_DIAGNOSTICS": "1",
+    "PANEL_Y_MEMORY_RELOADS": "0",
+    "before_after_statistics_equal": true
+  },
+  "independent_validation": {
+    "file": "candidate-statistics-4-sources-numpy.json",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0"
+  },
+  "batch_policy": {
+    "max_total_workers": 4,
+    "minimum_channels": 2,
+    "minimum_total_samples": 8000000,
+    "draw_mode": "Line",
+    "raw_access": "borrowed immutable slices; all scoped workers joined before publishing caches"
+  }
+}

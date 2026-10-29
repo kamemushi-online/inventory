@@ -1,0 +1,66 @@
+name: Build Python converters
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/package-python-converters]
+    paths:
+      - .github/workflows/build-converters.yml
+      - tools/preprocess/**
+      - tools/tests/test_tools.py
+      - tools/requirements*.txt
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-2022
+            platform: windows-x64
+          - runner: macos-14
+            platform: macos-arm64
+          - runner: macos-15-intel
+            platform: macos-x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Create isolated build environment
+        run: python -m venv tools/.venv
+      - name: Build and validate Windows package
+        if: runner.os == 'Windows'
+        shell: cmd
+        run: |
+          call tools\.venv\Scripts\activate.bat
+          call tools\preprocess\build_windows.bat
+      - name: Build and validate macOS package
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          source tools/.venv/bin/activate
+          bash tools/preprocess/build_macos.sh
+      - name: Upload verified package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: panel-y-converters-${{ matrix.platform }}
+          path: |
+            tools/preprocess/dist/panel-y-converters-${{ matrix.platform }}.zip
+            tools/preprocess/dist/panel-y-converters-${{ matrix.platform }}.zip.sha256
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload binary test report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: converter-test-report-${{ matrix.platform }}
+          path: tools/preprocess/dist/*-tests.txt
+          if-no-files-found: ignore
+          retention-days: 30

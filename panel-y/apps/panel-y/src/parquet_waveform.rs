@@ -1,0 +1,1282 @@
+use arrow_array::{
+    Array, Float32Array, Float64Array, Int8Array, Int16Array, Int32Array, Int64Array, UInt8Array,
+    UInt16Array, UInt32Array, UInt64Array,
+};
+use arrow_schema::DataType;
+use parquet::arrow::ProjectionMask;
+use parquet::arrow::arrow_reader::ParquetRecordBatchReaderBuilder;
+use std::path::{Path, PathBuf};
+use std::sync::Arc;
+use std::time::{Duration, Instant};
+
+use crate::parquet_schema::{self, ColumnInfo};
+
+const BATCH_SIZE: usize = 64 * 1024;
+
+macro_rules! append_primitive {
+    ($array:expr, $output:expr, $array_type:ty, $convert:expr) => {{
+        let primitive = $array
+            .as_any()
+            .downcast_ref::<$array_type>()
+            .ok_or_else(|| "Arrow array downcast failed".to_owned())?;
+
+        for index in 0..primitive.len() {
+            if primitive.is_null(index) {
+                $output.push(f64::NAN);
+            } else {
+                $output.push($convert(primitive.value(index)));
+            }
+        }
+
+        Ok(())
+    }};
+}
+
+macro_rules! append_primitive_as_f32 {
+    ($array:expr, $output:expr, $array_type:ty, $convert:expr) => {{
+        let primitive = $array
+            .as_any()
+            .downcast_ref::<$array_type>()
+            .ok_or_else(|| "Arrow array downcast failed".to_owned())?;
+
+        for index in 0..primitive.len() {
+            if primitive.is_null(index) {
+                $output.push(f32::NAN);
+            } else {
+                $output.push($convert(primitive.value(index)));
+            }
+        }
+
+        Ok(())
+    }};
+}
+
+#[derive(Clone, Debug)]
+pub struct WaveformData {
+    pub path: PathBuf,
+    pub channel_name: String,
+    pub channel_path: String,
+    pub time: Vec<f64>,
+    pub values: Vec<f32>,
+    pub projected_column_indices: [usize; 2],
+    pub elapsed: Duration,
+}
+
+#[derive(Clone, Debug)]
+pub struct TimeData {
+    pub path: PathBuf,
+    pub column_name: String,
+    pub column_path: String,
+    pub time: Arc<Vec<f64>>,
+    pub projected_column_index: usize,
+    pub elapsed: Duration,
+}
+
+#[derive(Clone, Debug)]
+pub struct ChannelData {
+    pub path: PathBuf,
+    pub channel_name: String,
+    pub channel_path: String,
+    pub values: Arc<Vec<f32>>,
+    pub projected_column_index: usize,
+    pub elapsed: Duration,
+}
+
+#[derive(Clone, Debug)]
+pub struct MinMaxEnvelope {
+    pub buckets: Vec<EnvelopeBucket>,
+    pub source_sample_count: usize,
+    pub requested_bucket_count: usize,
+    pub bucket_size: usize,
+    pub time_range: Option<(f64, f64)>,
+    pub value_range: Option<(f64, f64)>,
+    pub elapsed: Duration,
+}
+
+impl MinMaxEnvelope {
+    pub fn bucket_count(&self) -> usize {
+        self.buckets.len()
+    }
+
+    pub fn draw_point_count(&self) -> usize {
+        self.buckets.len() * 2
+    }
+}
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct EnvelopeBucket {
+    pub start_index: usize,
+    pub end_index: usize,
+    pub time: f64,
+    pub min: f32,
+    pub max: f32,
+}
+
+#[derive(Clone, Debug, PartialEq)]
+pub struct MinMaxEnvelopePlan {
+    pub bucket_spans: Vec<EnvelopeBucketSpan>,
+    pub source_sample_count: usize,
+    pub requested_bucket_count: usize,
+    pub bucket_size: usize,
+    pub time_range: Option<(f64, f64)>,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct EnvelopeBucketSpan {
+    pub start_index: usize,
+    pub end_index: usize,
+    pub time: f64,
+}
+
+#[derive(Clone, Debug)]
+pub struct LineTileCache {
+    pub tile_size: usize,
+    pub sample_count: usize,
+    pub tiles: Vec<LineMinMaxTile>,
+    pub elapsed: Duration,
+}
+
+#[derive(Debug)]
+pub struct LineTileBatch {
+    pub caches: Vec<LineTileCache>,
+    /// Actual workers, including the caller; zero for an empty batch.
+    pub workers: usize,
+    /// Batch wall time. Per-cache elapsed times can overlap across workers.
+    pub elapsed: Duration,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct LineMinMaxTile {
+    pub start_index: usize,
+    pub end_index: usize,
+    pub min: f32,
+    pub max: f32,
+    pub has_finite: bool,
+}
+
+impl LineTileCache {
+    pub fn memory_bytes(&self) -> usize {
+        self.tiles.len() * std::mem::size_of::<LineMinMaxTile>()
+    }
+}
+
+impl WaveformData {
+    pub fn sample_count(&self) -> usize {
+        self.time.len()
+    }
+
+    pub fn memory_bytes(&self) -> usize {
+        self.time.len() * std::mem::size_of::<f64>()
+            + self.values.len() * std::mem::size_of::<f32>()
+    }
+
+    pub fn time_range(&self) -> Option<(f64, f64)> {
+        Some((*self.time.first()?, *self.time.last()?))
+    }
+
+    pub fn min_max_envelope(&self, requested_bucket_count: usize) -> MinMaxEnvelope {
+        min_max_envelope(&self.time, &self.values, requested_bucket_count)
+    }
+
+    pub fn min_max_envelope_for_range(
+        &self,
+        time_range: (f64, f64),
+        requested_bucket_count: usize,
+    ) -> MinMaxEnvelope {
+        min_max_envelope_for_range(&self.time, &self.values, time_range, requested_bucket_count)
+    }
+}
+
+impl TimeData {
+    pub fn sample_count(&self) -> usize {
+        self.time.len()
+    }
+
+    pub fn memory_bytes(&self) -> usize {
+        self.time.len() * std::mem::size_of::<f64>()
+    }
+
+    pub fn time_range(&self) -> Option<(f64, f64)> {
+        Some((*self.time.first()?, *self.time.last()?))
+    }
+}
+
+impl ChannelData {
+    pub fn sample_count(&self) -> usize {
+        self.values.len()
+    }
+
+    pub fn memory_bytes(&self) -> usize {
+        self.values.len() * std::mem::size_of::<f32>()
+    }
+
+    pub fn min_max_envelope_for_range(
+        &self,
+        time: &[f64],
+        time_range: (f64, f64),
+        requested_bucket_count: usize,
+    ) -> MinMaxEnvelope {
+        min_max_envelope_for_range(time, &self.values, time_range, requested_bucket_count)
+    }
+}
+
+pub fn min_max_envelope(
+    time: &[f64],
+    values: &[f32],
+    requested_bucket_count: usize,
+) -> MinMaxEnvelope {
+    min_max_envelope_for_indices(
+        time,
+        values,
+        0,
+        time.len().min(values.len()),
+        requested_bucket_count,
+        time_range(time),
+    )
+}
+
+pub fn min_max_envelope_for_range(
+    time: &[f64],
+    values: &[f32],
+    time_range: (f64, f64),
+    requested_bucket_count: usize,
+) -> MinMaxEnvelope {
+    let plan =
+        min_max_envelope_plan_for_range(time, values.len(), time_range, requested_bucket_count);
+    min_max_envelope_for_plan(values, &plan)
+}
+
+pub fn min_max_envelope_plan_for_range(
+    time: &[f64],
+    value_count: usize,
+    time_range: (f64, f64),
+    requested_bucket_count: usize,
+) -> MinMaxEnvelopePlan {
+    let Some((range_start, range_end)) = normalized_time_range(time_range) else {
+        return empty_envelope_plan(requested_bucket_count, None);
+    };
+
+    let sample_count = time.len().min(value_count);
+    let start = time[..sample_count].partition_point(|time| *time < range_start);
+    let end = time[..sample_count].partition_point(|time| *time <= range_end);
+
+    min_max_envelope_plan_for_indices(
+        time,
+        value_count,
+        start.min(sample_count),
+        end.min(sample_count),
+        requested_bucket_count,
+        Some((range_start, range_end)),
+    )
+}
+
+pub fn min_max_envelope_for_plan(values: &[f32], plan: &MinMaxEnvelopePlan) -> MinMaxEnvelope {
+    let started = Instant::now();
+    let mut buckets = Vec::with_capacity(plan.bucket_spans.len());
+    let mut value_range = None;
+
+    for span in &plan.bucket_spans {
+        if let Some(bucket) = envelope_bucket_for_span(values, *span) {
+            value_range = update_range(value_range, f64::from(bucket.min));
+            value_range = update_range(value_range, f64::from(bucket.max));
+            buckets.push(bucket);
+        }
+    }
+
+    MinMaxEnvelope {
+        buckets,
+        source_sample_count: plan.source_sample_count,
+        requested_bucket_count: plan.requested_bucket_count,
+        bucket_size: plan.bucket_size,
+        time_range: plan.time_range,
+        value_range,
+        elapsed: started.elapsed(),
+    }
+}
+
+pub fn build_line_tile_cache(values: &[f32], tile_size: usize) -> LineTileCache {
+    let started = Instant::now();
+    let tile_size = tile_size.max(1);
+    let mut tiles = Vec::with_capacity(values.len().div_ceil(tile_size));
+    let mut start = 0usize;
+
+    while start < values.len() {
+        let end = (start + tile_size).min(values.len());
+        let mut min = f32::INFINITY;
+        let mut max = f32::NEG_INFINITY;
+        for value in &values[start..end] {
+            if value.is_finite() {
+                min = min.min(*value);
+                max = max.max(*value);
+            }
+        }
+        let has_finite = min.is_finite() && max.is_finite();
+        tiles.push(LineMinMaxTile {
+            start_index: start,
+            end_index: end,
+            min,
+            max,
+            has_finite,
+        });
+        start = end;
+    }
+
+    LineTileCache {
+        tile_size,
+        sample_count: values.len(),
+        tiles,
+        elapsed: started.elapsed(),
+    }
+}
+
+pub fn build_line_tile_caches(
+    values: &[&[f32]],
+    tile_size: usize,
+    worker_limit: usize,
+) -> LineTileBatch {
+    let started = Instant::now();
+    let worker_count = worker_limit.clamp(1, 4).min(values.len());
+    if worker_count <= 1 {
+        let caches = values
+            .iter()
+            .map(|values| build_line_tile_cache(values, tile_size))
+            .collect();
+        return LineTileBatch {
+            caches,
+            workers: worker_count,
+            elapsed: started.elapsed(),
+        };
+    }
+
+    // Balance channels of different lengths while borrowing every raw buffer.
+    // Each channel is assigned once; only the small index lists are allocated.
+    let mut order = (0..values.len()).collect::<Vec<_>>();
+    order.sort_unstable_by_key(|&index| std::cmp::Reverse(values[index].len()));
+    let mut assignments = vec![Vec::new(); worker_count];
+    let mut sample_loads = vec![0usize; worker_count];
+    for index in order {
+        let worker = sample_loads
+            .iter()
+            .enumerate()
+            .min_by_key(|(_, count)| **count)
+            .map(|(worker, _)| worker)
+            .expect("nonempty worker assignments");
+        assignments[worker].push(index);
+        sample_loads[worker] = sample_loads[worker].saturating_add(values[index].len().max(1));
+    }
+
+    let (mut indexed_caches, workers) = std::thread::scope(|scope| {
+        let mut handles = Vec::with_capacity(worker_count - 1);
+        let mut caches = Vec::with_capacity(values.len());
+        for assignment in assignments.iter().skip(1) {
+            match std::thread::Builder::new()
+                .name("panel-y-tiles".to_owned())
+                .spawn_scoped(scope, move || {
+                    build_line_tile_batch_assignment(values, assignment, tile_size)
+                }) {
+                Ok(handle) => handles.push(handle),
+                // Resource exhaustion must not prevent drawing. The caller
+                // performs the same assigned work when a thread cannot start.
+                Err(_) => caches.extend(build_line_tile_batch_assignment(
+                    values, assignment, tile_size,
+                )),
+            }
+        }
+        let workers = handles.len() + 1;
+        caches.extend(build_line_tile_batch_assignment(
+            values,
+            &assignments[0],
+            tile_size,
+        ));
+        let mut panic = None;
+        for handle in handles {
+            match handle.join() {
+                Ok(completed) => caches.extend(completed),
+                Err(payload) => {
+                    if panic.is_none() {
+                        panic = Some(payload);
+                    }
+                }
+            }
+        }
+        // Join every worker before propagating a worker panic or returning any
+        // caches to the caller. No thread or raw borrow outlives this batch.
+        if let Some(payload) = panic {
+            std::panic::resume_unwind(payload);
+        }
+        (caches, workers)
+    });
+    indexed_caches.sort_unstable_by_key(|(index, _)| *index);
+    let caches = indexed_caches.into_iter().map(|(_, cache)| cache).collect();
+    LineTileBatch {
+        caches,
+        workers,
+        elapsed: started.elapsed(),
+    }
+}
+
+fn build_line_tile_batch_assignment(
+    values: &[&[f32]],
+    assignment: &[usize],
+    tile_size: usize,
+) -> Vec<(usize, LineTileCache)> {
+    assignment
+        .iter()
+        .map(|&index| (index, build_line_tile_cache(values[index], tile_size)))
+        .collect()
+}
+
+pub fn min_max_envelope_for_plan_with_tiles(
+    time: &[f64],
+    values: &[f32],
+    plan: &MinMaxEnvelopePlan,
+    tile_cache: &LineTileCache,
+) -> MinMaxEnvelope {
+    let started = Instant::now();
+    let sample_count = time.len().min(values.len()).min(tile_cache.sample_count);
+    let values = &values[..sample_count];
+    let mut buckets = Vec::with_capacity(plan.bucket_spans.len());
+    let mut value_range = None;
+
+    for span in &plan.bucket_spans {
+        if let Some(bucket) = envelope_bucket_for_span_with_tiles(values, *span, tile_cache) {
+            value_range = update_range(value_range, f64::from(bucket.min));
+            value_range = update_range(value_range, f64::from(bucket.max));
+            buckets.push(bucket);
+        }
+    }
+
+    MinMaxEnvelope {
+        buckets,
+        source_sample_count: plan.source_sample_count.min(sample_count),
+        requested_bucket_count: plan.requested_bucket_count,
+        bucket_size: plan.bucket_size,
+        time_range: plan.time_range,
+        value_range,
+        elapsed: started.elapsed(),
+    }
+}
+
+pub fn clip_min_max_envelope_to_range(
+    cached: &MinMaxEnvelope,
+    time: &[f64],
+    values: &[f32],
+    time_range: (f64, f64),
+    requested_bucket_count: usize,
+) -> MinMaxEnvelope {
+    let started = Instant::now();
+    let Some((range_start, range_end)) = normalized_time_range(time_range) else {
+        return empty_envelope(requested_bucket_count, None, started);
+    };
+
+    let sample_count = time.len().min(values.len());
+    let time = &time[..sample_count];
+    let values = &values[..sample_count];
+    let view_start = time.partition_point(|time| *time < range_start);
+    let view_end = time.partition_point(|time| *time <= range_end);
+    if view_start >= view_end {
+        return empty_envelope(
+            requested_bucket_count,
+            Some((range_start, range_end)),
+            started,
+        );
+    }
+
+    let mut buckets = Vec::new();
+    let mut value_range = None;
+    for cached_bucket in &cached.buckets {
+        if cached_bucket.end_index <= view_start || cached_bucket.start_index >= view_end {
+            continue;
+        }
+
+        let clipped_start = cached_bucket.start_index.max(view_start);
+        let clipped_end = cached_bucket.end_index.min(view_end);
+        let bucket = if clipped_start == cached_bucket.start_index
+            && clipped_end == cached_bucket.end_index
+        {
+            *cached_bucket
+        } else {
+            let span = EnvelopeBucketSpan {
+                start_index: clipped_start,
+                end_index: clipped_end,
+                time: bucket_mid_time(time, clipped_start, clipped_end),
+            };
+            match envelope_bucket_for_span(values, span) {
+                Some(bucket) => bucket,
+                None => continue,
+            }
+        };
+
+        value_range = update_range(value_range, f64::from(bucket.min));
+        value_range = update_range(value_range, f64::from(bucket.max));
+        buckets.push(bucket);
+    }
+
+    MinMaxEnvelope {
+        buckets,
+        source_sample_count: view_end - view_start,
+        requested_bucket_count,
+        bucket_size: cached.bucket_size,
+        time_range: Some((range_start, range_end)),
+        value_range,
+        elapsed: started.elapsed(),
+    }
+}
+
+fn min_max_envelope_for_indices(
+    time: &[f64],
+    values: &[f32],
+    start_index: usize,
+    end_index: usize,
+    requested_bucket_count: usize,
+    time_range: Option<(f64, f64)>,
+) -> MinMaxEnvelope {
+    let plan = min_max_envelope_plan_for_indices(
+        time,
+        values.len(),
+        start_index,
+        end_index,
+        requested_bucket_count,
+        time_range,
+    );
+    min_max_envelope_for_plan(values, &plan)
+}
+
+fn min_max_envelope_plan_for_indices(
+    time: &[f64],
+    value_count: usize,
+    start_index: usize,
+    end_index: usize,
+    requested_bucket_count: usize,
+    time_range: Option<(f64, f64)>,
+) -> MinMaxEnvelopePlan {
+    let sample_count = time.len().min(value_count);
+    let start_index = start_index.min(sample_count);
+    let end_index = end_index.min(sample_count).max(start_index);
+    let source_sample_count = end_index - start_index;
+    let target_bucket_count = requested_bucket_count
+        .max(1)
+        .min(source_sample_count.max(1));
+    let bucket_size = source_sample_count.div_ceil(target_bucket_count).max(1);
+    let mut bucket_spans = Vec::with_capacity(target_bucket_count);
+
+    let mut start = start_index;
+    while start < end_index {
+        let end = (start + bucket_size).min(end_index);
+        bucket_spans.push(EnvelopeBucketSpan {
+            start_index: start,
+            end_index: end,
+            time: bucket_mid_time(time, start, end),
+        });
+        start = end;
+    }
+
+    MinMaxEnvelopePlan {
+        bucket_spans,
+        source_sample_count,
+        requested_bucket_count,
+        bucket_size,
+        time_range,
+    }
+}
+
+fn envelope_bucket_for_span(
+    channel_values: &[f32],
+    span: EnvelopeBucketSpan,
+) -> Option<EnvelopeBucket> {
+    let start_index = span.start_index.min(channel_values.len());
+    let end_index = span.end_index.min(channel_values.len()).max(start_index);
+    if start_index >= end_index {
+        return None;
+    }
+
+    let mut min = f32::INFINITY;
+    let mut max = f32::NEG_INFINITY;
+    for value in &channel_values[start_index..end_index] {
+        if value.is_finite() {
+            min = min.min(*value);
+            max = max.max(*value);
+        }
+    }
+
+    if !min.is_finite() || !max.is_finite() {
+        return None;
+    }
+
+    if !span.time.is_finite() {
+        return None;
+    }
+
+    Some(EnvelopeBucket {
+        start_index,
+        end_index,
+        time: span.time,
+        min,
+        max,
+    })
+}
+
+fn envelope_bucket_for_span_with_tiles(
+    channel_values: &[f32],
+    span: EnvelopeBucketSpan,
+    tile_cache: &LineTileCache,
+) -> Option<EnvelopeBucket> {
+    let start_index = span.start_index.min(channel_values.len());
+    let end_index = span.end_index.min(channel_values.len()).max(start_index);
+    if start_index >= end_index || tile_cache.tile_size == 0 {
+        return None;
+    }
+
+    let tile_size = tile_cache.tile_size;
+    let first_full_tile = start_index.div_ceil(tile_size);
+    let last_full_tile_exclusive = end_index / tile_size;
+    let raw_prefix_end = (first_full_tile * tile_size).min(end_index);
+    let mut min = f32::INFINITY;
+    let mut max = f32::NEG_INFINITY;
+
+    update_f32_range_from_raw(
+        &mut min,
+        &mut max,
+        &channel_values[start_index..raw_prefix_end],
+    );
+
+    for tile_index in first_full_tile..last_full_tile_exclusive {
+        if let Some(tile) = tile_cache.tiles.get(tile_index)
+            && tile.has_finite
+            && tile.start_index >= start_index
+            && tile.end_index <= end_index
+        {
+            min = min.min(tile.min);
+            max = max.max(tile.max);
+        }
+    }
+
+    let raw_suffix_start = (last_full_tile_exclusive * tile_size)
+        .max(raw_prefix_end)
+        .min(end_index);
+    update_f32_range_from_raw(
+        &mut min,
+        &mut max,
+        &channel_values[raw_suffix_start..end_index],
+    );
+
+    if !min.is_finite() || !max.is_finite() || !span.time.is_finite() {
+        return None;
+    }
+
+    Some(EnvelopeBucket {
+        start_index,
+        end_index,
+        time: span.time,
+        min,
+        max,
+    })
+}
+
+fn update_f32_range_from_raw(min: &mut f32, max: &mut f32, values: &[f32]) {
+    for value in values {
+        if value.is_finite() {
+            *min = min.min(*value);
+            *max = max.max(*value);
+        }
+    }
+}
+
+fn bucket_mid_time(time_values: &[f64], start: usize, end: usize) -> f64 {
+    if start >= end {
+        return f64::NAN;
+    }
+
+    let Some(time_start) = time_values.get(start).copied() else {
+        return f64::NAN;
+    };
+    let Some(time_end) = time_values.get(end - 1).copied() else {
+        return f64::NAN;
+    };
+    (time_start + time_end) * 0.5
+}
+
+pub fn time_range(time: &[f64]) -> Option<(f64, f64)> {
+    Some((*time.first()?, *time.last()?))
+}
+
+fn normalized_time_range((start, end): (f64, f64)) -> Option<(f64, f64)> {
+    if !start.is_finite() || !end.is_finite() {
+        return None;
+    }
+
+    match start.partial_cmp(&end)? {
+        std::cmp::Ordering::Less => Some((start, end)),
+        std::cmp::Ordering::Greater => Some((end, start)),
+        std::cmp::Ordering::Equal => None,
+    }
+}
+
+fn empty_envelope(
+    requested_bucket_count: usize,
+    time_range: Option<(f64, f64)>,
+    started: Instant,
+) -> MinMaxEnvelope {
+    MinMaxEnvelope {
+        buckets: Vec::new(),
+        source_sample_count: 0,
+        requested_bucket_count,
+        bucket_size: 1,
+        time_range,
+        value_range: None,
+        elapsed: started.elapsed(),
+    }
+}
+
+fn empty_envelope_plan(
+    requested_bucket_count: usize,
+    time_range: Option<(f64, f64)>,
+) -> MinMaxEnvelopePlan {
+    MinMaxEnvelopePlan {
+        bucket_spans: Vec::new(),
+        source_sample_count: 0,
+        requested_bucket_count,
+        bucket_size: 1,
+        time_range,
+    }
+}
+
+pub fn read_selected_channel(
+    path: impl AsRef<Path>,
+    selected_channel: &str,
+) -> Result<WaveformData, String> {
+    let path = path.as_ref();
+    let summary = parquet_schema::read_schema_summary(path)?;
+    let time_column = summary
+        .time_column
+        .as_ref()
+        .ok_or_else(|| "time column not found".to_owned())?;
+    let channel = find_channel(&summary.channels, selected_channel)?;
+
+    let started = Instant::now();
+    let file = std::fs::File::open(path).map_err(|error| error.to_string())?;
+    let builder =
+        ParquetRecordBatchReaderBuilder::try_new(file).map_err(|error| error.to_string())?;
+    let projection =
+        ProjectionMask::leaves(builder.parquet_schema(), [time_column.index, channel.index]);
+    let projected_column_indices = [time_column.index, channel.index];
+    let (time_position, channel_position) = projected_positions(time_column.index, channel.index)?;
+    let mut reader = builder
+        .with_projection(projection)
+        .with_batch_size(BATCH_SIZE)
+        .build()
+        .map_err(|error| error.to_string())?;
+
+    let capacity = usize::try_from(summary.row_count).unwrap_or(0);
+    let mut time = Vec::with_capacity(capacity);
+    let mut values = Vec::with_capacity(capacity);
+
+    for batch in &mut reader {
+        let batch = batch.map_err(|error| error.to_string())?;
+        append_numeric_as_f64(
+            batch.column(time_position).as_ref(),
+            &mut time,
+            time_column.display_name(),
+            NullPolicy::Reject,
+        )?;
+        append_numeric_as_f32(
+            batch.column(channel_position).as_ref(),
+            &mut values,
+            channel.display_name(),
+            NullPolicy::NaN,
+        )?;
+    }
+
+    if time.len() != values.len() {
+        return Err(format!(
+            "time/value length mismatch: {} vs {}",
+            time.len(),
+            values.len()
+        ));
+    }
+
+    Ok(WaveformData {
+        path: path.to_path_buf(),
+        channel_name: channel.display_name().to_owned(),
+        channel_path: channel.path.clone(),
+        time,
+        values,
+        projected_column_indices,
+        elapsed: started.elapsed(),
+    })
+}
+
+pub fn read_time_column(
+    path: impl AsRef<Path>,
+    summary: &parquet_schema::SchemaSummary,
+) -> Result<TimeData, String> {
+    let path = path.as_ref();
+    let time_column = summary
+        .time_column
+        .as_ref()
+        .ok_or_else(|| "time column not found".to_owned())?;
+
+    let started = Instant::now();
+    let file = std::fs::File::open(path).map_err(|error| error.to_string())?;
+    let builder =
+        ParquetRecordBatchReaderBuilder::try_new(file).map_err(|error| error.to_string())?;
+    let projection = ProjectionMask::leaves(builder.parquet_schema(), [time_column.index]);
+    let mut reader = builder
+        .with_projection(projection)
+        .with_batch_size(BATCH_SIZE)
+        .build()
+        .map_err(|error| error.to_string())?;
+
+    let capacity = usize::try_from(summary.row_count).unwrap_or(0);
+    let mut time = Vec::with_capacity(capacity);
+
+    for batch in &mut reader {
+        let batch = batch.map_err(|error| error.to_string())?;
+        append_numeric_as_f64(
+            batch.column(0).as_ref(),
+            &mut time,
+            time_column.display_name(),
+            NullPolicy::Reject,
+        )?;
+    }
+
+    Ok(TimeData {
+        path: path.to_path_buf(),
+        column_name: time_column.display_name().to_owned(),
+        column_path: time_column.path.clone(),
+        time: Arc::new(time),
+        projected_column_index: time_column.index,
+        elapsed: started.elapsed(),
+    })
+}
+
+pub fn read_channel_values(
+    path: impl AsRef<Path>,
+    summary: &parquet_schema::SchemaSummary,
+    selected_channel: &str,
+) -> Result<ChannelData, String> {
+    let path = path.as_ref();
+    let channel = find_channel(&summary.channels, selected_channel)?;
+
+    let started = Instant::now();
+    let file = std::fs::File::open(path).map_err(|error| error.to_string())?;
+    let builder =
+        ParquetRecordBatchReaderBuilder::try_new(file).map_err(|error| error.to_string())?;
+    let projection = ProjectionMask::leaves(builder.parquet_schema(), [channel.index]);
+    let mut reader = builder
+        .with_projection(projection)
+        .with_batch_size(BATCH_SIZE)
+        .build()
+        .map_err(|error| error.to_string())?;
+
+    let capacity = usize::try_from(summary.row_count).unwrap_or(0);
+    let mut values = Vec::with_capacity(capacity);
+
+    for batch in &mut reader {
+        let batch = batch.map_err(|error| error.to_string())?;
+        append_numeric_as_f32(
+            batch.column(0).as_ref(),
+            &mut values,
+            channel.display_name(),
+            NullPolicy::NaN,
+        )?;
+    }
+
+    Ok(ChannelData {
+        path: path.to_path_buf(),
+        channel_name: channel.display_name().to_owned(),
+        channel_path: channel.path.clone(),
+        values: Arc::new(values),
+        projected_column_index: channel.index,
+        elapsed: started.elapsed(),
+    })
+}
+
+fn find_channel<'a>(
+    channels: &'a [ColumnInfo],
+    selected_channel: &str,
+) -> Result<&'a ColumnInfo, String> {
+    channels
+        .iter()
+        .find(|channel| {
+            channel.path == selected_channel
+                || channel.name == selected_channel
+                || channel.display_name() == selected_channel
+        })
+        .ok_or_else(|| format!("selected channel not found: {selected_channel}"))
+}
+
+fn projected_positions(time_index: usize, channel_index: usize) -> Result<(usize, usize), String> {
+    match time_index.cmp(&channel_index) {
+        std::cmp::Ordering::Less => Ok((0, 1)),
+        std::cmp::Ordering::Greater => Ok((1, 0)),
+        std::cmp::Ordering::Equal => Err("time and channel columns must differ".to_owned()),
+    }
+}
+
+#[derive(Clone, Copy)]
+enum NullPolicy {
+    Reject,
+    NaN,
+}
+
+fn append_numeric_as_f64(
+    array: &dyn Array,
+    output: &mut Vec<f64>,
+    column_name: &str,
+    null_policy: NullPolicy,
+) -> Result<(), String> {
+    if array.null_count() > 0 && matches!(null_policy, NullPolicy::Reject) {
+        return Err(format!("{column_name} contains null values"));
+    }
+
+    match array.data_type() {
+        DataType::Float64 => append_primitive!(array, output, Float64Array, |value| value),
+        DataType::Float32 => append_primitive!(array, output, Float32Array, f64::from),
+        DataType::Int64 => append_primitive!(array, output, Int64Array, |value| value as f64),
+        DataType::Int32 => append_primitive!(array, output, Int32Array, f64::from),
+        DataType::Int16 => append_primitive!(array, output, Int16Array, f64::from),
+        DataType::Int8 => append_primitive!(array, output, Int8Array, f64::from),
+        DataType::UInt64 => append_primitive!(array, output, UInt64Array, |value| value as f64),
+        DataType::UInt32 => append_primitive!(array, output, UInt32Array, f64::from),
+        DataType::UInt16 => append_primitive!(array, output, UInt16Array, f64::from),
+        DataType::UInt8 => append_primitive!(array, output, UInt8Array, f64::from),
+        other => Err(format!(
+            "{column_name} is not a supported numeric type: {other}"
+        )),
+    }
+}
+
+fn append_numeric_as_f32(
+    array: &dyn Array,
+    output: &mut Vec<f32>,
+    column_name: &str,
+    null_policy: NullPolicy,
+) -> Result<(), String> {
+    if array.null_count() > 0 && matches!(null_policy, NullPolicy::Reject) {
+        return Err(format!("{column_name} contains null values"));
+    }
+
+    match array.data_type() {
+        DataType::Float64 => {
+            append_primitive_as_f32!(array, output, Float64Array, |value| { value as f32 })
+        }
+        DataType::Float32 => append_primitive_as_f32!(array, output, Float32Array, |value| value),
+        DataType::Int64 => {
+            append_primitive_as_f32!(array, output, Int64Array, |value| { value as f32 })
+        }
+        DataType::Int32 => {
+            append_primitive_as_f32!(array, output, Int32Array, |value| { value as f32 })
+        }
+        DataType::Int16 => {
+            append_primitive_as_f32!(array, output, Int16Array, |value| { value as f32 })
+        }
+        DataType::Int8 => {
+            append_primitive_as_f32!(array, output, Int8Array, |value| value as f32)
+        }
+        DataType::UInt64 => {
+            append_primitive_as_f32!(array, output, UInt64Array, |value| { value as f32 })
+        }
+        DataType::UInt32 => {
+            append_primitive_as_f32!(array, output, UInt32Array, |value| { value as f32 })
+        }
+        DataType::UInt16 => {
+            append_primitive_as_f32!(array, output, UInt16Array, |value| { value as f32 })
+        }
+        DataType::UInt8 => {
+            append_primitive_as_f32!(array, output, UInt8Array, |value| value as f32)
+        }
+        other => Err(format!(
+            "{column_name} is not a supported numeric type: {other}"
+        )),
+    }
+}
+
+fn update_range(range: Option<(f64, f64)>, value: f64) -> Option<(f64, f64)> {
+    if !value.is_finite() {
+        return range;
+    }
+
+    match range {
+        Some((min, max)) => Some((min.min(value), max.max(value))),
+        None => Some((value, value)),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn reads_time_and_selected_channel_if_dataset_exists() {
+        let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../data/test_100k.parquet");
+
+        if !path.exists() {
+            return;
+        }
+
+        let data = read_selected_channel(&path, "sine_50Hz").expect("read selected channel");
+
+        assert_eq!(data.sample_count(), 100_000);
+        assert_eq!(data.values.len(), 100_000);
+        assert_eq!(data.projected_column_indices, [0, 1]);
+        assert_eq!(data.channel_name, "sine_50Hz");
+        assert!(data.time_range().is_some_and(|(start, end)| start < end));
+        assert!(data.min_max_envelope(512).value_range.is_some());
+    }
+
+    #[test]
+    fn reads_non_first_channel_with_same_time_projection_if_dataset_exists() {
+        let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../data/test_100k.parquet");
+
+        if !path.exists() {
+            return;
+        }
+
+        let data = read_selected_channel(&path, "chirp_1_500Hz").expect("read selected channel");
+
+        assert_eq!(data.sample_count(), 100_000);
+        assert_eq!(data.projected_column_indices, [0, 4]);
+        assert_eq!(data.channel_name, "chirp_1_500Hz");
+    }
+
+    #[test]
+    fn reads_shared_time_and_channel_values_if_dataset_exists() {
+        let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../data/test_100k.parquet");
+
+        if !path.exists() {
+            return;
+        }
+
+        let summary = parquet_schema::read_schema_summary(&path).expect("read schema");
+        let time = read_time_column(&path, &summary).expect("read time column");
+        let channel =
+            read_channel_values(&path, &summary, "chirp_1_500Hz").expect("read channel values");
+
+        assert_eq!(time.sample_count(), 100_000);
+        assert_eq!(channel.sample_count(), time.sample_count());
+        assert_eq!(time.projected_column_index, 0);
+        assert_eq!(channel.projected_column_index, 4);
+        assert_eq!(channel.channel_name, "chirp_1_500Hz");
+        assert!(
+            channel
+                .min_max_envelope_for_range(&time.time, time.time_range().unwrap(), 512)
+                .value_range
+                .is_some()
+        );
+    }
+
+    #[test]
+    fn builds_full_range_min_max_envelope() {
+        let data = WaveformData {
+            path: PathBuf::new(),
+            channel_name: "ch".to_owned(),
+            channel_path: "ch".to_owned(),
+            time: vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0],
+            values: vec![1.0, 3.0, -1.0, 4.0, 2.0, 5.0, 0.0],
+            projected_column_indices: [0, 1],
+            elapsed: Duration::ZERO,
+        };
+
+        let envelope = data.min_max_envelope(3);
+
+        assert_eq!(envelope.source_sample_count, 7);
+        assert_eq!(envelope.bucket_size, 3);
+        assert_eq!(envelope.bucket_count(), 3);
+        assert_eq!(envelope.value_range, Some((-1.0, 5.0)));
+        assert_eq!(
+            envelope.buckets,
+            vec![
+                EnvelopeBucket {
+                    start_index: 0,
+                    end_index: 3,
+                    time: 1.0,
+                    min: -1.0,
+                    max: 3.0,
+                },
+                EnvelopeBucket {
+                    start_index: 3,
+                    end_index: 6,
+                    time: 4.0,
+                    min: 2.0,
+                    max: 5.0,
+                },
+                EnvelopeBucket {
+                    start_index: 6,
+                    end_index: 7,
+                    time: 6.0,
+                    min: 0.0,
+                    max: 0.0,
+                },
+            ]
+        );
+    }
+
+    #[test]
+    fn builds_time_range_min_max_envelope() {
+        let data = WaveformData {
+            path: PathBuf::new(),
+            channel_name: "ch".to_owned(),
+            channel_path: "ch".to_owned(),
+            time: vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0],
+            values: vec![1.0, 3.0, -1.0, 4.0, 2.0, 5.0, 0.0],
+            projected_column_indices: [0, 1],
+            elapsed: Duration::ZERO,
+        };
+
+        let envelope = data.min_max_envelope_for_range((1.5, 4.5), 2);
+
+        assert_eq!(envelope.time_range, Some((1.5, 4.5)));
+        assert_eq!(envelope.source_sample_count, 3);
+        assert_eq!(envelope.bucket_size, 2);
+        assert_eq!(envelope.bucket_count(), 2);
+        assert_eq!(envelope.value_range, Some((-1.0, 4.0)));
+        assert_eq!(
+            envelope.buckets,
+            vec![
+                EnvelopeBucket {
+                    start_index: 2,
+                    end_index: 4,
+                    time: 2.5,
+                    min: -1.0,
+                    max: 4.0,
+                },
+                EnvelopeBucket {
+                    start_index: 4,
+                    end_index: 5,
+                    time: 4.0,
+                    min: 2.0,
+                    max: 2.0,
+                },
+            ]
+        );
+    }
+
+    #[test]
+    fn accepts_reversed_time_range_for_envelope() {
+        let data = WaveformData {
+            path: PathBuf::new(),
+            channel_name: "ch".to_owned(),
+            channel_path: "ch".to_owned(),
+            time: vec![0.0, 1.0, 2.0],
+            values: vec![1.0, 2.0, 3.0],
+            projected_column_indices: [0, 1],
+            elapsed: Duration::ZERO,
+        };
+
+        let envelope = data.min_max_envelope_for_range((2.0, 0.0), 8);
+
+        assert_eq!(envelope.time_range, Some((0.0, 2.0)));
+        assert_eq!(envelope.source_sample_count, 3);
+        assert_eq!(envelope.bucket_count(), 3);
+    }
+
+    #[test]
+    fn clips_cached_envelope_without_using_overscan_values_for_y_range() {
+        let time = vec![0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0];
+        let values = vec![100.0, 3.0, -1.0, 4.0, 2.0, 5.0, 0.0];
+        let cached = min_max_envelope_for_range(&time, &values, (0.0, 6.0), 3);
+
+        let clipped = clip_min_max_envelope_to_range(&cached, &time, &values, (2.0, 4.0), 2);
+
+        assert_eq!(clipped.time_range, Some((2.0, 4.0)));
+        assert_eq!(clipped.source_sample_count, 3);
+        assert_eq!(clipped.value_range, Some((-1.0, 4.0)));
+        assert_eq!(clipped.bucket_count(), 2);
+        assert_eq!(clipped.buckets[0].start_index, 2);
+        assert_eq!(clipped.buckets[0].end_index, 3);
+        assert_eq!(clipped.buckets[1].start_index, 3);
+        assert_eq!(clipped.buckets[1].end_index, 5);
+    }
+
+    #[test]
+    fn parallel_line_tiles_match_scalar_values_and_input_order() {
+        let mut varying = (0..1_537)
+            .map(|index| ((index % 31) as f32 - 15.0) * 0.25)
+            .collect::<Vec<_>>();
+        varying[7] = f32::NAN;
+        varying[8] = f32::INFINITY;
+        varying[9] = f32::NEG_INFINITY;
+        varying[255] = -100_000.0;
+        varying[256] = 200_000.0;
+        varying[1_536] = -300_000.0;
+        let channels = [
+            Vec::new(),
+            vec![4.0; 257],
+            varying,
+            vec![f32::NAN, f32::INFINITY, f32::NEG_INFINITY],
+            vec![f32::from_bits(1); 63],
+            [0.0, -0.0].repeat(129),
+            vec![-8.0; 513],
+        ];
+        let values = channels.iter().map(Vec::as_slice).collect::<Vec<_>>();
+        for tile_size in [0, 1, 7, 256, 257, 2_048] {
+            let expected = values
+                .iter()
+                .map(|values| build_line_tile_cache(values, tile_size))
+                .collect::<Vec<_>>();
+            for worker_limit in [0, 1, 2, 4, usize::MAX] {
+                let batch = build_line_tile_caches(&values, tile_size, worker_limit);
+                assert_eq!(batch.caches.len(), expected.len());
+                assert!((1..=worker_limit.clamp(1, 4)).contains(&batch.workers));
+                for (actual, expected) in batch.caches.iter().zip(&expected) {
+                    assert_eq!(actual.tile_size, expected.tile_size);
+                    assert_eq!(actual.sample_count, expected.sample_count);
+                    assert_eq!(actual.memory_bytes(), expected.memory_bytes());
+                    assert_eq!(actual.tiles, expected.tiles);
+                    for (actual, expected) in actual.tiles.iter().zip(&expected.tiles) {
+                        // Preserve even the scalar reducer's choice of signed zero.
+                        assert_eq!(actual.min.to_bits(), expected.min.to_bits());
+                        assert_eq!(actual.max.to_bits(), expected.max.to_bits());
+                    }
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn line_tile_batch_handles_empty_single_and_limited_workers() {
+        for limit in [0, 1, 4, usize::MAX] {
+            let empty = build_line_tile_caches(&[], 256, limit);
+            assert!(empty.caches.is_empty());
+            assert_eq!(empty.workers, 0);
+
+            let single = build_line_tile_caches(&[&[1.0, 2.0]], 256, limit);
+            assert_eq!(single.workers, 1);
+            assert_eq!(single.caches.len(), 1);
+            assert_eq!(single.caches[0].tiles[0].min, 1.0);
+            assert_eq!(single.caches[0].tiles[0].max, 2.0);
+        }
+        let channels: [&[f32]; 6] = [&[], &[1.0], &[2.0], &[], &[3.0], &[4.0]];
+        for limit in [0, 1] {
+            let batch = build_line_tile_caches(&channels, 256, limit);
+            assert_eq!(batch.workers, 1);
+            assert_eq!(batch.caches.len(), channels.len());
+        }
+        let capped = build_line_tile_caches(&channels, 256, usize::MAX);
+        // Thread creation may fail under OS resource pressure; inline fallback
+        // can reduce actual concurrency, but must never exceed the cap or lose work.
+        assert!((1..=4).contains(&capped.workers));
+        assert_eq!(capped.caches.len(), channels.len());
+        let two = build_line_tile_caches(&channels[..2], 256, 4);
+        assert!((1..=2).contains(&two.workers));
+        assert_eq!(two.caches.len(), 2);
+    }
+
+    #[test]
+    fn line_tile_envelope_preserves_spikes_and_matches_raw_envelope() {
+        let time = (0..16).map(|value| value as f64).collect::<Vec<_>>();
+        let mut values = vec![0.0; 16];
+        values[6] = 25.0;
+        values[13] = -10.0;
+        let plan = min_max_envelope_plan_for_range(&time, values.len(), (0.0, 15.0), 2);
+        let tiles = build_line_tile_cache(&values, 4);
+
+        let raw = min_max_envelope_for_plan(&values, &plan);
+        let tiled = min_max_envelope_for_plan_with_tiles(&time, &values, &plan, &tiles);
+
+        assert_eq!(tiled.bucket_count(), raw.bucket_count());
+        assert_eq!(tiled.value_range, Some((-10.0, 25.0)));
+        assert_eq!(tiled.buckets, raw.buckets);
+    }
+}

@@ -1,0 +1,262 @@
+Browser tab: 1, Title: "Dash", URL: "http://127.0.0.1:50301/".
+0 AXWebArea Dash, URL: 127.0.0.1:50301/
+	1 container app-root
+		2 container header-bar
+			3 heading PanelY, Value: 2
+				4 text PanelY
+			5 text field (settable) Value: /Users/ochiba/newspace/life/factory/panel-y/data/test_100k.parquet, ID: file-path-input
+			6 button 読み込み, ID: load-btn
+			25 text field (settable) Value: /Users/ochiba/newspace/life/factory/panel-y/data/test_100k.pyc.json, ID: config-path-input
+			10 button 💾, Help: 作図設定を保存, ID: save-plotconfig-btn
+			11 button 📂, Help: 作図設定をロード, ID: load-plotconfig-btn
+			12 button 🔒 スケール固定, ID: scroll-zoom-btn
+			13 button 📏 計測, ID: measure-toggle-btn
+			26 text ✓ test_100k.parquet (4 ch, 100,000 点, 100,000 Hz)
+			14 button 🌙, Help: テーマ切替, ID: theme-toggle-btn
+			15 button 📌, Help: ヘッダー固定/解除, ID: pin-header-btn
+			16 text produced by YTDC
+		17 button + 行追加, ID: add-row-btn
+		18 button 更新 (Ctrl+Enter), ID: update-btn
+		19 container
+			20 button (expanded) 行設定, Secondary Actions: Collapse
+				21 text 行設定
+			27 container rows-container
+				28 text 行1
+				29 pop up button (collapsed) sine_50Hz, ID: {"index":0,"type":"row-dropdown"}, Secondary Actions: Expand
+					30 text sine_50Hz
+					31 link Clear selection
+						32 image
+					33 image
+				34 text step:
+				35 pop up button (collapsed) ch..., ID: {"index":0,"type":"step-channels"}, Secondary Actions: Expand
+					36 text ch...
+					37 image
+				38 text Y:
+				39 stepper (settable) {"index":0,"type":"ymin-input"}
+				40 text ~
+				41 stepper (settable) {"index":0,"type":"ymax-input"}
+				42 button ×, ID: {"index":0,"type":"row-delete"}
+				43 text 行2
+				44 pop up button (collapsed) pwm_1kHz, ID: {"index":1,"type":"row-dropdown"}, Secondary Actions: Expand
+					45 text pwm_1kHz
+					46 link Clear selection
+						47 image
+					48 image
+				49 text step:
+				50 pop up button (collapsed) ch..., ID: {"index":1,"type":"step-channels"}, Secondary Actions: Expand
+					51 text ch...
+					52 image
+				53 text Y:
+				54 stepper (settable) {"index":1,"type":"ymin-input"}
+				55 text ~
+				56 stepper (settable) {"index":1,"type":"ymax-input"}
+				57 button ×, ID: {"index":1,"type":"row-delete"}
+				58 text 行3
+				59 pop up button (collapsed) noise, ID: {"index":2,"type":"row-dropdown"}, Secondary Actions: Expand
+					60 text noise
+					61 link Clear selection
+						62 image
+					63 image
+				64 text step:
+				65 pop up button (collapsed) ch..., ID: {"index":2,"type":"step-channels"}, Secondary Actions: Expand
+					66 text ch...
+					67 image
+				68 text Y:
+				69 stepper (settable) {"index":2,"type":"ymin-input"}
+				70 text ~
+				71 stepper (settable) {"index":2,"type":"ymax-input"}
+				72 button ×, ID: {"index":2,"type":"row-delete"}
+				73 text 行4
+				74 pop up button (collapsed) chirp_1_500Hz, ID: {"index":3,"type":"row-dropdown"}, Secondary Actions: Expand
+					75 text chirp_1_500Hz
+					76 link Clear selection
+						77 image
+					78 image
+				79 text step:
+				80 pop up button (collapsed) ch..., ID: {"index":3,"type":"step-channels"}, Secondary Actions: Expand
+					81 text ch...
+					82 image
+				83 text Y:
+				84 stepper (settable) {"index":3,"type":"ymin-input"}
+				85 text ~
+				86 stepper (settable) {"index":3,"type":"ymax-input"}
+				87 button ×, ID: {"index":3,"type":"row-delete"}
+		22 button (collapsed) チャンネル設定（色・太さ）, Secondary Actions: Expand
+			23 text チャンネル設定（色・太さ）
+		88 container waveform-container
+			237 text Channel / Value
+			238 text Waveform
+			89 text sine_50Hz
+			239 text ---
+			90 container
+				91 image
+					92 image
+					93 image
+					94 image
+					95 image
+					96 image
+					97 image
+					98 image
+					99 image
+					100 image
+					101 image
+					102 image
+					240 text −10.0
+					241 text −5.00
+					242 text 0.00
+					243 text 5.00
+					244 text 10.0
+				103 image
+				104 toolbar modebar-920f37
+					105 container
+						106 button Download plot as a PNG
+							107 image
+						108 button Share chart...
+							109 image
+					110 container
+						111 button Zoom
+							112 image
+						113 button Pan
+							114 image
+					115 container
+						116 button Zoom in
+							117 image
+						118 button Zoom out
+							119 image
+						120 button Autoscale
+							121 image
+						122 button Reset axes
+							123 image
+					124 link Description: plotly-logomark, Value: plotly.com/
+				125 image
+			126 text pwm_1kHz
+			245 text ---
+			127 container
+				128 image
+					129 image
+					130 image
+					131 image
+					132 image
+					133 image
+					134 image
+					135 image
+					136 image
+					137 image
+					138 image
+					139 image
+					246 text 0.00
+					247 text 2.00
+					248 text 4.00
+				140 image
+				141 toolbar modebar-de9b58
+					142 container
+						143 button Download plot as a PNG
+							144 image
+						145 button Share chart...
+							146 image
+					147 container
+						148 button Zoom
+							149 image
+						150 button Pan
+							151 image
+					152 container
+						153 button Zoom in
+							154 image
+						155 button Zoom out
+							156 image
+						157 button Autoscale
+							158 image
+						159 button Reset axes
+							160 image
+					161 link Description: plotly-logomark, Value: plotly.com/
+				162 image
+			163 text noise
+			249 text ---
+			164 container
+				165 image
+					166 image
+					167 image
+					168 image
+					169 image
+					170 image
+					171 image
+					172 image
+					173 image
+					174 image
+					175 image
+					176 image
+					250 text 0.00
+					251 text 5.00
+				177 image
+				178 toolbar modebar-68cc24
+					179 container
+						180 button Download plot as a PNG
+							181 image
+						182 button Share chart...
+							183 image
+					184 container
+						185 button Zoom
+							186 image
+						187 button Pan
+							188 image
+					189 container
+						190 button Zoom in
+							191 image
+						192 button Zoom out
+							193 image
+						194 button Autoscale
+							195 image
+						196 button Reset axes
+							197 image
+					198 link Description: plotly-logomark, Value: plotly.com/
+				199 image
+			200 text chirp_1_500Hz
+			252 text ---
+			201 container
+				202 image
+					203 image
+					204 image
+					205 image
+					206 image
+					207 image
+					208 image
+					209 image
+					210 image
+					211 image
+					212 image
+					213 image
+					253 text 0
+					254 text 0.2
+					255 text 0.4
+					256 text 0.6
+					257 text 0.8
+					258 text −5.00
+					259 text 0.00
+					260 text 5.00
+				214 image
+					261 text Time [s]
+				215 toolbar modebar-8bc40b
+					216 container
+						217 button Download plot as a PNG
+							218 image
+						219 button Share chart...
+							220 image
+					221 container
+						222 button Zoom
+							223 image
+						224 button Pan
+							225 image
+					226 container
+						227 button Zoom in
+							228 image
+						229 button Zoom out
+							230 image
+						231 button Autoscale
+							232 image
+						233 button Reset axes
+							234 image
+					235 link Description: plotly-logomark, Value: plotly.com/
+				236 image
+	24 image js-plotly-tester
+
+The focused UI element is 18 button 更新 (Ctrl+Enter), ID: update-btn

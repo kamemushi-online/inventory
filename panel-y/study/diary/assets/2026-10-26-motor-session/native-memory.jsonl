@@ -1,0 +1,9 @@
+{"timestamp": "2026-10-27T06:10:13.741995+09:00", "pid": 58599, "checkpoint": "initial-three-source-loaded", "rss_mib": 203.21875, "cpu_percent": 0.0, "process_elapsed": "02:05"}
+{"timestamp": "2026-10-27T06:14:38.260549+09:00", "pid": 58599, "checkpoint": "cycle-1-preset-restored", "rss_mib": 167.328125, "cpu_percent": 0.0, "process_elapsed": "06:30"}
+{"timestamp": "2026-10-27T06:15:40.069212+09:00", "pid": 58599, "checkpoint": "cycle-2-preset-restored", "rss_mib": 169.421875, "cpu_percent": 0.0, "process_elapsed": "07:32"}
+{"timestamp": "2026-10-27T06:16:03.032462+09:00", "pid": 58599, "checkpoint": "cycle-3-preset-restored", "rss_mib": 171.578125, "cpu_percent": 0.0, "process_elapsed": "07:55"}
+{"timestamp": "2026-10-27T06:16:39.663040+09:00", "pid": 58599, "checkpoint": "cycle-4-preset-restored", "rss_mib": 171.953125, "cpu_percent": 0.0, "process_elapsed": "08:31"}
+{"timestamp": "2026-10-27T06:17:13.451211+09:00", "pid": 58599, "checkpoint": "cycle-5-preset-restored", "rss_mib": 172.171875, "cpu_percent": 0.0, "process_elapsed": "09:05"}
+{"timestamp": "2026-10-27T06:17:51.672974+09:00", "pid": 58599, "checkpoint": "all-sources-removed", "rss_mib": 162.921875, "cpu_percent": 0.0, "process_elapsed": "09:43"}
+{"timestamp": "2026-10-27T06:18:59.420890+09:00", "pid": 58599, "checkpoint": "after-five-plot-config-loads", "rss_mib": 176.1875, "cpu_percent": 0.0, "process_elapsed": "10:51"}
+{"timestamp": "2026-10-27T06:20:46.281569+09:00", "pid": 58599, "checkpoint": "final-fft-after-reloads", "rss_mib": 179.0625, "cpu_percent": 0.0, "process_elapsed": "12:38"}

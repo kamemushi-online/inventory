@@ -1,0 +1,2 @@
+   Compiling panel-y v0.1.0 (/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y)
+    Finished `release` profile [optimized] target(s) in 15.53s

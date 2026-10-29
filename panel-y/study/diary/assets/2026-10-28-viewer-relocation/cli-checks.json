@@ -1,0 +1,65 @@
+[
+  {
+    "name": "schema-root",
+    "args": [
+      "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/target/release/panel-y",
+      "--schema",
+      "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/test_100k.parquet"
+    ],
+    "cwd": "/Users/ochiba/newspace/life/factory/panel-y",
+    "exit_code": 0,
+    "stdout": "file: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/test_100k.parquet\nrows: 100000\nrow groups: 1\ncolumns: 5\ncreated by: parquet-cpp-arrow version 23.0.1\ntime column: time\n\nchannels:\n  #01 sine_50Hz (DOUBLE)\n  #02 pwm_1kHz (DOUBLE)\n  #03 noise (DOUBLE)\n  #04 chirp_1_500Hz (DOUBLE)\n\ncolumns:\n  #00 time    DOUBLE   time                             logical=- converted=NONE numeric=yes\n  #01 channel DOUBLE   sine_50Hz                        logical=- converted=NONE numeric=yes\n  #02 channel DOUBLE   pwm_1kHz                         logical=- converted=NONE numeric=yes\n  #03 channel DOUBLE   noise                            logical=- converted=NONE numeric=yes\n  #04 channel DOUBLE   chirp_1_500Hz                    logical=- converted=NONE numeric=yes\n\n",
+    "stderr": ""
+  },
+  {
+    "name": "channel-app-dir",
+    "args": [
+      "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/target/release/panel-y",
+      "--load-channel",
+      "../../code/proto_3_1b/data/test_100k.parquet",
+      "sine_50Hz"
+    ],
+    "cwd": "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y",
+    "exit_code": 0,
+    "stdout": "file: ../../code/proto_3_1b/data/test_100k.parquet\nchannel: sine_50Hz\nchannel path: sine_50Hz\nsamples: 100000\ntime range: 0.000000 .. 0.999990\nvalue range: -10.000000 .. 10.000000\nprojected columns: [0, 1]\nread time: 0.003s\nenvelope: 4096 buckets requested, 4000 buckets built, bucket size 25, draw points 8000, 0.000s\nmemory: 1.1 MiB\n",
+    "stderr": ""
+  },
+  {
+    "name": "schema-launcher",
+    "args": [
+      "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/run_macos.sh",
+      "--schema",
+      "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_1.parquet"
+    ],
+    "cwd": "/tmp",
+    "exit_code": 0,
+    "stdout": "file: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_1.parquet\nrows: 100001\nrow groups: 1\ncolumns: 4\ncreated by: parquet-cpp-arrow version 25.0.0\ntime column: time\n\nchannels:\n  #01 iu (FLOAT)\n  #02 torque (FLOAT)\n  #03 gate_pwm (FLOAT)\n\ncolumns:\n  #00 time    DOUBLE   time                             logical=- converted=NONE numeric=yes\n  #01 channel FLOAT    iu                               logical=- converted=NONE numeric=yes\n  #02 channel FLOAT    torque                           logical=- converted=NONE numeric=yes\n  #03 channel FLOAT    gate_pwm                         logical=- converted=NONE numeric=yes\n\n",
+    "stderr": ""
+  },
+  {
+    "name": "channel-launcher",
+    "args": [
+      "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/run_macos.sh",
+      "--load-channel",
+      "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_2.parquet",
+      "iu"
+    ],
+    "cwd": "/tmp",
+    "exit_code": 0,
+    "stdout": "file: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_2.parquet\nchannel: iu\nchannel path: iu\nsamples: 80001\ntime range: 0.500000 .. 1.750000\nvalue range: -7.850000 .. 8.650000\nprojected columns: [0, 1]\nread time: 0.002s\nenvelope: 4096 buckets requested, 4001 buckets built, bucket size 20, draw points 8002, 0.000s\nmemory: 0.9 MiB\n",
+    "stderr": ""
+  },
+  {
+    "name": "multi-source-bench",
+    "args": [
+      "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/run_macos.sh",
+      "--bench-multi-source",
+      "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_1.parquet",
+      "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_2.parquet"
+    ],
+    "cwd": "/Users/ochiba/newspace/life/factory/panel-y",
+    "exit_code": 0,
+    "stdout": "multi-source benchmark\nworkspace: 2 sources, display range 0.000000..2.000000s, 4 rows, line channels 4, step channels 2\nload: wall 0.007s, raw cache 3.4 MiB, loaded channels 6\nvisible trace benchmark: 24 ranges, 1200 buckets requested, total 0.006s, avg 0.0003s, max 0.0007s, max channels 6, max draw points 31084\npan cache benchmark: 24 ranges, total 0.005s, avg 0.0002s, max 0.0003s, cache hits 70, misses 26, context hits 35, context misses 13, tile hits 0, builds 0, step edge hits 0, builds 48\nhover benchmark: 1000 positions, 6000 lookups, 4875 hits, total 0.0005s, avg 0.080 us/lookup\ndraw caches: envelopes 4, line tiles 0 (0.0 MiB), step edges 2 (0.0 MiB), fallback hints 0\nrss: before_load=n/a, after_load=n/a, after_visible=n/a, after_pan=n/a, after_hover=n/a\nsource loads:\n  Source #1: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_1.parquet rows=100001 time_samples=100001 channels=3 schema=0.000s time=0.002s channel_total=0.002s raw=1.9 MiB\n    iu (iu) samples=100001 array=0.4 MiB read=0.000s\n    torque (torque) samples=100001 array=0.4 MiB read=0.001s\n    gate_pwm (gate_pwm) samples=100001 array=0.4 MiB read=0.000s\n  Source #2: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/multi_source_validation_2.parquet rows=80001 time_samples=80001 channels=3 schema=0.000s time=0.001s channel_total=0.002s raw=1.5 MiB\n    iu (iu) samples=80001 array=0.3 MiB read=0.000s\n    speed (speed) samples=80001 array=0.3 MiB read=0.001s\n    gate_pwm (gate_pwm) samples=80001 array=0.3 MiB read=0.000s\nper-source pan cache:\n  Source #1: frames=24 cache h/m=38/10 context h/m=19/5 tile h/b=0/0 step edge h/b=0/24\n  Source #2: frames=24 cache h/m=32/16 context h/m=16/8 tile h/b=0/0 step edge h/b=0/24\n\n",
+    "stderr": ""
+  }
+]

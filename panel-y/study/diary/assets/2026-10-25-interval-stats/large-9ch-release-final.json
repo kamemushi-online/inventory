@@ -1,0 +1,174 @@
+{
+  "active_ui_frames": {
+    "count": 90,
+    "max_ms": 14.43825,
+    "p50_ms": 12.091958,
+    "p95_ms": 12.947833000000001
+  },
+  "cancel_to_exit_ms": 0.035667000000000004,
+  "channels": [
+    "iu",
+    "iv",
+    "iw",
+    "vu",
+    "vv",
+    "vw",
+    "torque",
+    "gate_pwm",
+    "spike_event"
+  ],
+  "cold_full_ui_frame_ms": 74.815875,
+  "completion_wall": {
+    "count": 5,
+    "max_ms": 189.924541,
+    "p50_ms": 178.64408300000002,
+    "p95_ms": 189.924541
+  },
+  "dispatch": {
+    "count": 5,
+    "max_ms": 0.089,
+    "p50_ms": 0.073208,
+    "p95_ms": 0.089
+  },
+  "file": "code/proto_3_1b/data/panely_large_10s_1mhz_9ch.parquet",
+  "full_range_statistics": [
+    {
+      "a": 0.0,
+      "b": -0.015330886468291283,
+      "channel": "iu",
+      "delta": -0.015330886468291283,
+      "max": 21.15837287902832,
+      "mean": -8.61764419823885e-15,
+      "min": -21.15837287902832,
+      "peak_to_peak": 42.31674575805664,
+      "rms": 14.167568592750968,
+      "slope_per_second": -0.001533088800138008
+    },
+    {
+      "a": -17.32050895690918,
+      "b": -17.324604034423828,
+      "channel": "iv",
+      "delta": -0.0040950775146484375,
+      "max": 20.918670654296875,
+      "mean": 3.727062669349834e-9,
+      "min": -20.91866683959961,
+      "peak_to_peak": 41.837337493896484,
+      "rms": 14.158417985388523,
+      "slope_per_second": -0.00040950779241562295
+    },
+    {
+      "a": 17.32050895690918,
+      "b": 17.313695907592773,
+      "channel": "iw",
+      "delta": -0.00681304931640625,
+      "max": 21.278270721435547,
+      "mean": 1.2466834858059882e-9,
+      "min": -21.278270721435547,
+      "peak_to_peak": 42.556541442871094,
+      "rms": 14.17290371879558,
+      "slope_per_second": -0.0006813049997711249
+    },
+    {
+      "a": 0.0,
+      "b": -0.665924608707428,
+      "channel": "vu",
+      "delta": -0.665924608707428,
+      "max": 337.96051025390625,
+      "mean": -3.748573362827301e-15,
+      "min": -337.96051025390625,
+      "peak_to_peak": 675.9210205078125,
+      "rms": 226.63186008218284,
+      "slope_per_second": -0.06659246752998954
+    },
+    {
+      "a": -277.1281433105469,
+      "b": -277.54901123046875,
+      "channel": "vv",
+      "delta": -0.420867919921875,
+      "max": 334.99560546875,
+      "mean": 4.825770761817694e-8,
+      "min": -334.8903503417969,
+      "peak_to_peak": 669.8859558105469,
+      "rms": 226.5226257785347,
+      "slope_per_second": -0.04208679620086712
+    },
+    {
+      "a": 277.1281433105469,
+      "b": 276.6758117675781,
+      "channel": "vw",
+      "delta": -0.45233154296875,
+      "max": 335.8903503417969,
+      "mean": 1.3179446011781692e-8,
+      "min": -335.99560546875,
+      "peak_to_peak": 671.8859558105469,
+      "rms": 226.55683619731505,
+      "slope_per_second": -0.045233158820190876
+    },
+    {
+      "a": 5.0,
+      "b": 4.999638557434082,
+      "channel": "torque",
+      "delta": -0.00036144256591796875,
+      "max": 6.6992621421813965,
+      "mean": 5.000000000172878,
+      "min": 3.3007378578186035,
+      "peak_to_peak": 3.398524284362793,
+      "rms": 5.113218164921527,
+      "slope_per_second": -0.00003614426020622289
+    },
+    {
+      "a": 5.0,
+      "b": 0.0,
+      "channel": "gate_pwm",
+      "delta": -5.0,
+      "max": 5.0,
+      "mean": 2.5436315,
+      "min": 0.0,
+      "peak_to_peak": 5.0,
+      "rms": 3.5662525849973106,
+      "slope_per_second": -0.5000000500000049
+    },
+    {
+      "a": 1.0,
+      "b": 0.0,
+      "channel": "spike_event",
+      "delta": -1.0,
+      "max": 1.0,
+      "mean": 0.000103,
+      "min": 0.0,
+      "peak_to_peak": 1.0,
+      "rms": 0.01014889156509222,
+      "slope_per_second": -0.10000001000000099
+    }
+  ],
+  "idle_ui_frames": {
+    "count": 60,
+    "max_ms": 15.187667,
+    "p50_ms": 12.778708,
+    "p95_ms": 14.793417
+  },
+  "numerical_reference_match": true,
+  "pan_changes_while_pending": 67,
+  "profile": "release",
+  "rapid_100_requests": {
+    "count": 100,
+    "max_ms": 0.029375,
+    "p50_ms": 0.002375,
+    "p95_ms": 0.027292
+  },
+  "raw_mib": 419.61669921875,
+  "rss_after_load_mib": 434.0,
+  "rss_after_trials_mib": 470.796875,
+  "rss_after_warmup_mib": 467.953125,
+  "samples_per_channel": 10000000,
+  "scope": "Full egui CPU UI plus tessellation with hover/pan/zoom events; warmed draw caches; identical cursors and panel dimensions for idle/active frames, idle uses completed cached statistics; excludes native OS event delivery, GPU and presentation.",
+  "synchronous_reference_ms": 180.345791,
+  "view_changes_while_pending": 78,
+  "worker_compute": {
+    "count": 5,
+    "max_ms": 173.363541,
+    "p50_ms": 173.068084,
+    "p95_ms": 173.363541
+  },
+  "zoom_changes_while_pending": 11
+}

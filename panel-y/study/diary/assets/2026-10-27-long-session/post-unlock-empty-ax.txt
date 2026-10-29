@@ -1,0 +1,93 @@
+Window: "PanelY native soak validation", App: PanelY SoakSession.
+0 standard window PanelY native soak validation, Secondary Actions: Raise
+	1 container
+		2 text (settable) Panel-y
+		3 text (settable) v3.0
+		4 button About
+		5 text (settable) Removed #1 motor_speed.parquet; cleaned 4 row channel reference(s)
+		6 text (settable) full frame 0.9ms visible 0.0ms draw 0.0ms input 0.0ms rows 3 ch 0 points 0 buckets 1492/1492 env h/m 0/0 ctx 0/0 tile h/b 0/0 edge h/b 0/0
+		7 text (settable) Data Sources
+		8 text (settable) 0 source(s)
+		9 button (disabled) Start all at zero
+		10 button Add Source
+		11 text (settable) No data sources. Add one to continue.
+		12 text (settable) Plot config
+		13 text (settable) .pyc.json compatible view config.
+		14 text (settable) Path
+		15 text field (settable) /Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/saved-motor.pyc.json
+		16 button Browse
+		17 button Load
+		18 button (disabled) Apply to Current Data
+		19 button (disabled) Save
+		20 button (disabled) Save As...
+		21 text (settable) Save includes all sources and offsets (v2). Apply keeps current data and offsets; v2 matches file paths.
+		22 button (disabled) Load / Add channel to Row 1
+		23 text (settable) Channel browser
+		24 text (settable) Target row
+		25 pop up button (settable) Row 1
+		26 text (settable) Filter
+		27 text field (settable) channel name or path
+		28 text (settable) State
+		29 pop up button (settable) All
+		30 text (settable) Sort
+		31 pop up button (settable) Schema order
+		32 text (settable) No data sources
+		33 text (settable) Rows
+		34 button Add Row
+		35 text (settable) Load target: Row 1
+		36 button Row 1
+		37 button Delete
+		38 text (settable) Y
+		39 pop up button (settable) Auto
+		40 text (settable) No channels in row
+		41 button Row 2
+		42 button Delete
+		43 text (settable) Y
+		44 pop up button (settable) Auto
+		45 text (settable) No channels in row
+		46 button Row 3
+		47 button Delete
+		48 text (settable) Y
+		49 pop up button (settable) Auto
+		50 text (settable) No channels in row
+		51 text (settable) Session preset
+		52 text (settable) In memory until exit. Restores all sources, offsets and view settings.
+		53 button (disabled) Save
+		54 button Apply
+		55 button Clear
+		56 text (settable) 3 source(s), 3 row(s), 12 channel(s)
+		57 text (settable) Applied session preset: 3 source(s), 3 row(s), 12 channel(s)
+		58 text (settable) Analysis
+		59 checkbox (disabled, settable, boolean) Cursor mode, Value: on
+		60 text (settable) Load waveform data before placing cursors.
+		61 button (disabled) Clear cursors
+		62 checkbox (settable, boolean) Show cursor info panel, Value: on
+		63 checkbox (settable, boolean) Collapse cursor info panel, Value: off
+		64 text (settable) A: -
+		65 text (settable) B: -
+		66 text (settable) Cache
+		67 text (settable) Workspace: 0 source(s), 0 channel(s), 0.0 MiB raw
+		68 text (settable) Workspace draw caches: 0 envelope(s), 0 line tile(s) / 0.0 MiB, 0 step edge cache(s) / 0.0 MiB, 0 hint(s)
+		69 scroll bar
+		70 unknown
+		71 unknown
+		72 scroll bar
+		73 unknown
+		74 text (settable) Analysis
+		75 button Statistics
+		76 button FFT
+		77 button Split
+		78 button Collapse
+		79 button Hide
+		80 text (settable) A -
+		81 text (settable) B -
+		82 button [-] FFT
+		83 button (disabled) Run FFT
+		84 text (settable) 0 target(s)
+		85 text (settable) Load and show channels before running FFT.
+	86 close button
+	87 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	88 minimize button
+	89 text PanelY native soak validation
+90 menu bar
+	91 PanelY native soak validation

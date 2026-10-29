@@ -1,0 +1,38 @@
+{
+  "base_revision": "0a1e51f7d2bc711eefa556468b43c3ff3e9a12d7",
+  "tracked_files": {
+    "code/rust_phase1/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+    "code/rust_phase1/.serena/.gitignore": "21d5dcb497df8b257d94919bdadcfe75b75d085d0f7b77ac2d8a813a9ca6e758",
+    "code/rust_phase1/Cargo.lock": "8994aa51679ba0bf8170f64fdb17620753a008663a4bc2c0bec272467c40737c",
+    "code/rust_phase1/Cargo.toml": "ba0ddded1a7c12b1f8615401a2360ab9edb4f9fada7430b54ff1f3919a784888",
+    "code/rust_phase1/README.md": "fa5debda969060e2d31837c919e926967771ef1ad43c5a47da110cfc3a3e9644",
+    "code/rust_phase1/assets/panel-y_LOGO.png": "3f3c7696749d7f3d4c1c982d430826456da9df2d39e6be1db92df7835e6a6911",
+    "code/rust_phase1/assets/panel-y_blue2_LOGO.png": "8cbaecad3467aad94400f0ce9749e4264bd6b431ef1cd1d87179b2ef220b51b2",
+    "code/rust_phase1/run_macos.sh": "d22418f2e29c47ce975afa493fc81d527c71634bdd8b8e2e75b893dcd0172649",
+    "code/rust_phase1/src/cold_render_bench.rs": "f3283b95d5d91eb8e5d6a23f5addbe782ea2fb80b66dc7b0560f412c05700621",
+    "code/rust_phase1/src/fft_analysis.rs": "47e6aff29c5d7d047e21f22f09db2ff28071dae86e5d6af8cd84a336b9495759",
+    "code/rust_phase1/src/interval_stats.rs": "ba96850f6e59d2799ad47b27357daad2e78c15abfdfed2bba6d8de8264972b55",
+    "code/rust_phase1/src/interval_stats_bench.rs": "bd224899fffcb3d3af48363dd1a4a80ce9373d295538726b58336e396cecebe5",
+    "code/rust_phase1/src/interval_stats_multi_bench.rs": "9f806acb411dd8831a06e186f2fc54a1bb70d4ea235a14a6059cb0dca55f25a5",
+    "code/rust_phase1/src/main.rs": "0be0c8931bf24cf72c2da4bf30fe9dd96eb234435a00e671caf9688a6762bc0f",
+    "code/rust_phase1/src/parquet_schema.rs": "545f665d3556e86dc87feee1d9865bf6562f4688885db6b352a88b850ceca09b",
+    "code/rust_phase1/src/parquet_waveform.rs": "37e63c212d3f127ca4b16082b68a35e9b308642bfac0d765dccac23ca631a82d",
+    "code/rust_phase1/src/plot_config.rs": "393d4b9fc5a66debecd6a49e95d879f93f44c5960ec33d902d0c1b9386a3c37a",
+    "code/rust_phase1/src/soak_validation.rs": "2eb050e30eaaef15ab7dfdfdd9d393178725e3185ef46484f89f5d96127f0974",
+    "code/rust_phase1/src/workspace_data.rs": "eeb5afccc3e9bc6624cfc9a4e1aac819de80ae3466ff64031608b3823d9cec47"
+  },
+  "fixtures": {
+    "code/proto_3_1b/data/test_100k.parquet": {
+      "bytes": 3705374,
+      "sha256": "0d3e8df72b247282fc43bba3d02662704d908832b715f5714196c560716bd4ef"
+    },
+    "code/proto_3_1b/data/multi_source_validation_1.parquet": {
+      "bytes": 600180,
+      "sha256": "98f0c24c35a96d25283034a08180d810802f13e0e5dca02bcb34b8ad4f449079"
+    },
+    "code/proto_3_1b/data/multi_source_validation_2.parquet": {
+      "bytes": 367803,
+      "sha256": "3b342b589d31ca2b6417f7efbd9515c0fe4f3419acff829acfa8fc694fa82393"
+    }
+  }
+}

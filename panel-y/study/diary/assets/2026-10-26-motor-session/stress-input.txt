@@ -1,0 +1,16 @@
+file: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet
+channel: Ia_phys
+samples: 100000
+time range: 0.000001 .. 0.100000
+read time: 0.005s
+array memory: 1.1 MiB
+full envelope: 4096 buckets requested, 4000 buckets built, bucket size 25, draw points 8000, 0.000s
+stress visible envelope: 2000 runs, 1200 buckets requested, wall 0.037s, measured total 0.025s, avg 0.0000s, max 0.0000s
+stress totals: samples=37999750, draw_points=4368000
+rss: before_load=n/a, after_load=n/a, after_full_envelope=n/a, after_stress=n/a
+rss blocks:
+  runs=400 wall=0.007s rss=n/a
+  runs=800 wall=0.014s rss=n/a
+  runs=1200 wall=0.021s rss=n/a
+  runs=1600 wall=0.029s rss=n/a
+  runs=2000 wall=0.036s rss=n/a

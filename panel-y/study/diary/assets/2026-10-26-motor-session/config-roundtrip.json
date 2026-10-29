@@ -1,0 +1,295 @@
+{
+  "passed": true,
+  "initial": {
+    "sources": [
+      [
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+        0.0
+      ],
+      [
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+        0.0
+      ],
+      [
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+        0.0
+      ]
+    ],
+    "rows": [
+      [
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Ia_phys",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Ia_phys",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Ia_phys",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        }
+      ],
+      [
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Te",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Trq_cmd",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Te",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Trq_cmd",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Te",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Trq_cmd",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        }
+      ],
+      [
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Hi_a",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Hi_a",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Hi_a",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        }
+      ]
+    ],
+    "y": [
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ]
+    ]
+  },
+  "saved": {
+    "sources": [
+      [
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+        0.0
+      ],
+      [
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+        0.0
+      ],
+      [
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+        0.0
+      ]
+    ],
+    "rows": [
+      [
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Ia_phys",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Ia_phys",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Ia_phys",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        }
+      ],
+      [
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Te",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Trq_cmd",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Te",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Trq_cmd",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Te",
+          "visible": true,
+          "draw_mode": "line",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Trq_cmd",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        }
+      ],
+      [
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+          "path": "Hi_a",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#50beff",
+          "line_width": 1.25,
+          "color_index": 0
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+          "path": "Hi_a",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#ffb347",
+          "line_width": 1.25,
+          "color_index": 1
+        },
+        {
+          "source_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+          "path": "Hi_a",
+          "visible": true,
+          "draw_mode": "step",
+          "color": "#7ee787",
+          "line_width": 1.25,
+          "color_index": 2
+        }
+      ]
+    ],
+    "y": [
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ],
+      [
+        null,
+        null
+      ]
+    ]
+  }
+}

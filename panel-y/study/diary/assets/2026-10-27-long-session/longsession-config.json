@@ -1,0 +1,8 @@
+{
+  "plot_config_path": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/saved-motor.pyc.json",
+  "output_jsonl": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-27-long-session/longsession-events.jsonl",
+  "duration_seconds": 3600,
+  "cycles": 30,
+  "final_quiet_seconds": 120,
+  "close_when_done": false
+}

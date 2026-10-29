@@ -1,0 +1,19 @@
+{
+  "binary": "/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-converters-macos-arm64/panel-y-convert",
+  "exit_code": 0,
+  "stdout": "[読み込み完了] input.csv  shape=(3, 2)\n[出力完了] output.parquet\n  チャンネル: ['value']\n  サンプル数: 3 点\n  サンプリング: 0.0 Hz (Ts=600000.0000 ms)\n",
+  "stderr": "",
+  "output": {
+    "time": [
+      0,
+      600,
+      1200
+    ],
+    "value": [
+      3,
+      -1,
+      2
+    ]
+  },
+  "verified": true
+}

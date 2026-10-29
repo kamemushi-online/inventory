@@ -1,0 +1,14 @@
+{
+  "binary": "/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/multiconverter",
+  "exit_code": 0,
+  "stdout": "[\u30b9\u30ad\u30e3\u30f3\u5b8c\u4e86] 2 \u4ef6\u306e .mat \u30d5\u30a1\u30a4\u30eb\u3092\u691c\u51fa\n\n--- classic.mat ---\n[\u8aad\u307f\u8fbc\u307f\u5b8c\u4e86] classic.mat  shape=(3, 2)\n[\u6642\u9593\u5909\u63db] 'elapsed' \u3092 ms \u2192 s \u306b\u5909\u63db\u3057\u307e\u3059\n[\u51fa\u529b\u5b8c\u4e86] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-binary-n6r1zf0d/output/classic.parquet\n  \u30c1\u30e3\u30f3\u30cd\u30eb: ['current']\n  \u30b5\u30f3\u30d7\u30eb\u6570: 3 \u70b9\n  \u30b5\u30f3\u30d7\u30ea\u30f3\u30b0: 100.0 Hz (Ts=10.0000 ms)\n\n--- hdf5.mat ---\n[\u8aad\u307f\u8fbc\u307f\u5b8c\u4e86] hdf5.mat  shape=(3, 2)\n[\u6642\u9593\u5909\u63db] 'elapsed' \u3092 ms \u2192 s \u306b\u5909\u63db\u3057\u307e\u3059\n[\u51fa\u529b\u5b8c\u4e86] /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-binary-n6r1zf0d/output/hdf5.parquet\n  \u30c1\u30e3\u30f3\u30cd\u30eb: ['current']\n  \u30b5\u30f3\u30d7\u30eb\u6570: 3 \u70b9\n  \u30b5\u30f3\u30d7\u30ea\u30f3\u30b0: 100.0 Hz (Ts=10.0000 ms)\n\n========================================\n\u5909\u63db\u30b5\u30de\u30ea\u30fc\n========================================\n  \u6210\u529f  : 2 \u4ef6\n  \u30b9\u30ad\u30c3\u30d7: 0 \u4ef6\n  \u5931\u6557  : 0 \u4ef6\n",
+  "stderr": "",
+  "validated_outputs": [
+    "classic MAT",
+    "HDF5 MAT"
+  ],
+  "time_unit": "ms -> s",
+  "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-converter-binary-n6r1zf0d",
+  "windows_build": "not run on macOS",
+  "sandbox_note": "The initial sandboxed launch could not initialize a sync semaphore; this validation ran with approved host execution."
+}

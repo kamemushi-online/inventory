@@ -1,0 +1,10 @@
+file: /Users/ochiba/newspace/life/factory/panel-y/data/test_100k.parquet
+channel: sine_50Hz
+channel path: sine_50Hz
+samples: 100000
+time range: 0.000000 .. 0.999990
+value range: -10.000000 .. 10.000000
+projected columns: [0, 1]
+read time: 0.006s
+envelope: 4096 buckets requested, 4000 buckets built, bucket size 25, draw points 8000, 0.000s
+memory: 1.1 MiB

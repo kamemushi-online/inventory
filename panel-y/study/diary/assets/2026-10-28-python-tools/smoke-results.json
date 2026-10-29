@@ -1,0 +1,836 @@
+{
+  "verified_at": "2026-10-28T07:56:12.019489+09:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "pyarrow": "26.0.0",
+    "h5py": "3.16.0",
+    "pyinstaller": "6.22.3"
+  },
+  "work_dir": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+  "comparisons": [
+    {
+      "file": "test_100k.parquet",
+      "rows": 100000,
+      "columns": 5,
+      "comparison": "all values and types equal to pre-move script using the same Python environment"
+    },
+    {
+      "file": "step_validation_100k.parquet",
+      "rows": 100000,
+      "columns": 4,
+      "comparison": "all values and types equal to pre-move script using the same Python environment"
+    },
+    {
+      "file": "multi_source_validation_1.parquet",
+      "rows": 100001,
+      "columns": 4,
+      "comparison": "all values and types equal to pre-move script using the same Python environment"
+    },
+    {
+      "file": "multi_source_validation_2.parquet",
+      "rows": 80001,
+      "columns": 4,
+      "comparison": "all values and types equal to pre-move script using the same Python environment"
+    },
+    {
+      "file": "panely_medium_2m_8ch.parquet",
+      "rows": 2000000,
+      "columns": 9,
+      "comparison": "every row group and channel equal to pre-move generator"
+    },
+    {
+      "file": "panely_large_10s_1mhz_9ch.parquet",
+      "rows": 10000000,
+      "columns": 10,
+      "comparison": "every row group and channel equal to pre-move generator"
+    },
+    {
+      "file": "ripple_validation_2_4m.parquet",
+      "rows": 2400000,
+      "columns": 6,
+      "comparison": "every row group and channel equal to pre-move generator"
+    }
+  ],
+  "existing_data_unchanged": {
+    "code/proto_3_1b/data/multi_source_validation_2.parquet": "3b342b589d31ca2b6417f7efbd9515c0fe4f3419acff829acfa8fc694fa82393",
+    "code/proto_3_1b/data/panely_interval_source_3_12m.parquet": "e56c3df5066f653b30748dc8471e719d3c7ea46e7f186dd6999f5dd0c6ac66ca",
+    "code/proto_3_1b/data/panely_large_10s_1mhz_9ch.parquet": "0150088509f86a473b34693f424944b263d149a379b84a4c14549099aa2afcd6",
+    "code/proto_3_1b/data/panely_interval_source_1_10m.parquet": "bc0afb0d87a3be4c525fef9cba3d60321f1800d28175bffc6f9343392818c8bb",
+    "code/proto_3_1b/data/multi_source_validation_1.parquet": "98f0c24c35a96d25283034a08180d810802f13e0e5dca02bcb34b8ad4f449079",
+    "code/proto_3_1b/data/panely_interval_source_4_6m.parquet": "8fcfba72526865a84d5bea1bc4cd7fa2e82b6474ad021ba36591f48e3164945d",
+    "code/proto_3_1b/data/test_100k.parquet": "0d3e8df72b247282fc43bba3d02662704d908832b715f5714196c560716bd4ef",
+    "code/proto_3_1b/data/panely_interval_source_2_8m.parquet": "b3f7f147d381b0503082680b034cbf40ece993c31a3706afe99800f03bb1a552",
+    "code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet": "46ae606cc531db6e4e92d28cffd907199dfcdbf69d1e54ad2edb62f91d3d086e",
+    "code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet": "bf5e1ecb0c8a25ce20136c3809d66967ddaaa7ffc4c5e62ba9be9cffaa6dc761",
+    "code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet": "9e21e257fa8ecbec80f702d54fa061421fec762d65cee13e96a0cbbeb385be68"
+  },
+  "interval_configs": [
+    "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/reports/config-1-sources.json",
+    "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/reports/config-2-sources.json",
+    "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/reports/config-4-sources.json"
+  ],
+  "interval_scope": "reuse 4 existing verified sources, 36M total rows; new report paths tested from external cwd",
+  "single_statistics": {
+    "passed": true,
+    "reference": "NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection",
+    "rtol": 1e-10,
+    "atol": 1e-10,
+    "interval_indices": [
+      0,
+      99999
+    ],
+    "channels": [
+      {
+        "channel": "sine_50Hz",
+        "finite_samples": 100000,
+        "absolute_errors": {
+          "mean": 4.5474735088646416e-18,
+          "min": 0.0,
+          "max": 0.0,
+          "peak_to_peak": 0.0,
+          "rms": 8.43769498715119e-14,
+          "a": 0.0,
+          "b": 0.0,
+          "delta": 0.0,
+          "slope_per_second": 0.0
+        }
+      }
+    ]
+  },
+  "multi_statistics": {
+    "passed": true,
+    "source_count": 4,
+    "sources": [
+      {
+        "source_id": 1,
+        "passed": true,
+        "reference": "NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection",
+        "rtol": 1e-10,
+        "atol": 1e-10,
+        "interval_indices": [
+          250000,
+          9500000
+        ],
+        "channels": [
+          {
+            "channel": "iu",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 4.85722573273506e-17,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.5145218412726535e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iv",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.2573053709274973e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iw",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 6.064482249712455e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vu",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 5.551115123125783e-17,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.0896883395616896e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vv",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.8758328224066645e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vw",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 7.563016879430506e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "torque",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.2230216839270724e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "gate_pwm",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 0.0,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "spike_event",
+            "finite_samples": 9250001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 0.0,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "source_id": 2,
+        "passed": true,
+        "reference": "NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection",
+        "rtol": 1e-10,
+        "atol": 1e-10,
+        "interval_indices": [
+          200000,
+          7600000
+        ],
+        "channels": [
+          {
+            "channel": "iu",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 3.8973269056441495e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iv",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.0768275160444318e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iw",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.9184653865522705e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vu",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 2.7910118660656735e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vv",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.0476242096046917e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vw",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.5916157281026244e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "torque",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.4335199693960021e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "gate_pwm",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 0.0,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "spike_event",
+            "finite_samples": 7400001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.887379141862766e-15,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "source_id": 3,
+        "passed": true,
+        "reference": "NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection",
+        "rtol": 1e-10,
+        "atol": 1e-10,
+        "interval_indices": [
+          300000,
+          11400000
+        ],
+        "channels": [
+          {
+            "channel": "iu",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 2.6574298317427747e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iv",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.709210550870921e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iw",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 5.201172825763933e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vu",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 2.290789780090563e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vv",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 3.3662672649370506e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vw",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 7.759126674500294e-11,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "torque",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 4.517275442594837e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "gate_pwm",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 0.0,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "spike_event",
+            "finite_samples": 11100001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 3.9968028886505635e-15,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "source_id": 4,
+        "passed": true,
+        "reference": "NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection",
+        "rtol": 1e-10,
+        "atol": 1e-10,
+        "interval_indices": [
+          150000,
+          5700000
+        ],
+        "channels": [
+          {
+            "channel": "iu",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 8.185452315956354e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iv",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 9.411138535142527e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "iw",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 2.5792701308091637e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vu",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.6984813555609435e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vv",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.9178969523636624e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "vw",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 1.8286527847521938e-10,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "torque",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 4.162004074714787e-12,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "gate_pwm",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 0.0,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          },
+          {
+            "channel": "spike_event",
+            "finite_samples": 5550001,
+            "absolute_errors": {
+              "mean": 0.0,
+              "min": 0.0,
+              "max": 0.0,
+              "peak_to_peak": 0.0,
+              "rms": 2.886579864025407e-15,
+              "a": 0.0,
+              "b": 0.0,
+              "delta": 0.0,
+              "slope_per_second": 0.0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "commands": [
+    {
+      "name": "new-generate_test_data.py",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "baseline-generate_test_data.py",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "new-generate_step_validation_data.py",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "baseline-generate_step_validation_data.py",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "new-generate_multi_source_validation_data.py",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "baseline-generate_multi_source_validation_data.py",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "phase1-all",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "ripple-default",
+      "status": "passed in initial run; existing outputs numerically rechecked below"
+    },
+    {
+      "name": "interval-sources-reuse-from-external-cwd",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_interval_statistics_sources.py",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/reports"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "reusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_1_10m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_2_8m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_3_12m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_4_6m.parquet\n",
+      "stderr": ""
+    },
+    {
+      "name": "interval-explicit-output-dir-reuse",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/data_generation/generate_interval_statistics_sources.py",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/custom-reports",
+        "--output-dir",
+        "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "reusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_1_10m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_2_8m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_3_12m.parquet\nreusing /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_4_6m.parquet\n",
+      "stderr": ""
+    },
+    {
+      "name": "rust-load-generated-sample",
+      "args": [
+        "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/target/release/panel-y",
+        "--load-channel",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/test_100k.parquet",
+        "sine_50Hz"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "file: /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/test_100k.parquet\nchannel: sine_50Hz\nchannel path: sine_50Hz\nsamples: 100000\ntime range: 0.000000 .. 0.999990\nvalue range: -10.000000 .. 10.000000\nprojected columns: [0, 1]\nread time: 0.003s\nenvelope: 4096 buckets requested, 4000 buckets built, bucket size 25, draw points 8000, 0.000s\nmemory: 1.1 MiB\n",
+      "stderr": ""
+    },
+    {
+      "name": "rust-generated-multi-source",
+      "args": [
+        "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/target/release/panel-y",
+        "--bench-multi-source",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/multi_source_validation_1.parquet",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/multi_source_validation_2.parquet"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "multi-source benchmark\nworkspace: 2 sources, display range 0.000000..2.000000s, 4 rows, line channels 4, step channels 2\nload: wall 0.006s, raw cache 3.4 MiB, loaded channels 6\nvisible trace benchmark: 24 ranges, 1200 buckets requested, total 0.005s, avg 0.0002s, max 0.0005s, max channels 6, max draw points 31084\npan cache benchmark: 24 ranges, total 0.005s, avg 0.0002s, max 0.0004s, cache hits 70, misses 26, context hits 35, context misses 13, tile hits 0, builds 0, step edge hits 0, builds 48\nhover benchmark: 1000 positions, 6000 lookups, 4875 hits, total 0.0008s, avg 0.126 us/lookup\ndraw caches: envelopes 4, line tiles 0 (0.0 MiB), step edges 2 (0.0 MiB), fallback hints 0\nrss: before_load=n/a, after_load=n/a, after_visible=n/a, after_pan=n/a, after_hover=n/a\nsource loads:\n  Source #1: /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/multi_source_validation_1.parquet rows=100001 time_samples=100001 channels=3 schema=0.000s time=0.002s channel_total=0.002s raw=1.9 MiB\n    iu (iu) samples=100001 array=0.4 MiB read=0.000s\n    torque (torque) samples=100001 array=0.4 MiB read=0.001s\n    gate_pwm (gate_pwm) samples=100001 array=0.4 MiB read=0.000s\n  Source #2: /var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/multi_source_validation_2.parquet rows=80001 time_samples=80001 channels=3 schema=0.000s time=0.001s channel_total=0.001s raw=1.5 MiB\n    iu (iu) samples=80001 array=0.3 MiB read=0.000s\n    speed (speed) samples=80001 array=0.3 MiB read=0.001s\n    gate_pwm (gate_pwm) samples=80001 array=0.3 MiB read=0.000s\nper-source pan cache:\n  Source #1: frames=24 cache h/m=38/10 context h/m=19/5 tile h/b=0/0 step edge h/b=0/24\n  Source #2: frames=24 cache h/m=32/16 context h/m=16/8 tile h/b=0/0 step edge h/b=0/24\n\n",
+      "stderr": ""
+    },
+    {
+      "name": "rust-single-statistics",
+      "args": [
+        "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/target/release/panel-y",
+        "--bench-interval-stats",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/test_100k.parquet",
+        "sine_50Hz"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "{\n  \"active_frame_breakdown\": {\n    \"context_rebuilds\": 0,\n    \"edge_builds\": 0,\n    \"envelope_builds\": 0,\n    \"envelope_miss_frames\": 0,\n    \"max_mesh_vertices\": 30160,\n    \"max_shapes\": 1139,\n    \"max_ui_passes\": 1,\n    \"paint_traces_and_axes\": {\n      \"count\": 5,\n      \"max_ms\": 0.11491699999999999,\n      \"p50_ms\": 0.04725,\n      \"p95_ms\": 0.11491699999999999\n    },\n    \"scope\": \"visible_traces and paint_traces_and_axes are subsets of ui; tessellation is separate. CPU timings exclude OS/GPU.\",\n    \"tessellation\": {\n      \"count\": 5,\n      \"max_ms\": 0.304667,\n      \"p50_ms\": 0.28029200000000004,\n      \"p95_ms\": 0.304667\n    },\n    \"tile_builds\": 0,\n    \"ui\": {\n      \"count\": 5,\n      \"max_ms\": 0.49129100000000003,\n      \"p50_ms\": 0.349708,\n      \"p95_ms\": 0.49129100000000003\n    },\n    \"visible_traces\": {\n      \"count\": 5,\n      \"max_ms\": 0.018708000000000002,\n      \"p50_ms\": 0.013958,\n      \"p95_ms\": 0.018708000000000002\n    }\n  },\n  \"active_ui_frames\": {\n    \"count\": 5,\n    \"max_ms\": 0.798875,\n    \"p50_ms\": 0.6398750000000001,\n    \"p95_ms\": 0.798875\n  },\n  \"cancel_to_exit_ms\": 0.005709,\n  \"channels\": [\n    \"sine_50Hz\"\n  ],\n  \"cold_frame_breakdown\": {\n    \"context_rebuilds\": 1,\n    \"edge_builds\": 0,\n    \"envelope_builds\": 1,\n    \"envelope_miss_frames\": 1,\n    \"max_mesh_vertices\": 31504,\n    \"max_shapes\": 1234,\n    \"max_ui_passes\": 2,\n    \"paint_traces_and_axes\": {\n      \"count\": 1,\n      \"max_ms\": 2.957793,\n      \"p50_ms\": 2.957793,\n      \"p95_ms\": 2.957793\n    },\n    \"scope\": \"visible_traces and paint_traces_and_axes are subsets of ui; tessellation is separate. CPU timings exclude OS/GPU.\",\n    \"tessellation\": {\n      \"count\": 1,\n      \"max_ms\": 0.474333,\n      \"p50_ms\": 0.474333,\n      \"p95_ms\": 0.474333\n    },\n    \"tile_builds\": 0,\n    \"ui\": {\n      \"count\": 1,\n      \"max_ms\": 12.180666,\n      \"p50_ms\": 12.180666,\n      \"p95_ms\": 12.180666\n    },\n    \"visible_traces\": {\n      \"count\": 1,\n      \"max_ms\": 0.103417,\n      \"p50_ms\": 0.103417,\n      \"p95_ms\": 0.103417\n    }\n  },\n  \"cold_full_ui_frame_ms\": 12.660958,\n  \"completion_wall\": {\n    \"count\": 5,\n    \"max_ms\": 2.333625,\n    \"p50_ms\": 2.1685,\n    \"p95_ms\": 2.333625\n  },\n  \"dispatch\": {\n    \"count\": 5,\n    \"max_ms\": 0.030957999999999996,\n    \"p50_ms\": 0.019542,\n    \"p95_ms\": 0.030957999999999996\n  },\n  \"file\": \"/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/output/test_100k.parquet\",\n  \"full_range_statistics\": [\n    {\n      \"a\": 0.0,\n      \"b\": -0.031415876001119614,\n      \"channel\": \"sine_50Hz\",\n      \"delta\": -0.031415876001119614,\n      \"max\": 10.0,\n      \"mean\": 0.0,\n      \"min\": -10.0,\n      \"peak_to_peak\": 20.0,\n      \"rms\": 7.071067808865119,\n      \"slope_per_second\": -0.031416190163021246,\n      \"source_id\": 1\n    }\n  ],\n  \"idle_frame_breakdown\": {\n    \"context_rebuilds\": 0,\n    \"edge_builds\": 0,\n    \"envelope_builds\": 0,\n    \"envelope_miss_frames\": 0,\n    \"max_mesh_vertices\": 30304,\n    \"max_shapes\": 1147,\n    \"max_ui_passes\": 1,\n    \"paint_traces_and_axes\": {\n      \"count\": 60,\n      \"max_ms\": 0.108667,\n      \"p50_ms\": 0.041832999999999995,\n      \"p95_ms\": 0.044458\n    },\n    \"scope\": \"visible_traces and paint_traces_and_axes are subsets of ui; tessellation is separate. CPU timings exclude OS/GPU.\",\n    \"tessellation\": {\n      \"count\": 60,\n      \"max_ms\": 0.53325,\n      \"p50_ms\": 0.264625,\n      \"p95_ms\": 0.295958\n    },\n    \"tile_builds\": 0,\n    \"ui\": {\n      \"count\": 60,\n      \"max_ms\": 0.674666,\n      \"p50_ms\": 0.281334,\n      \"p95_ms\": 0.384875\n    },\n    \"visible_traces\": {\n      \"count\": 60,\n      \"max_ms\": 0.042166999999999996,\n      \"p50_ms\": 0.009542,\n      \"p95_ms\": 0.012541\n    }\n  },\n  \"idle_ui_frames\": {\n    \"count\": 60,\n    \"max_ms\": 1.211541,\n    \"p50_ms\": 0.549625,\n    \"p95_ms\": 0.663625\n  },\n  \"numerical_reference_match\": true,\n  \"pan_changes_while_pending\": 3,\n  \"profile\": \"release\",\n  \"rapid_100_requests\": {\n    \"count\": 100,\n    \"max_ms\": 0.018708000000000002,\n    \"p50_ms\": 0.000292,\n    \"p95_ms\": 0.008957999999999999\n  },\n  \"raw_mib\": 1.1444091796875,\n  \"rss_after_load_mib\": null,\n  \"rss_after_trials_mib\": null,\n  \"rss_after_warmup_mib\": null,\n  \"samples_per_channel\": 100000,\n  \"scope\": \"Full egui CPU UI plus tessellation with hover/pan/zoom events; warmed draw caches; identical cursors and panel dimensions for idle/active frames, idle uses completed cached statistics; excludes native OS event delivery, GPU and presentation.\",\n  \"synchronous_reference_ms\": 0.206458,\n  \"view_changes_while_pending\": 5,\n  \"worker_compute\": {\n    \"count\": 5,\n    \"max_ms\": 0.198209,\n    \"p50_ms\": 0.193625,\n    \"p95_ms\": 0.198209\n  },\n  \"zoom_changes_while_pending\": 2\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "numpy-single-statistics",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/validation/validate_interval_statistics.py",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/single-stats.json"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"reference\": \"NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection\",\n  \"rtol\": 1e-10,\n  \"atol\": 1e-10,\n  \"interval_indices\": [\n    0,\n    99999\n  ],\n  \"channels\": [\n    {\n      \"channel\": \"sine_50Hz\",\n      \"finite_samples\": 100000,\n      \"absolute_errors\": {\n        \"mean\": 4.5474735088646416e-18,\n        \"min\": 0.0,\n        \"max\": 0.0,\n        \"peak_to_peak\": 0.0,\n        \"rms\": 8.43769498715119e-14,\n        \"a\": 0.0,\n        \"b\": 0.0,\n        \"delta\": 0.0,\n        \"slope_per_second\": 0.0\n      }\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "rust-multi-statistics",
+      "args": [
+        "/Users/ochiba/newspace/life/factory/panel-y/apps/panel-y/target/release/panel-y",
+        "--bench-interval-stats-multi",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/multi-config.json"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "{\n  \"active_frame_breakdown\": {\n    \"context_rebuilds\": 0,\n    \"edge_builds\": 0,\n    \"envelope_builds\": 0,\n    \"envelope_miss_frames\": 0,\n    \"max_mesh_vertices\": 557684,\n    \"max_shapes\": 31261,\n    \"max_ui_passes\": 2,\n    \"paint_traces_and_axes\": {\n      \"count\": 55,\n      \"max_ms\": 2.044375,\n      \"p50_ms\": 0.973625,\n      \"p95_ms\": 1.01925\n    },\n    \"scope\": \"visible_traces and paint_traces_and_axes are subsets of ui; tessellation is separate. CPU timings exclude OS/GPU.\",\n    \"tessellation\": {\n      \"count\": 55,\n      \"max_ms\": 6.518167,\n      \"p50_ms\": 6.101083,\n      \"p95_ms\": 6.364125\n    },\n    \"tile_builds\": 0,\n    \"ui\": {\n      \"count\": 55,\n      \"max_ms\": 6.802,\n      \"p50_ms\": 2.856125,\n      \"p95_ms\": 3.0658339999999997\n    },\n    \"visible_traces\": {\n      \"count\": 55,\n      \"max_ms\": 1.098375,\n      \"p50_ms\": 0.41583400000000004,\n      \"p95_ms\": 0.472667\n    }\n  },\n  \"active_ui_frames\": {\n    \"count\": 55,\n    \"max_ms\": 13.701417000000001,\n    \"p50_ms\": 9.15875,\n    \"p95_ms\": 9.597292\n  },\n  \"cancel_to_exit_ms\": 0.028374999999999997,\n  \"cold_frame_breakdown\": {\n    \"context_rebuilds\": 4,\n    \"edge_builds\": 0,\n    \"envelope_builds\": 36,\n    \"envelope_miss_frames\": 1,\n    \"max_mesh_vertices\": 564448,\n    \"max_shapes\": 31978,\n    \"max_ui_passes\": 2,\n    \"paint_traces_and_axes\": {\n      \"count\": 1,\n      \"max_ms\": 8.350708000000001,\n      \"p50_ms\": 8.350708000000001,\n      \"p95_ms\": 8.350708000000001\n    },\n    \"scope\": \"visible_traces and paint_traces_and_axes are subsets of ui; tessellation is separate. CPU timings exclude OS/GPU.\",\n    \"tessellation\": {\n      \"count\": 1,\n      \"max_ms\": 8.419584,\n      \"p50_ms\": 8.419584,\n      \"p95_ms\": 8.419584\n    },\n    \"tile_builds\": 36,\n    \"ui\": {\n      \"count\": 1,\n      \"max_ms\": 93.52754200000001,\n      \"p50_ms\": 93.52754200000001,\n      \"p95_ms\": 93.52754200000001\n    },\n    \"visible_traces\": {\n      \"count\": 1,\n      \"max_ms\": 70.618625,\n      \"p50_ms\": 70.618625,\n      \"p95_ms\": 70.618625\n    }\n  },\n  \"cold_full_ui_frame_ms\": 101.966417,\n  \"completion_wall\": {\n    \"count\": 1,\n    \"max_ms\": 591.0772079999999,\n    \"p50_ms\": 591.0772079999999,\n    \"p95_ms\": 591.0772079999999\n  },\n  \"config_file\": \"/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/multi-config.json\",\n  \"cursors\": [\n    0.25,\n    9.5\n  ],\n  \"dispatch\": {\n    \"count\": 1,\n    \"max_ms\": 0.115125,\n    \"p50_ms\": 0.115125,\n    \"p95_ms\": 0.115125\n  },\n  \"idle_frame_breakdown\": {\n    \"context_rebuilds\": 0,\n    \"edge_builds\": 0,\n    \"envelope_builds\": 0,\n    \"envelope_miss_frames\": 0,\n    \"max_mesh_vertices\": 565212,\n    \"max_shapes\": 31644,\n    \"max_ui_passes\": 1,\n    \"paint_traces_and_axes\": {\n      \"count\": 60,\n      \"max_ms\": 1.0750410000000001,\n      \"p50_ms\": 1.005042,\n      \"p95_ms\": 1.0511249999999999\n    },\n    \"scope\": \"visible_traces and paint_traces_and_axes are subsets of ui; tessellation is separate. CPU timings exclude OS/GPU.\",\n    \"tessellation\": {\n      \"count\": 60,\n      \"max_ms\": 7.281625,\n      \"p50_ms\": 6.649292,\n      \"p95_ms\": 7.144792\n    },\n    \"tile_builds\": 0,\n    \"ui\": {\n      \"count\": 60,\n      \"max_ms\": 3.689333,\n      \"p50_ms\": 3.182833,\n      \"p95_ms\": 3.43025\n    },\n    \"visible_traces\": {\n      \"count\": 60,\n      \"max_ms\": 0.75075,\n      \"p50_ms\": 0.532,\n      \"p95_ms\": 0.684083\n    }\n  },\n  \"idle_ui_frames\": {\n    \"count\": 60,\n    \"max_ms\": 10.996291,\n    \"p50_ms\": 10.097292000000001,\n    \"p95_ms\": 10.740167\n  },\n  \"interval_statistics\": [\n    {\n      \"a\": -1.3210255372236857e-13,\n      \"b\": -9.20743863097595e-12,\n      \"channel\": \"iu\",\n      \"delta\": -9.075336077253582e-12,\n      \"max\": 21.15837287902832,\n      \"mean\": -0.013764750229639484,\n      \"min\": -21.15837287902832,\n      \"peak_to_peak\": 42.31674575805664,\n      \"rms\": 14.167567826934896,\n      \"slope_per_second\": -9.81117413757144e-13,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 0.25,\n      \"b\": 0.25,\n      \"channel\": \"iu\",\n      \"delta\": 0.0,\n      \"max\": 24.58213996887207,\n      \"mean\": 0.2341705373617267,\n      \"min\": -24.08213996887207,\n      \"peak_to_peak\": 48.66427993774414,\n      \"rms\": 16.294377515655025,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 0.5,\n      \"b\": 0.5,\n      \"channel\": \"iu\",\n      \"delta\": 0.0,\n      \"max\": 28.005895614624023,\n      \"mean\": 0.482105824981847,\n      \"min\": -27.005895614624023,\n      \"peak_to_peak\": 55.01179122924805,\n      \"rms\": 18.424137707739913,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 0.75,\n      \"b\": 0.75,\n      \"channel\": \"iu\",\n      \"delta\": 0.0,\n      \"max\": 31.429622650146484,\n      \"mean\": 0.73004111288924,\n      \"min\": -29.929622650146484,\n      \"peak_to_peak\": 61.35924530029297,\n      \"rms\": 20.55593131902538,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 4\n    },\n    {\n      \"a\": 17.32050895690918,\n      \"b\": -17.32050895690918,\n      \"channel\": \"iv\",\n      \"delta\": -34.64101791381836,\n      \"max\": 20.918670654296875,\n      \"mean\": 0.006882378837351156,\n      \"min\": -20.91866683959961,\n      \"peak_to_peak\": 41.837337493896484,\n      \"rms\": 14.158452101621164,\n      \"slope_per_second\": -3.744974909601985,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 20.1685848236084,\n      \"b\": -19.6685848236084,\n      \"channel\": \"iv\",\n      \"delta\": -39.8371696472168,\n      \"max\": 24.30647087097168,\n      \"mean\": 0.2579147303822545,\n      \"min\": -23.806459426879883,\n      \"peak_to_peak\": 48.11293029785156,\n      \"rms\": 16.284260367176607,\n      \"slope_per_second\": -4.306721042942357,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 23.016660690307617,\n      \"b\": -22.016660690307617,\n      \"channel\": \"iv\",\n      \"delta\": -45.033321380615234,\n      \"max\": 27.694271087646484,\n      \"mean\": 0.5089470869873627,\n      \"min\": -26.694271087646484,\n      \"peak_to_peak\": 54.38854217529297,\n      \"rms\": 18.41301995526619,\n      \"slope_per_second\": -4.868467176282728,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 25.86473846435547,\n      \"b\": -24.36473846435547,\n      \"channel\": \"iv\",\n      \"delta\": -50.22947692871094,\n      \"max\": 31.082059860229492,\n      \"mean\": 0.7599794430440796,\n      \"min\": -29.582059860229492,\n      \"peak_to_peak\": 60.664119720458984,\n      \"rms\": 20.543815970402527,\n      \"slope_per_second\": -5.430213722022804,\n      \"source_id\": 4\n    },\n    {\n      \"a\": -17.32050895690918,\n      \"b\": 17.32050895690918,\n      \"channel\": \"iw\",\n      \"delta\": 34.64101791381836,\n      \"max\": 21.278270721435547,\n      \"mean\": 0.006882376359636231,\n      \"min\": -21.278270721435547,\n      \"peak_to_peak\": 42.556541442871094,\n      \"rms\": 14.172857756851828,\n      \"slope_per_second\": 3.744974909601985,\n      \"source_id\": 1\n    },\n    {\n      \"a\": -19.6685848236084,\n      \"b\": 20.1685848236084,\n      \"channel\": \"iw\",\n      \"delta\": 39.8371696472168,\n      \"max\": 24.720014572143555,\n      \"mean\": 0.2579147246164704,\n      \"min\": -24.22001075744629,\n      \"peak_to_peak\": 48.940025329589844,\n      \"rms\": 16.30082479535243,\n      \"slope_per_second\": 4.306721042942357,\n      \"source_id\": 2\n    },\n    {\n      \"a\": -22.016660690307617,\n      \"b\": 23.016660690307617,\n      \"channel\": \"iw\",\n      \"delta\": 45.033321380615234,\n      \"max\": 28.16175079345703,\n      \"mean\": 0.5089470863534513,\n      \"min\": -27.16175079345703,\n      \"peak_to_peak\": 55.32350158691406,\n      \"rms\": 18.431740167125948,\n      \"slope_per_second\": 4.868467176282728,\n      \"source_id\": 3\n    },\n    {\n      \"a\": -24.36473846435547,\n      \"b\": 25.86473846435547,\n      \"channel\": \"iw\",\n      \"delta\": 50.22947692871094,\n      \"max\": 31.603492736816406,\n      \"mean\": 0.7599794444705635,\n      \"min\": -30.103492736816406,\n      \"peak_to_peak\": 61.70698547363281,\n      \"rms\": 20.564689879856974,\n      \"slope_per_second\": 5.430213722022804,\n      \"source_id\": 4\n    },\n    {\n      \"a\": -2.3427215029014903e-12,\n      \"b\": -2.1714213760404277e-10,\n      \"channel\": \"vu\",\n      \"delta\": -2.1479941610114128e-10,\n      \"max\": 337.96051025390625,\n      \"mean\": -0.22023600374240382,\n      \"min\": -337.96051025390625,\n      \"peak_to_peak\": 675.9210205078125,\n      \"rms\": 226.6318478318157,\n      \"slope_per_second\": -2.322155849742068e-11,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 0.25,\n      \"b\": 0.25,\n      \"channel\": \"vu\",\n      \"delta\": 0.0,\n      \"max\": 388.9045715332031,\n      \"mean\": -0.003271392912561704,\n      \"min\": -388.4045715332031,\n      \"peak_to_peak\": 777.3091430664062,\n      \"rms\": 260.6264931402541,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 0.5,\n      \"b\": 0.5,\n      \"channel\": \"vu\",\n      \"delta\": 0.0,\n      \"max\": 439.8486328125,\n      \"mean\": 0.21369319933303593,\n      \"min\": -438.8486328125,\n      \"peak_to_peak\": 878.697265625,\n      \"rms\": 294.62133248141276,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 0.75,\n      \"b\": 0.75,\n      \"channel\": \"vu\",\n      \"delta\": 0.0,\n      \"max\": 490.7927551269531,\n      \"mean\": 0.43065781364783334,\n      \"min\": -489.2927551269531,\n      \"peak_to_peak\": 980.0855102539062,\n      \"rms\": 328.6163054916495,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 4\n    },\n    {\n      \"a\": 277.1281433105469,\n      \"b\": -277.1281433105469,\n      \"channel\": \"vv\",\n      \"delta\": -554.2562866210938,\n      \"max\": 334.99560546875,\n      \"mean\": 0.11011805011383041,\n      \"min\": -334.8903503417969,\n      \"peak_to_peak\": 669.8859558105469,\n      \"rms\": 226.52275816139596,\n      \"slope_per_second\": -59.91959855363176,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 318.9473571777344,\n      \"b\": -318.4473571777344,\n      \"channel\": \"vv\",\n      \"delta\": -637.3947143554688,\n      \"max\": 385.49493408203125,\n      \"mean\": 0.3766357779036197,\n      \"min\": -384.8739013671875,\n      \"peak_to_peak\": 770.3688354492188,\n      \"rms\": 260.5014097932433,\n      \"slope_per_second\": -68.90753668707771,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 360.7665710449219,\n      \"b\": -359.7665710449219,\n      \"channel\": \"vv\",\n      \"delta\": -720.5331420898438,\n      \"max\": 435.9942626953125,\n      \"mean\": 0.6431533515800646,\n      \"min\": -434.8574523925781,\n      \"peak_to_peak\": 870.8517150878906,\n      \"rms\": 294.4802411675056,\n      \"slope_per_second\": -77.89547482052365,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 402.5858154296875,\n      \"b\": -401.0858154296875,\n      \"channel\": \"vv\",\n      \"delta\": -803.671630859375,\n      \"max\": 486.49365234375,\n      \"mean\": 0.9096711275310989,\n      \"min\": -484.8410339355469,\n      \"peak_to_peak\": 971.3346862792969,\n      \"rms\": 328.45923691569897,\n      \"slope_per_second\": -86.88341955236487,\n      \"source_id\": 4\n    },\n    {\n      \"a\": -277.1281433105469,\n      \"b\": 277.1281433105469,\n      \"channel\": \"vw\",\n      \"delta\": 554.2562866210938,\n      \"max\": 335.8903503417969,\n      \"mean\": 0.11011801512115928,\n      \"min\": -335.99560546875,\n      \"peak_to_peak\": 671.8859558105469,\n      \"rms\": 226.55670757409501,\n      \"slope_per_second\": 59.91959855363176,\n      \"source_id\": 1\n    },\n    {\n      \"a\": -318.4473571777344,\n      \"b\": 318.9473571777344,\n      \"channel\": \"vw\",\n      \"delta\": 637.3947143554688,\n      \"max\": 386.5238952636719,\n      \"mean\": 0.3766358082721942,\n      \"min\": -386.1449279785156,\n      \"peak_to_peak\": 772.6688232421875,\n      \"rms\": 260.54045146198746,\n      \"slope_per_second\": 68.90753668707771,\n      \"source_id\": 2\n    },\n    {\n      \"a\": -359.7665710449219,\n      \"b\": 360.7665710449219,\n      \"channel\": \"vw\",\n      \"delta\": 720.5331420898438,\n      \"max\": 437.1574401855469,\n      \"mean\": 0.6431534915304987,\n      \"min\": -436.2942810058594,\n      \"peak_to_peak\": 873.4517211914062,\n      \"rms\": 294.5243750015981,\n      \"slope_per_second\": 77.89547482052365,\n      \"source_id\": 3\n    },\n    {\n      \"a\": -401.0858154296875,\n      \"b\": 402.5858154296875,\n      \"channel\": \"vw\",\n      \"delta\": 803.671630859375,\n      \"max\": 487.791015625,\n      \"mean\": 0.9096710431525882,\n      \"min\": -486.4436340332031,\n      \"peak_to_peak\": 974.2346496582031,\n      \"rms\": 328.508463621867,\n      \"slope_per_second\": 86.88341955236487,\n      \"source_id\": 4\n    },\n    {\n      \"a\": 6.5,\n      \"b\": 5.0,\n      \"channel\": \"torque\",\n      \"delta\": -1.5,\n      \"max\": 6.6992621421813965,\n      \"mean\": 5.005134333141895,\n      \"min\": 3.3007378578186035,\n      \"peak_to_peak\": 3.398524284362793,\n      \"rms\": 5.118232313880802,\n      \"slope_per_second\": -0.16216216216216217,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 7.724999904632568,\n      \"b\": 6.0,\n      \"channel\": \"torque\",\n      \"delta\": -1.7249999046325684,\n      \"max\": 7.954151153564453,\n      \"mean\": 6.005904385366157,\n      \"min\": 4.045848846435547,\n      \"peak_to_peak\": 3.9083023071289062,\n      \"rms\": 6.1306655776252885,\n      \"slope_per_second\": -0.1864864761764939,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 8.949999809265137,\n      \"b\": 7.0,\n      \"channel\": \"torque\",\n      \"delta\": -1.9499998092651367,\n      \"max\": 9.209040641784668,\n      \"mean\": 7.006674375034488,\n      \"min\": 4.790958881378174,\n      \"peak_to_peak\": 4.418081760406494,\n      \"rms\": 7.143418039380675,\n      \"slope_per_second\": -0.2108107901908256,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 10.175000190734863,\n      \"b\": 8.0,\n      \"channel\": \"torque\",\n      \"delta\": -2.1750001907348633,\n      \"max\": 10.463930130004883,\n      \"mean\": 8.007445099272125,\n      \"min\": 5.536069869995117,\n      \"peak_to_peak\": 4.927860260009766,\n      \"rms\": 8.156371581981917,\n      \"slope_per_second\": -0.23513515575512037,\n      \"source_id\": 4\n    },\n    {\n      \"a\": 5.0,\n      \"b\": 5.0,\n      \"channel\": \"gate_pwm\",\n      \"delta\": 0.0,\n      \"max\": 5.0,\n      \"mean\": 2.542547833238072,\n      \"min\": 0.0,\n      \"peak_to_peak\": 5.0,\n      \"rms\": 3.5654928363678366,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 6.0,\n      \"b\": 6.0,\n      \"channel\": \"gate_pwm\",\n      \"delta\": 0.0,\n      \"max\": 6.0,\n      \"mean\": 3.186519163983897,\n      \"min\": 0.25,\n      \"peak_to_peak\": 5.75,\n      \"rms\": 4.291356985255288,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 7.0,\n      \"b\": 7.0,\n      \"channel\": \"gate_pwm\",\n      \"delta\": 0.0,\n      \"max\": 7.0,\n      \"mean\": 3.7958387571316434,\n      \"min\": 0.5,\n      \"peak_to_peak\": 6.5,\n      \"rms\": 4.9968780932185375,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 8.0,\n      \"b\": 8.0,\n      \"channel\": \"gate_pwm\",\n      \"delta\": 0.0,\n      \"max\": 8.0,\n      \"mean\": 4.4789878416238125,\n      \"min\": 0.75,\n      \"peak_to_peak\": 7.25,\n      \"rms\": 5.761175540999281,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 4\n    },\n    {\n      \"a\": 0.0,\n      \"b\": 0.0,\n      \"channel\": \"spike_event\",\n      \"delta\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.00010270269159970901,\n      \"min\": 0.0,\n      \"peak_to_peak\": 1.0,\n      \"rms\": 0.010134233646394236,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 1\n    },\n    {\n      \"a\": 0.25,\n      \"b\": 0.25,\n      \"channel\": \"spike_event\",\n      \"delta\": 0.0,\n      \"max\": 1.399999976158142,\n      \"mean\": 0.2501165540358871,\n      \"min\": 0.25,\n      \"peak_to_peak\": 1.149999976158142,\n      \"rms\": 0.2503843328893321,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 2\n    },\n    {\n      \"a\": 0.5,\n      \"b\": 0.5,\n      \"channel\": \"spike_event\",\n      \"delta\": 0.0,\n      \"max\": 1.7999999523162842,\n      \"mean\": 0.5001323423255654,\n      \"min\": 0.5,\n      \"peak_to_peak\": 1.2999999523162842,\n      \"rms\": 0.5003042947472011,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 3\n    },\n    {\n      \"a\": 0.75,\n      \"b\": 0.75,\n      \"channel\": \"spike_event\",\n      \"delta\": 0.0,\n      \"max\": 2.200000047683716,\n      \"mean\": 0.750148918896984,\n      \"min\": 0.75,\n      \"peak_to_peak\": 1.4500000476837158,\n      \"rms\": 0.7502928166744024,\n      \"slope_per_second\": 0.0,\n      \"source_id\": 4\n    }\n  ],\n  \"memory\": {\n    \"all_source_buffers_released\": true,\n    \"numerical_reference_match\": true,\n    \"raw_after_all_removed_mib\": 0.0,\n    \"raw_after_remove_mib\": 1258.85009765625,\n    \"raw_before_mib\": 1510.6201171875,\n    \"remaining_statistics_count\": 27,\n    \"remove_source_id\": 4,\n    \"remove_to_drained_ms\": 2.571667,\n    \"remove_ui_ms\": 1.0140419999999999,\n    \"removed_source_buffers_released\": true,\n    \"repeats\": 1,\n    \"rss_after_all_removed_mib\": null,\n    \"rss_after_all_removed_settled\": [\n      {\n        \"elapsed_ms\": 110.016375,\n        \"rss_mib\": null\n      },\n      {\n        \"elapsed_ms\": 520.7279580000001,\n        \"rss_mib\": null\n      },\n      {\n        \"elapsed_ms\": 2027.057208,\n        \"rss_mib\": null\n      }\n    ],\n    \"rss_after_each_trial_mib\": [\n      null\n    ],\n    \"rss_after_remove_mib\": null,\n    \"rss_after_repeats_mib\": null,\n    \"rss_before_mib\": null,\n    \"rss_samples\": [],\n    \"sample_sleep_ms\": 50,\n    \"sampled_peak_rss_mib\": null,\n    \"scope\": \"Separate statistics-only pass without UI rendering; RSS sampled via ps with 50ms sleeps plus process-launch latency. Peak is sampled, not an OS high-water mark; allocator retention can keep RSS above logical raw bytes after release.\"\n  },\n  \"numerical_reference_match\": true,\n  \"pan_changes_while_pending\": 40,\n  \"profile\": \"release\",\n  \"rapid_100_requests\": {\n    \"count\": 100,\n    \"max_ms\": 0.076834,\n    \"p50_ms\": 0.010417000000000001,\n    \"p95_ms\": 0.069083\n  },\n  \"raw_mib\": 1510.6201171875,\n  \"rss_after_load_mib\": null,\n  \"rss_after_trials_mib\": null,\n  \"rss_after_warmup_mib\": null,\n  \"rss_before_load_mib\": null,\n  \"scope\": \"Full egui CPU UI plus tessellation with hover/pan/zoom events; warmed draw caches; identical cursors and panel dimensions for idle/active frames, idle uses completed cached statistics; excludes native OS event delivery, GPU and presentation.\",\n  \"source_count\": 4,\n  \"sources\": [\n    {\n      \"channels\": [\n        \"iu\",\n        \"iv\",\n        \"iw\",\n        \"vu\",\n        \"vv\",\n        \"vw\",\n        \"torque\",\n        \"gate_pwm\",\n        \"spike_event\"\n      ],\n      \"display_range\": [\n        0.0,\n        9.999999\n      ],\n      \"file\": \"/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_1_10m.parquet\",\n      \"interval_indices\": [\n        250000,\n        9500000\n      ],\n      \"interval_samples_per_channel\": 9250001,\n      \"offset_seconds\": -0.0,\n      \"raw_mib\": 419.61669921875,\n      \"raw_range\": [\n        0.0,\n        9.999999\n      ],\n      \"samples_per_channel\": 10000000,\n      \"source_id\": 1,\n      \"time_column\": \"time\"\n    },\n    {\n      \"channels\": [\n        \"iu\",\n        \"iv\",\n        \"iw\",\n        \"vu\",\n        \"vv\",\n        \"vw\",\n        \"torque\",\n        \"gate_pwm\",\n        \"spike_event\"\n      ],\n      \"display_range\": [\n        0.0,\n        9.999998750000003\n      ],\n      \"file\": \"/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_2_8m.parquet\",\n      \"interval_indices\": [\n        200000,\n        7600000\n      ],\n      \"interval_samples_per_channel\": 7400001,\n      \"offset_seconds\": -100.0,\n      \"raw_mib\": 335.693359375,\n      \"raw_range\": [\n        100.0,\n        109.99999875\n      ],\n      \"samples_per_channel\": 8000000,\n      \"source_id\": 2,\n      \"time_column\": \"time\"\n    },\n    {\n      \"channels\": [\n        \"iu\",\n        \"iv\",\n        \"iw\",\n        \"vu\",\n        \"vv\",\n        \"vw\",\n        \"torque\",\n        \"gate_pwm\",\n        \"spike_event\"\n      ],\n      \"display_range\": [\n        0.0,\n        9.999999166666667\n      ],\n      \"file\": \"/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_3_12m.parquet\",\n      \"interval_indices\": [\n        300000,\n        11400000\n      ],\n      \"interval_samples_per_channel\": 11100001,\n      \"offset_seconds\": 20.0,\n      \"raw_mib\": 503.5400390625,\n      \"raw_range\": [\n        -20.0,\n        -10.000000833333333\n      ],\n      \"samples_per_channel\": 12000000,\n      \"source_id\": 3,\n      \"time_column\": \"time\"\n    },\n    {\n      \"channels\": [\n        \"iu\",\n        \"iv\",\n        \"iw\",\n        \"vu\",\n        \"vv\",\n        \"vw\",\n        \"torque\",\n        \"gate_pwm\",\n        \"spike_event\"\n      ],\n      \"display_range\": [\n        0.0,\n        9.999998333333338\n      ],\n      \"file\": \"/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/panely_interval_source_4_6m.parquet\",\n      \"interval_indices\": [\n        150000,\n        5700000\n      ],\n      \"interval_samples_per_channel\": 5550001,\n      \"offset_seconds\": -1000.0,\n      \"raw_mib\": 251.77001953125,\n      \"raw_range\": [\n        1000.0,\n        1009.9999983333333\n      ],\n      \"samples_per_channel\": 6000000,\n      \"source_id\": 4,\n      \"time_column\": \"time\"\n    }\n  ],\n  \"synchronous_reference_ms\": 685.9327499999999,\n  \"view_changes_while_pending\": 47,\n  \"worker_compute\": {\n    \"count\": 1,\n    \"max_ms\": 580.9175829999999,\n    \"p50_ms\": 580.9175829999999,\n    \"p95_ms\": 580.9175829999999\n  },\n  \"zoom_changes_while_pending\": 7\n}\n",
+      "stderr": "4 source(s): measuring 1 UI trials\n4 source(s): separate 1-repeat memory pass and source removal\n"
+    },
+    {
+      "name": "numpy-multi-statistics",
+      "args": [
+        "/private/tmp/panel-y-tools-validation-20261028/bin/python",
+        "/Users/ochiba/newspace/life/factory/panel-y/tools/validation/validate_interval_statistics.py",
+        "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04/multi-stats.json"
+      ],
+      "cwd": "/var/folders/mp/20qyvk91507dmn271sjy4fd80000gn/T/panel-y-tools-smoke-cjcnwn04",
+      "returncode": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"source_count\": 4,\n  \"sources\": [\n    {\n      \"source_id\": 1,\n      \"passed\": true,\n      \"reference\": \"NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection\",\n      \"rtol\": 1e-10,\n      \"atol\": 1e-10,\n      \"interval_indices\": [\n        250000,\n        9500000\n      ],\n      \"channels\": [\n        {\n          \"channel\": \"iu\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 4.85722573273506e-17,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.5145218412726535e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iv\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.2573053709274973e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iw\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 6.064482249712455e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vu\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 5.551115123125783e-17,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.0896883395616896e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vv\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.8758328224066645e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vw\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 7.563016879430506e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"torque\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.2230216839270724e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"gate_pwm\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 0.0,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"spike_event\",\n          \"finite_samples\": 9250001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 0.0,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        }\n      ]\n    },\n    {\n      \"source_id\": 2,\n      \"passed\": true,\n      \"reference\": \"NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection\",\n      \"rtol\": 1e-10,\n      \"atol\": 1e-10,\n      \"interval_indices\": [\n        200000,\n        7600000\n      ],\n      \"channels\": [\n        {\n          \"channel\": \"iu\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 3.8973269056441495e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iv\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.0768275160444318e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iw\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.9184653865522705e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vu\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 2.7910118660656735e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vv\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.0476242096046917e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vw\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.5916157281026244e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"torque\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.4335199693960021e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"gate_pwm\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 0.0,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"spike_event\",\n          \"finite_samples\": 7400001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.887379141862766e-15,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        }\n      ]\n    },\n    {\n      \"source_id\": 3,\n      \"passed\": true,\n      \"reference\": \"NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection\",\n      \"rtol\": 1e-10,\n      \"atol\": 1e-10,\n      \"interval_indices\": [\n        300000,\n        11400000\n      ],\n      \"channels\": [\n        {\n          \"channel\": \"iu\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 2.6574298317427747e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iv\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.709210550870921e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iw\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 5.201172825763933e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vu\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 2.290789780090563e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vv\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 3.3662672649370506e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vw\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 7.759126674500294e-11,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"torque\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 4.517275442594837e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"gate_pwm\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 0.0,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"spike_event\",\n          \"finite_samples\": 11100001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 3.9968028886505635e-15,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        }\n      ]\n    },\n    {\n      \"source_id\": 4,\n      \"passed\": true,\n      \"reference\": \"NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection\",\n      \"rtol\": 1e-10,\n      \"atol\": 1e-10,\n      \"interval_indices\": [\n        150000,\n        5700000\n      ],\n      \"channels\": [\n        {\n          \"channel\": \"iu\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 8.185452315956354e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iv\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 9.411138535142527e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"iw\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 2.5792701308091637e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vu\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.6984813555609435e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vv\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.9178969523636624e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"vw\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 1.8286527847521938e-10,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"torque\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 4.162004074714787e-12,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"gate_pwm\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 0.0,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        },\n        {\n          \"channel\": \"spike_event\",\n          \"finite_samples\": 5550001,\n          \"absolute_errors\": {\n            \"mean\": 0.0,\n            \"min\": 0.0,\n            \"max\": 0.0,\n            \"peak_to_peak\": 0.0,\n            \"rms\": 2.886579864025407e-15,\n            \"a\": 0.0,\n            \"b\": 0.0,\n            \"delta\": 0.0,\n            \"slope_per_second\": 0.0\n          }\n        }\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ]
+}

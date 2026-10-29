@@ -1,0 +1,9 @@
+{
+  "viewer_revision": "65f68696d8c0c938eddc85b9dc8f019dd0c208ee",
+  "viewer_binary_sha256": "90c0fc8abb58a60a7de4ff8f277d272f30c31faca58f2fb264590ed387796897",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "launch_malloc_large_cache": "0 via app LSEnvironment / run_macos.sh",
+  "app": "/private/tmp/PanelY-Motor-Validation.app",
+  "scope": "native GUI operations; CLI frame times exclude OS/GPU presentation"
+}

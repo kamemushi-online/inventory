@@ -1,0 +1,26 @@
+{
+  "captured_at_utc": "2026-10-27T13:52:25.781Z",
+  "app_bundle": "/private/tmp/PanelY-SoakSession.app",
+  "pid_verified_before_capture": 79377,
+  "process_start_local": "Tue Oct 27 20:46:47 2026",
+  "measurement_complete_at_utc": "2026-10-27T12:48:50.475Z",
+  "scope": "Post-run empty state after user unlock; does not provide screen evidence for the locked part of the run.",
+  "overview": "post-unlock-empty-overview.png",
+  "accessibility": "post-unlock-empty-ax.txt",
+  "cache_captured_at_utc": "2026-10-27T13:52:39.781Z",
+  "cache_screenshot": "post-unlock-empty-cache.png",
+  "observed": {
+    "sources": 0,
+    "loaded_channels": 0,
+    "raw_mib": 0,
+    "envelopes": 0,
+    "line_tiles": 0,
+    "line_tile_mib": 0,
+    "step_edge_caches": 0,
+    "step_edge_mib": 0,
+    "hints": 0,
+    "fft_targets": 0,
+    "cursor_a": null,
+    "cursor_b": null
+  }
+}

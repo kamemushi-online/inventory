@@ -1,0 +1,16 @@
+file: /Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet
+channel: Ia_phys
+samples: 320000
+time range: 0.000001 .. 0.320000
+read time: 0.004s
+array memory: 3.7 MiB
+full envelope: 4096 buckets requested, 4051 buckets built, bucket size 79, draw points 8102, 0.000s
+stress visible envelope: 2000 runs, 1200 buckets requested, wall 0.066s, measured total 0.052s, avg 0.0000s, max 0.0001s
+stress totals: samples=121599750, draw_points=4591000
+rss: before_load=n/a, after_load=n/a, after_full_envelope=n/a, after_stress=n/a
+rss blocks:
+  runs=400 wall=0.013s rss=n/a
+  runs=800 wall=0.026s rss=n/a
+  runs=1200 wall=0.039s rss=n/a
+  runs=1600 wall=0.052s rss=n/a
+  runs=2000 wall=0.065s rss=n/a

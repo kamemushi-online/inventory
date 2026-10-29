@@ -1,0 +1,52 @@
+{
+  "basis": "Independent calculation from deterministic fixture generator formulas; float32 quantization; nearest-sample lookup.",
+  "cursor_display_seconds": [
+    0.900921643,
+    1.101382494
+  ],
+  "source1_offset_0": {
+    "A": 2.8501925468444824,
+    "B": 4.200857162475586,
+    "mean": 0.00845508238171352,
+    "rms": 7.0647393176044915,
+    "samples": 10024
+  },
+  "source2_offset_0_25": {
+    "A": -6.153374195098877,
+    "B": -6.798091888427734,
+    "mean": 0.38389641464436,
+    "rms": 5.848913102299034,
+    "samples": 12830
+  },
+  "source2_offset_0_375": {
+    "A": 5.411565780639648,
+    "B": 4.431125164031982,
+    "mean": 0.410589397174545,
+    "rms": 5.845366047967246,
+    "samples": 12830
+  },
+  "hover": {
+    "display_0_502304_source1": 6.613118648529053,
+    "display_0_502304_source2_offset_0_25": null,
+    "display_1_source1": 1.964386803449212e-14,
+    "display_1_source2_offset_0_25": -4.449228286743164
+  },
+  "fixture_sha256": {
+    "multi_source_validation_2.parquet": "3b342b589d31ca2b6417f7efbd9515c0fe4f3419acff829acfa8fc694fa82393",
+    "multi_source_validation_1.parquet": "98f0c24c35a96d25283034a08180d810802f13e0e5dca02bcb34b8ad4f449079"
+  },
+  "source1_after_remove_source2": {
+    "cursor_display_seconds": [
+      0.900429308,
+      1.10056144
+    ],
+    "offset_seconds": 0.125,
+    "A": -9.913076400756836,
+    "B": -9.845643043518066,
+    "mean": -0.007898261602357553,
+    "rms": 7.073759467586647,
+    "samples": 10008,
+    "fft_expected_peak_bin_hz": 49.96003197442047,
+    "hover_at_cursor_B": -9.845643043518066
+  }
+}

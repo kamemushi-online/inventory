@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "source_count": 1,
+  "sources": [
+    {
+      "source_id": 1,
+      "passed": true,
+      "reference": "NumPy float64 streaming value reductions from Parquet with independent nearest-sample selection",
+      "rtol": 1e-10,
+      "atol": 1e-10,
+      "interval_indices": [
+        250000,
+        9500000
+      ],
+      "channels": [
+        {
+          "channel": "iu",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 4.85722573273506e-17,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 1.5145218412726535e-11,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "iv",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 1.2573053709274973e-11,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "iw",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 6.064482249712455e-12,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "vu",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 5.551115123125783e-17,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 1.0896883395616896e-10,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "vv",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 1.8758328224066645e-10,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "vw",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 7.563016879430506e-11,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "torque",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 1.2230216839270724e-12,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "gate_pwm",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 0.0,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        },
+        {
+          "channel": "spike_event",
+          "finite_samples": 9250001,
+          "absolute_errors": {
+            "mean": 0.0,
+            "min": 0.0,
+            "max": 0.0,
+            "peak_to_peak": 0.0,
+            "rms": 0.0,
+            "a": 0.0,
+            "b": 0.0,
+            "delta": 0.0,
+            "slope_per_second": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}

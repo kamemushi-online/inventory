@@ -1,0 +1,129 @@
+[
+  {
+    "target": "windows-x64",
+    "archive": "/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-converters-windows-x64.zip",
+    "bytes": 182892152,
+    "sha256": "65d1d60606e4848acfe5dc0532cddfd9bddcbcfdf4c655e1ba1500ae0414eab8",
+    "build_info": {
+      "revision": "2b53fd9",
+      "platform": "Windows-2022Server-10.0.20348-SP0",
+      "architecture": "x64",
+      "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+      "signed_for_distribution": false,
+      "versions": {
+        "pyinstaller": "6.22.3",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "scipy": "1.18.1",
+        "pyarrow": "26.0.0",
+        "h5py": "3.16.0"
+      },
+      "source_sha256": {
+        "tools\\preprocess\\convert.py": "b143b184e0fa9cf3e2d22ccc1363e56bca4b4e7ef341ed2eeaa1fcd93887826b",
+        "tools\\preprocess\\multiconverter.py": "71f308cc2f7fa785d5f443413c372cc841b788b19c56fa7e47801ce5173eb4e0",
+        "tools\\preprocess\\utils\\__init__.py": "b6b4b244208dec3f5b9a413a9f18139f535ceea4dbf3501a33406841cbb6f1ae",
+        "tools\\preprocess\\utils\\column_filter.py": "c6629d3d231874fef3c841c90e56f8194c78e0790d528f5b3e0cdb76e943f8e1",
+        "tools\\preprocess\\utils\\converter.py": "70eac1730f71eb6ff762228b5360fc3cac41fc2ca1806ab81bdf9f8fc26327ba",
+        "tools\\preprocess\\utils\\reader_csv.py": "1a025087bdeef6b7359a4cb0a062c1acab2b51c60d47ed06041b31a035efb039",
+        "tools\\preprocess\\utils\\reader_mat.py": "614a83462b875b673046772f1e36442de2001e6ce507f9c9ad56a3a4ccf89a12",
+        "tools\\preprocess\\utils\\resampler.py": "fc9c5f1cb305dbec3fad2352affbee660c9e9387e5e5c68418ea60c85f4caec0",
+        "tools\\preprocess\\utils\\time_normalizer.py": "635d77788d6af46fad0e85c59769276c2f2c3981db3a044a9b3d1119a7bb720a"
+      },
+      "executables_sha256": {
+        "panel-y-convert.exe": "9a79e3dd58b919760eafbe18f1699fd84b9bfcad1fea7694b0eee26b490de7b5",
+        "multiconverter.exe": "fe3d7bc92f5c44b9b706109e098b6e75b0cc3041cc88522c860968e602ceab38"
+      },
+      "packaged_test_suites_passed": 6
+    },
+    "windows_crlf_sources": [
+      "tools\\preprocess\\convert.py",
+      "tools\\preprocess\\multiconverter.py",
+      "tools\\preprocess\\utils\\__init__.py",
+      "tools\\preprocess\\utils\\column_filter.py",
+      "tools\\preprocess\\utils\\converter.py",
+      "tools\\preprocess\\utils\\reader_csv.py",
+      "tools\\preprocess\\utils\\reader_mat.py",
+      "tools\\preprocess\\utils\\resampler.py",
+      "tools\\preprocess\\utils\\time_normalizer.py"
+    ],
+    "verified": true
+  },
+  {
+    "target": "macos-arm64",
+    "archive": "/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-converters-macos-arm64.zip",
+    "bytes": 152698858,
+    "sha256": "37585f7a99613348a510d2dbdc1c13d2a995e4f6080331c2974c3254a083a149",
+    "build_info": {
+      "revision": "2b53fd9",
+      "platform": "macOS-14.8.9-arm64-arm-64bit",
+      "architecture": "arm64",
+      "python": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:46:59) [Clang 13.0.0 (clang-1300.0.29.30)]",
+      "signed_for_distribution": false,
+      "versions": {
+        "pyinstaller": "6.22.3",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "scipy": "1.18.1",
+        "pyarrow": "26.0.0",
+        "h5py": "3.16.0"
+      },
+      "source_sha256": {
+        "tools/preprocess/convert.py": "4a3ce1b26491e6eccac43ccb433a253be43e73545c74af57c975a63ccb9f6d51",
+        "tools/preprocess/multiconverter.py": "76087b0282fb9527a0a6c9d2b966e3679e854af60e66c97a068e903a46e15137",
+        "tools/preprocess/utils/__init__.py": "3e213845ea1f3f58d706847b5490e0d5dbd3f790b5b27b24b130f358e5e12fe8",
+        "tools/preprocess/utils/column_filter.py": "c309af104dc3bb3601d44ddb992ff219ab5c62904b6055048c4c23563a637d48",
+        "tools/preprocess/utils/converter.py": "12c702f581cb1d0f0bf938c045801d0b8de37184726cda56b4f3f27ac653a851",
+        "tools/preprocess/utils/reader_csv.py": "1a56134ad6bcad030b1e90a17eba58d535e2fe115f0b4223defc5fd963553e5f",
+        "tools/preprocess/utils/reader_mat.py": "e87e3b7a031d677f5667253bffb246fe19a1085d5f4d718c8d61e9e41c6c04ea",
+        "tools/preprocess/utils/resampler.py": "2f9b7a92154d789af830c1392296e5938a7ec7646e97b5859fe73b38263073a5",
+        "tools/preprocess/utils/time_normalizer.py": "25ba17d5df084ae8f9131c73f05d9ee81a0dff4dcbf7e9656544b6e0a472e910"
+      },
+      "executables_sha256": {
+        "panel-y-convert": "5052c691bcd380f7964ce381b5ea0cbae078bfa1c54e2949d5da0e9a10094674",
+        "multiconverter": "0ad3c98b63829a0f7360de45ffaeb937d512e28b39bdf09bd02dc53a384058db"
+      },
+      "packaged_test_suites_passed": 6
+    },
+    "windows_crlf_sources": [],
+    "verified": true
+  },
+  {
+    "target": "macos-x64",
+    "archive": "/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-converters-macos-x64.zip",
+    "bytes": 169725128,
+    "sha256": "fedcd74414ba5ef712f6b9b3bad15081d50d6683de9c4c6f1abbb4f731d4b04d",
+    "build_info": {
+      "revision": "2b53fd9",
+      "platform": "macOS-15.7.9-x86_64-i386-64bit",
+      "architecture": "x64",
+      "python": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:47:00) [Clang 13.0.0 (clang-1300.0.29.30)]",
+      "signed_for_distribution": false,
+      "versions": {
+        "pyinstaller": "6.22.3",
+        "numpy": "2.5.4",
+        "pandas": "3.1.0",
+        "scipy": "1.18.1",
+        "pyarrow": "26.0.0",
+        "h5py": "3.16.0"
+      },
+      "source_sha256": {
+        "tools/preprocess/convert.py": "4a3ce1b26491e6eccac43ccb433a253be43e73545c74af57c975a63ccb9f6d51",
+        "tools/preprocess/multiconverter.py": "76087b0282fb9527a0a6c9d2b966e3679e854af60e66c97a068e903a46e15137",
+        "tools/preprocess/utils/__init__.py": "3e213845ea1f3f58d706847b5490e0d5dbd3f790b5b27b24b130f358e5e12fe8",
+        "tools/preprocess/utils/column_filter.py": "c309af104dc3bb3601d44ddb992ff219ab5c62904b6055048c4c23563a637d48",
+        "tools/preprocess/utils/converter.py": "12c702f581cb1d0f0bf938c045801d0b8de37184726cda56b4f3f27ac653a851",
+        "tools/preprocess/utils/reader_csv.py": "1a56134ad6bcad030b1e90a17eba58d535e2fe115f0b4223defc5fd963553e5f",
+        "tools/preprocess/utils/reader_mat.py": "e87e3b7a031d677f5667253bffb246fe19a1085d5f4d718c8d61e9e41c6c04ea",
+        "tools/preprocess/utils/resampler.py": "2f9b7a92154d789af830c1392296e5938a7ec7646e97b5859fe73b38263073a5",
+        "tools/preprocess/utils/time_normalizer.py": "25ba17d5df084ae8f9131c73f05d9ee81a0dff4dcbf7e9656544b6e0a472e910"
+      },
+      "executables_sha256": {
+        "panel-y-convert": "a48a89dc56de3e41efef0ca3f43bc67977783d45f4323d1d3af9713a2b44e1ea",
+        "multiconverter": "cd97dac7753411095b9d88250d3fac43657e803636c029b78cf3dd6ed00b3fa1"
+      },
+      "packaged_test_suites_passed": 6
+    },
+    "windows_crlf_sources": [],
+    "verified": true
+  }
+]

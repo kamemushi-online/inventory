@@ -1,0 +1,27 @@
+{
+  "sources": [
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_1_10m.parquet",
+      "offset_seconds": -0.0
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_2_8m.parquet",
+      "offset_seconds": -100.0
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_3_12m.parquet",
+      "offset_seconds": 20.0
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_4_6m.parquet",
+      "offset_seconds": -1000.0
+    }
+  ],
+  "cursors": [
+    0.25,
+    9.5
+  ],
+  "trials": 10,
+  "memory_repeats": 30,
+  "viewport_height": 1200
+}

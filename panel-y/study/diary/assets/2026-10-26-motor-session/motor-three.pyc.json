@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+  "rows": [
+    {
+      "channels": [
+        "Ia_phys"
+      ],
+      "ymin": null,
+      "ymax": null,
+      "step_channels": []
+    },
+    {
+      "channels": [
+        "Te",
+        "Trq_cmd"
+      ],
+      "ymin": null,
+      "ymax": null,
+      "step_channels": [
+        "Trq_cmd"
+      ]
+    },
+    {
+      "channels": [
+        "Hi_a"
+      ],
+      "ymin": null,
+      "ymax": null,
+      "step_channels": [
+        "Hi_a"
+      ]
+    }
+  ],
+  "ch_styles": {},
+  "theme": "dark",
+  "scroll_zoom": true,
+  "rust": {
+    "version": 2,
+    "visual_mode": "plain",
+    "sources": [
+      {
+        "key": "s1",
+        "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+        "label": "input",
+        "time_offset_seconds": 0.0
+      },
+      {
+        "key": "s2",
+        "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+        "label": "reversal",
+        "time_offset_seconds": 0.0
+      },
+      {
+        "key": "s3",
+        "data_path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+        "label": "speed",
+        "time_offset_seconds": 0.0
+      }
+    ],
+    "rows": [
+      {
+        "channels": [
+          {
+            "source_key": "s1",
+            "path": "Ia_phys",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#50beff",
+            "line_width": 1.25,
+            "color_index": 0
+          },
+          {
+            "source_key": "s2",
+            "path": "Ia_phys",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#ffb347",
+            "line_width": 1.25,
+            "color_index": 1
+          },
+          {
+            "source_key": "s3",
+            "path": "Ia_phys",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#7ee787",
+            "line_width": 1.25,
+            "color_index": 2
+          }
+        ],
+        "ymin": null,
+        "ymax": null
+      },
+      {
+        "channels": [
+          {
+            "source_key": "s1",
+            "path": "Te",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#50beff",
+            "line_width": 1.25,
+            "color_index": 0
+          },
+          {
+            "source_key": "s1",
+            "path": "Trq_cmd",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#50beff",
+            "line_width": 1.25,
+            "color_index": 0
+          },
+          {
+            "source_key": "s2",
+            "path": "Te",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#ffb347",
+            "line_width": 1.25,
+            "color_index": 1
+          },
+          {
+            "source_key": "s2",
+            "path": "Trq_cmd",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#ffb347",
+            "line_width": 1.25,
+            "color_index": 1
+          },
+          {
+            "source_key": "s3",
+            "path": "Te",
+            "visible": true,
+            "draw_mode": "line",
+            "color": "#7ee787",
+            "line_width": 1.25,
+            "color_index": 2
+          },
+          {
+            "source_key": "s3",
+            "path": "Trq_cmd",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#7ee787",
+            "line_width": 1.25,
+            "color_index": 2
+          }
+        ],
+        "ymin": null,
+        "ymax": null
+      },
+      {
+        "channels": [
+          {
+            "source_key": "s1",
+            "path": "Hi_a",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#50beff",
+            "line_width": 1.25,
+            "color_index": 0
+          },
+          {
+            "source_key": "s2",
+            "path": "Hi_a",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#ffb347",
+            "line_width": 1.25,
+            "color_index": 1
+          },
+          {
+            "source_key": "s3",
+            "path": "Hi_a",
+            "visible": true,
+            "draw_mode": "step",
+            "color": "#7ee787",
+            "line_width": 1.25,
+            "color_index": 2
+          }
+        ],
+        "ymin": null,
+        "ymax": null
+      }
+    ]
+  }
+}

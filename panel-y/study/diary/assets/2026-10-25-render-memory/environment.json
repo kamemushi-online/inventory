@@ -1,0 +1,11 @@
+{
+  "date_jst": "2026-10-25",
+  "base_commit": "bcc7763075ec6837f3157f7c43eadab451d30442",
+  "platform": "Darwin arm64",
+  "macos": "26.6.2",
+  "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "baseline_executable_sha256": "4daf6e67a890982d7058f6c0cf4b49655cf4fc547c23406e8c2d8376f5ac666c",
+  "baseline_build": "bcc7763 production main.rs and parquet_waveform.rs, with same diagnostic benchmark modules as candidate",
+  "scope": "Sequential CPU egui+tessellation measurements; no native OS/GPU/presentation timings",
+  "candidate_executable_sha256": "af426fe8aa1b54471c4f9f47d280dd2d7175dca538047cb2a33306049e71c6f8"
+}

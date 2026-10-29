@@ -1,0 +1,207 @@
+{
+  "ch_styles": {
+    "chirp_1_500Hz": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "noise": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "pwm_10kHz": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "pwm_1kHz": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "sine_1kHz": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "sine_50Hz": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "spike_signal": {
+      "color": "#50beff",
+      "width": 1.25
+    },
+    "step_signal": {
+      "color": "#50beff",
+      "width": 1.25
+    }
+  },
+  "data_path": "panely_medium_2m_8ch.parquet",
+  "rows": [
+    {
+      "channels": [
+        "sine_50Hz"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "sine_1kHz"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "pwm_1kHz"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "pwm_10kHz"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "noise"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "chirp_1_500Hz"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "step_signal"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    },
+    {
+      "channels": [
+        "spike_signal"
+      ],
+      "step_channels": [],
+      "ymax": null,
+      "ymin": null
+    }
+  ],
+  "rust": {
+    "rows": [
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "sine_50Hz",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "sine_1kHz",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "pwm_1kHz",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "pwm_10kHz",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "noise",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "chirp_1_500Hz",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "step_signal",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "channels": [
+          {
+            "color": "#50beff",
+            "color_index": 0,
+            "draw_mode": "line",
+            "line_width": 1.25,
+            "path": "spike_signal",
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "version": 1
+  },
+  "scroll_zoom": false,
+  "theme": "dark",
+  "version": 1
+}

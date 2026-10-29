@@ -1,0 +1,424 @@
+{
+  "created_utc": "2026-10-26T23:28:27.615217+00:00",
+  "case": "native-soak-fixed-interval-independent-reference",
+  "provenance": "No8/Prius closed-loop simulation, not physical measurement",
+  "config_path": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/saved-motor.pyc.json",
+  "config_sha256": "377430e808c0e6c626caa41a735aa99b6cd8590f130c04660104b70e84c9e476",
+  "cursors_seconds": [
+    0.04,
+    0.09
+  ],
+  "statistics_contract": "Inclusive nearest samples (earlier sample wins ties); float32 channel storage promoted to float64 for NumPy reductions; slope uses exact cursor delta, not selected sample delta.",
+  "fft_contract": "Default Hanning = symmetric Hann; subtract unweighted mean; NumPy hanning and rfft without padding; one-sided abs(rfft)*2/N including DC/Nyquist; no coherent-gain correction or resampling.",
+  "sample_interval_contract": "First consecutive time difference of the inclusive selected interval.",
+  "comparison_scope": "Reference only; computing these values does not establish native agreement. Compare statistics and FFT count/peak values with native driver output separately.",
+  "suggested_tolerances": {
+    "absolute": 1e-09,
+    "relative": 1e-10,
+    "sample_counts_and_indices": "exact"
+  },
+  "script_sha256": "5ea3bb55d5a85a91efa4af968333205971f6e63d6564ac663009125cb283d88a",
+  "viewer_contract_source_sha256": {
+    "main.rs": "45c71da3fac9a9fc3faff53e4293f48bb289323481a015fe588e5d16a6e57bbb",
+    "fft_analysis.rs": "47e6aff29c5d7d047e21f22f09db2ff28071dae86e5d6af8cd84a336b9495759",
+    "interval_stats.rs": "ba96850f6e59d2799ad47b27357daad2e78c15abfdfed2bba6d8de8264972b55"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0"
+  },
+  "sources": [
+    {
+      "name": "input",
+      "path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_input.parquet",
+      "sha256": "bf5e1ecb0c8a25ce20136c3809d66967ddaaa7ffc4c5e62ba9be9cffaa6dc761",
+      "source_rows": 100000,
+      "source_offset_seconds": 0.0,
+      "indices_zero_based_inclusive": [
+        39999,
+        89999
+      ],
+      "sample_times_seconds": [
+        0.04,
+        0.09
+      ],
+      "statistics": {
+        "Ia_phys": {
+          "sample_count": 50001,
+          "value_a": -9.55453109741211,
+          "value_b": 5.7855658531188965,
+          "delta": 15.340096950531006,
+          "mean": 1.2253985535148075,
+          "min": -11.406227111816406,
+          "max": 10.957077026367188,
+          "peak_to_peak": 22.363304138183594,
+          "rms": 7.6386721753574305,
+          "slope_per_second": 306.8019390106201
+        },
+        "Te": {
+          "sample_count": 50001,
+          "value_a": 4.7348809242248535,
+          "value_b": 4.957732677459717,
+          "delta": 0.22285175323486328,
+          "mean": 4.975785515417622,
+          "min": 4.667018890380859,
+          "max": 5.433080196380615,
+          "peak_to_peak": 0.7660613059997559,
+          "rms": 4.977483528440088,
+          "slope_per_second": 4.457035064697266
+        },
+        "Trq_cmd": {
+          "sample_count": 50001,
+          "value_a": 5.0,
+          "value_b": 5.0,
+          "delta": 0.0,
+          "mean": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "peak_to_peak": 0.0,
+          "rms": 5.0,
+          "slope_per_second": 0.0
+        },
+        "Hi_a": {
+          "sample_count": 50001,
+          "value_a": 1.0,
+          "value_b": 1.0,
+          "delta": 0.0,
+          "mean": 0.5069898602027959,
+          "min": 0.0,
+          "max": 1.0,
+          "peak_to_peak": 1.0,
+          "rms": 0.7120322044702725,
+          "slope_per_second": 0.0
+        }
+      },
+      "fft": {
+        "channel": "Ia_phys",
+        "sample_count": 50001,
+        "dt_seconds": 9.999999999940612e-07,
+        "max_dt_deviation_seconds": 6.938893903907228e-18,
+        "frequency_bin_count": 25001,
+        "frequency_spacing_hz": 19.999600008118612,
+        "removed_mean": 1.2253985535148075,
+        "peak_bin": 2,
+        "peak_frequency_hz": 39.999200016237225,
+        "peak_amplitude": 4.887479364421517,
+        "peak_db": 13.781698735191362,
+        "first_ten_bins": [
+          {
+            "index": 0,
+            "frequency_hz": 0.0,
+            "amplitude": 2.176482968457764
+          },
+          {
+            "index": 1,
+            "frequency_hz": 19.999600008118612,
+            "amplitude": 4.703057382351842
+          },
+          {
+            "index": 2,
+            "frequency_hz": 39.999200016237225,
+            "amplitude": 4.887479364421517
+          },
+          {
+            "index": 3,
+            "frequency_hz": 59.99880002435584,
+            "amplitude": 1.2806952742348727
+          },
+          {
+            "index": 4,
+            "frequency_hz": 79.99840003247445,
+            "amplitude": 0.11936420127506352
+          },
+          {
+            "index": 5,
+            "frequency_hz": 99.99800004059307,
+            "amplitude": 0.05780261874519275
+          },
+          {
+            "index": 6,
+            "frequency_hz": 119.99760004871167,
+            "amplitude": 0.029671760822887257
+          },
+          {
+            "index": 7,
+            "frequency_hz": 139.99720005683028,
+            "amplitude": 0.0775010764512413
+          },
+          {
+            "index": 8,
+            "frequency_hz": 159.9968000649489,
+            "amplitude": 0.05502217299852928
+          },
+          {
+            "index": 9,
+            "frequency_hz": 179.99640007306752,
+            "amplitude": 0.030199660046844053
+          }
+        ]
+      }
+    },
+    {
+      "name": "reversal",
+      "path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_reversal.parquet",
+      "sha256": "9e21e257fa8ecbec80f702d54fa061421fec762d65cee13e96a0cbbeb385be68",
+      "source_rows": 320000,
+      "source_offset_seconds": 0.0,
+      "indices_zero_based_inclusive": [
+        39999,
+        89999
+      ],
+      "sample_times_seconds": [
+        0.04,
+        0.09
+      ],
+      "statistics": {
+        "Ia_phys": {
+          "sample_count": 50001,
+          "value_a": -7.890506267547607,
+          "value_b": 5.8565263748168945,
+          "delta": 13.747032642364502,
+          "mean": 1.3826125475129725,
+          "min": -10.618431091308594,
+          "max": 11.508505821228027,
+          "peak_to_peak": 22.12693691253662,
+          "rms": 7.31163285230521,
+          "slope_per_second": 274.94065284729004
+        },
+        "Te": {
+          "sample_count": 50001,
+          "value_a": 4.026294231414795,
+          "value_b": 5.061145305633545,
+          "delta": 1.03485107421875,
+          "mean": 4.763038169002321,
+          "min": 3.8964734077453613,
+          "max": 5.392023086547852,
+          "peak_to_peak": 1.4955496788024902,
+          "rms": 4.7704172789242785,
+          "slope_per_second": 20.697021484375
+        },
+        "Trq_cmd": {
+          "sample_count": 50001,
+          "value_a": 5.0,
+          "value_b": 5.0,
+          "delta": 0.0,
+          "mean": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "peak_to_peak": 0.0,
+          "rms": 5.0,
+          "slope_per_second": 0.0
+        },
+        "Hi_a": {
+          "sample_count": 50001,
+          "value_a": 1.0,
+          "value_b": 1.0,
+          "delta": 0.0,
+          "mean": 0.5065298694026119,
+          "min": 0.0,
+          "max": 1.0,
+          "peak_to_peak": 1.0,
+          "rms": 0.7117091185327135,
+          "slope_per_second": 0.0
+        }
+      },
+      "fft": {
+        "channel": "Ia_phys",
+        "sample_count": 50001,
+        "dt_seconds": 9.999999999940612e-07,
+        "max_dt_deviation_seconds": 6.938893903907228e-18,
+        "frequency_bin_count": 25001,
+        "frequency_spacing_hz": 19.999600008118612,
+        "removed_mean": 1.3826125475129725,
+        "peak_bin": 2,
+        "peak_frequency_hz": 39.999200016237225,
+        "peak_amplitude": 4.602721596662355,
+        "peak_db": 13.26029413316125,
+        "first_ten_bins": [
+          {
+            "index": 0,
+            "frequency_hz": 0.0,
+            "amplitude": 2.2028366043919063
+          },
+          {
+            "index": 1,
+            "frequency_hz": 19.999600008118612,
+            "amplitude": 4.526970696729304
+          },
+          {
+            "index": 2,
+            "frequency_hz": 39.999200016237225,
+            "amplitude": 4.602721596662355
+          },
+          {
+            "index": 3,
+            "frequency_hz": 59.99880002435584,
+            "amplitude": 1.1552470108038595
+          },
+          {
+            "index": 4,
+            "frequency_hz": 79.99840003247445,
+            "amplitude": 0.13194568005436355
+          },
+          {
+            "index": 5,
+            "frequency_hz": 99.99800004059307,
+            "amplitude": 0.05869808298769973
+          },
+          {
+            "index": 6,
+            "frequency_hz": 119.99760004871167,
+            "amplitude": 0.022476897469705784
+          },
+          {
+            "index": 7,
+            "frequency_hz": 139.99720005683028,
+            "amplitude": 0.03961398619264747
+          },
+          {
+            "index": 8,
+            "frequency_hz": 159.9968000649489,
+            "amplitude": 0.08616556082541707
+          },
+          {
+            "index": 9,
+            "frequency_hz": 179.99640007306752,
+            "amplitude": 0.04892479437830835
+          }
+        ]
+      }
+    },
+    {
+      "name": "speed",
+      "path": "/Users/ochiba/newspace/life/factory/panel-y/code/proto_3_1b/data/motor_control_validation_20261026/motor_speed.parquet",
+      "sha256": "46ae606cc531db6e4e92d28cffd907199dfcdbf69d1e54ad2edb62f91d3d086e",
+      "source_rows": 320000,
+      "source_offset_seconds": 0.0,
+      "indices_zero_based_inclusive": [
+        39999,
+        89999
+      ],
+      "sample_times_seconds": [
+        0.04,
+        0.09
+      ],
+      "statistics": {
+        "Ia_phys": {
+          "sample_count": 50001,
+          "value_a": -2.6096010208129883,
+          "value_b": -0.4750484228134155,
+          "delta": 2.1345525979995728,
+          "mean": 0.10235182244339047,
+          "min": -11.34460735321045,
+          "max": 11.191166877746582,
+          "peak_to_peak": 22.53577423095703,
+          "rms": 7.512038125344888,
+          "slope_per_second": 42.69105195999146
+        },
+        "Te": {
+          "sample_count": 50001,
+          "value_a": 4.763399124145508,
+          "value_b": 4.978211879730225,
+          "delta": 0.2148127555847168,
+          "mean": 4.956066699827273,
+          "min": 4.668013095855713,
+          "max": 5.36045503616333,
+          "peak_to_peak": 0.6924419403076172,
+          "rms": 4.956877581645857,
+          "slope_per_second": 4.296255111694336
+        },
+        "Trq_cmd": {
+          "sample_count": 50001,
+          "value_a": 5.0,
+          "value_b": 5.0,
+          "delta": 0.0,
+          "mean": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "peak_to_peak": 0.0,
+          "rms": 5.0,
+          "slope_per_second": 0.0
+        },
+        "Hi_a": {
+          "sample_count": 50001,
+          "value_a": 1.0,
+          "value_b": 1.0,
+          "delta": 0.0,
+          "mean": 0.500089998200036,
+          "min": 0.0,
+          "max": 1.0,
+          "peak_to_peak": 1.0,
+          "rms": 0.7071704166606774,
+          "slope_per_second": 0.0
+        }
+      },
+      "fft": {
+        "channel": "Ia_phys",
+        "sample_count": 50001,
+        "dt_seconds": 9.999999999940612e-07,
+        "max_dt_deviation_seconds": 6.938893903907228e-18,
+        "frequency_bin_count": 25001,
+        "frequency_spacing_hz": 19.999600008118612,
+        "removed_mean": 0.10235182244339047,
+        "peak_bin": 3,
+        "peak_frequency_hz": 59.99880002435584,
+        "peak_amplitude": 5.300415768175081,
+        "peak_db": 14.486198745759749,
+        "first_ten_bins": [
+          {
+            "index": 0,
+            "frequency_hz": 0.0,
+            "amplitude": 0.16664645507545592
+          },
+          {
+            "index": 1,
+            "frequency_hz": 19.999600008118612,
+            "amplitude": 0.21463753534796648
+          },
+          {
+            "index": 2,
+            "frequency_hz": 39.999200016237225,
+            "amplitude": 2.098855829020588
+          },
+          {
+            "index": 3,
+            "frequency_hz": 59.99880002435584,
+            "amplitude": 5.300415768175081
+          },
+          {
+            "index": 4,
+            "frequency_hz": 79.99840003247445,
+            "amplitude": 3.300595786039326
+          },
+          {
+            "index": 5,
+            "frequency_hz": 99.99800004059307,
+            "amplitude": 0.3110847270123501
+          },
+          {
+            "index": 6,
+            "frequency_hz": 119.99760004871167,
+            "amplitude": 0.04997265979980491
+          },
+          {
+            "index": 7,
+            "frequency_hz": 139.99720005683028,
+            "amplitude": 0.0048728192921623425
+          },
+          {
+            "index": 8,
+            "frequency_hz": 159.9968000649489,
+            "amplitude": 0.008120733180764873
+          },
+          {
+            "index": 9,
+            "frequency_hz": 179.99640007306752,
+            "amplitude": 0.0073842514610474004
+          }
+        ]
+      }
+    }
+  ]
+}

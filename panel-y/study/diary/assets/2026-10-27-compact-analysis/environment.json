@@ -1,0 +1,29 @@
+{
+  "base_revision": "829dd372875d7107d9afc4e1b333a41f77808747",
+  "platform": "27.0.1",
+  "initial_gui_binary_sha256": "6d01a108be93b8ed9fad765fc1569252d6a16e21b40580d54e21d40a328d8995",
+  "initial_gui_scope": "1280x832, 3 motor simulation sources / 12 channels; statistics last row, FFT target reset, run/rerun, frequency control, scroll, collapse/expand, hide/show, 1920x960 zoom and restore",
+  "final_adjustments": [
+    "default panel height 320 to 360",
+    "waveform input block includes panel spacing",
+    "large FFT warning remains visible when computation details collapse"
+  ],
+  "malloc_large_cache": "0 via LSEnvironment",
+  "focused_360px_binary_sha256": "c26a40633dc0e0a749b5ce3d63104b532b33ed334e3dc673ac00e54c80e8f7f7",
+  "focused_360px_native_scope": "1280x832: 12 statistics rows, FFT at 200 Hz with axes visible, Split, collapse/expand, hide/show; see screenshots 08-12. Horizontal clipping found and handled separately.",
+  "final_binary_sha256": "2e50366106e8abb05e5734629f36a0e5f3fb8a6bf2aea828abe918bc07918534",
+  "final_native_scope": "1280x832: 3 sources / 12 channels, scrollbar shows full Slope values 288.466253 / 263.529631 and returns to A; FFT run at 200 Hz with full plot and axes; screenshots 14-16.",
+  "verification_completed_at": "2026-10-27T07:43:02.118800+09:00",
+  "source_sha256": {
+    "code/rust_phase1/src/main.rs": "45c71da3fac9a9fc3faff53e4293f48bb289323481a015fe588e5d16a6e57bbb",
+    "code/rust_phase1/src/fft_analysis.rs": "47e6aff29c5d7d047e21f22f09db2ff28071dae86e5d6af8cd84a336b9495759"
+  },
+  "automated_tests": {
+    "passed": 240,
+    "failed": 0,
+    "command": "cargo test --offline --locked --manifest-path code/rust_phase1/Cargo.toml",
+    "horizontal_regression_comparison": "test fails without max_width/min_scrolled_width constraints; passes with them"
+  },
+  "build_command": "cargo build --release --offline --locked --manifest-path code/rust_phase1/Cargo.toml",
+  "final_verified_at": "2026-10-27T07:43:47.932323+09:00"
+}

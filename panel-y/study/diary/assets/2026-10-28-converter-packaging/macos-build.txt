@@ -1,0 +1,215 @@
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.2
+[notice] To update, run: pip install --upgrade pip
+39 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.9
+39 INFO: Python: 3.12.14
+50 INFO: Platform: macOS-27.0.1-arm64-arm-64bit
+50 INFO: Python environment: /Users/ochiba/newspace/life/factory/panel-y/tools/.venv
+51 INFO: wrote /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/panel-y-convert.spec
+54 INFO: Removing temporary files and cleaning cache in /Users/ochiba/Library/Application Support/pyinstaller
+55 INFO: Module search paths (PYTHONPATH):
+['/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess',
+ '/Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python312.zip',
+ '/Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12',
+ '/Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload',
+ '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages',
+ '/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess']
+315 INFO: checking Analysis
+315 INFO: Building Analysis because Analysis-00.toc is non existent
+315 INFO: Looking for Python shared library...
+329 INFO: Using Python shared library: /Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/libpython3.12.dylib
+329 INFO: Running Analysis Analysis-00.toc
+329 INFO: Target bytecode optimization level: 0
+329 INFO: Initializing module dependency graph...
+330 INFO: Initializing module graph hook caches...
+338 INFO: Analyzing modules for base_library.zip ...
+945 INFO: Processing standard module hook 'hook-encodings.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+1143 INFO: Processing standard module hook 'hook-math.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+1869 INFO: Processing standard module hook 'hook-pickle.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2494 INFO: Processing standard module hook 'hook-heapq.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2737 INFO: Caching module dependency graph...
+2763 INFO: Analyzing /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/convert.py
+2769 INFO: Processing standard module hook 'hook-pandas.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6308 INFO: Processing standard module hook 'hook-platform.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6329 INFO: Processing standard module hook 'hook-xml.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6346 INFO: Processing standard module hook 'hook-sysconfig.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6356 INFO: Processing standard module hook 'hook-_osx_support.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6370 INFO: Processing standard module hook 'hook-numpy.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6584 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+6585 INFO: SetuptoolsInfo: initializing cached setuptools info...
+7348 INFO: Processing standard module hook 'hook-webbrowser.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+7764 INFO: Processing standard module hook 'hook-_ctypes.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+8223 INFO: Processing standard module hook 'hook-difflib.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+8358 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+9404 INFO: Processing standard module hook 'hook-zoneinfo.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+9525 INFO: Processing standard module hook 'hook-scipy.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+10268 INFO: Processing standard module hook 'hook-scipy.linalg.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+10352 INFO: Processing standard module hook 'hook-scipy.special._ufuncs.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11187 INFO: Processing standard module hook 'hook-scipy.spatial._ckdtree.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11584 INFO: Processing standard module hook 'hook-scipy.spatial.transform.rotation.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+12295 INFO: Processing standard module hook 'hook-scipy.stats._stats.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+12707 INFO: Processing standard module hook 'hook-scipy.sparse.csgraph.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+13246 INFO: Processing standard module hook 'hook-scipy.special._ellip_harm_2.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+13565 INFO: Processing standard module hook 'hook-pyarrow.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+16820 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+18694 INFO: Processing standard module hook 'hook-pandas.plotting.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+18989 INFO: Processing standard module hook 'hook-dateutil.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+19195 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+20068 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+20074 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+20454 INFO: Processing standard module hook 'hook-sqlite3.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+20601 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+20758 INFO: Processing standard module hook 'hook-scipy.io.matlab.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+20914 INFO: Processing standard module hook 'hook-h5py.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+22247 INFO: Processing module hooks (post-graph stage)...
+22321 WARNING: Hidden import "scipy.special._cdflib" not found!
+22323 WARNING: Hidden import "jinja2" not found!
+22354 INFO: Performing binary vs. data reclassification (631 entries)
+22484 INFO: Looking for ctypes DLLs
+22551 WARNING: Library user32 required via ctypes not found
+22556 WARNING: Library msvcrt required via ctypes not found
+22570 INFO: Analyzing run-time hooks ...
+22577 INFO: Including run-time hook 'pyi_rth_inspect.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+22579 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+22580 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+22605 INFO: Creating base_library.zip...
+22621 INFO: Looking for dynamic libraries
+23810 INFO: Warnings written to /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/panel-y-convert/warn-panel-y-convert.txt
+23865 INFO: Graph cross-reference written to /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/panel-y-convert/xref-panel-y-convert.html
+24082 INFO: checking PYZ
+24082 INFO: Building PYZ because PYZ-00.toc is non existent
+24082 INFO: Building PYZ (ZlibArchive) /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/panel-y-convert/PYZ-00.pyz
+25398 INFO: Building PYZ (ZlibArchive) /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/panel-y-convert/PYZ-00.pyz completed successfully.
+25414 INFO: EXE target arch: arm64
+25414 INFO: Code signing identity: None
+25433 INFO: checking PKG
+25433 INFO: Building PKG because PKG-00.toc is non existent
+25433 INFO: Building PKG (CArchive) panel-y-convert.pkg
+50227 INFO: Building PKG (CArchive) panel-y-convert.pkg completed successfully.
+50239 INFO: Bootloader /Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/bootloader/Darwin-64bit/run
+50239 INFO: checking EXE
+50239 INFO: Building EXE because EXE-00.toc is non existent
+50239 INFO: Building EXE from EXE-00.toc
+50239 INFO: Copying bootloader EXE to /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-convert
+50240 INFO: Converting EXE to target arch (arm64)
+50280 INFO: Removing signature(s) from EXE
+50303 INFO: Modifying Mach-O image UUID(s) in EXE
+50374 INFO: Appending PKG archive to EXE
+50409 INFO: Fixing EXE headers for code signing
+50433 INFO: Rewriting the executable's macOS SDK version (26.2.0) to match the SDK version of the Python library (15.0.0) in order to avoid inconsistent behavior and potential UI issues in the frozen application.
+50434 INFO: Re-signing the EXE
+50571 INFO: Building EXE from EXE-00.toc completed successfully.
+50584 INFO: Build complete! The results are available in: /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist
+46 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.9
+46 INFO: Python: 3.12.14
+59 INFO: Platform: macOS-27.0.1-arm64-arm-64bit
+59 INFO: Python environment: /Users/ochiba/newspace/life/factory/panel-y/tools/.venv
+60 INFO: wrote /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/multiconverter.spec
+64 INFO: Removing temporary files and cleaning cache in /Users/ochiba/Library/Application Support/pyinstaller
+102 INFO: Module search paths (PYTHONPATH):
+['/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess',
+ '/Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python312.zip',
+ '/Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12',
+ '/Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload',
+ '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages',
+ '/Users/ochiba/newspace/life/factory/panel-y/tools/preprocess']
+278 INFO: checking Analysis
+278 INFO: Building Analysis because Analysis-00.toc is non existent
+278 INFO: Looking for Python shared library...
+290 INFO: Using Python shared library: /Users/ochiba/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/libpython3.12.dylib
+290 INFO: Running Analysis Analysis-00.toc
+290 INFO: Target bytecode optimization level: 0
+290 INFO: Initializing module dependency graph...
+291 INFO: Initializing module graph hook caches...
+299 INFO: Analyzing modules for base_library.zip ...
+905 INFO: Processing standard module hook 'hook-encodings.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+1115 INFO: Processing standard module hook 'hook-math.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2066 INFO: Processing standard module hook 'hook-pickle.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+2882 INFO: Processing standard module hook 'hook-heapq.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+3174 INFO: Caching module dependency graph...
+3199 INFO: Analyzing /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/multiconverter.py
+3207 INFO: Processing standard module hook 'hook-pandas.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4257 INFO: Processing standard module hook 'hook-platform.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4278 INFO: Processing standard module hook 'hook-xml.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4295 INFO: Processing standard module hook 'hook-sysconfig.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4306 INFO: Processing standard module hook 'hook-_osx_support.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4321 INFO: Processing standard module hook 'hook-numpy.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+4532 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+4533 INFO: SetuptoolsInfo: initializing cached setuptools info...
+5212 INFO: Processing standard module hook 'hook-webbrowser.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+5623 INFO: Processing standard module hook 'hook-_ctypes.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6084 INFO: Processing standard module hook 'hook-difflib.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+6216 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+7253 INFO: Processing standard module hook 'hook-zoneinfo.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+7375 INFO: Processing standard module hook 'hook-scipy.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+8140 INFO: Processing standard module hook 'hook-scipy.linalg.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+8226 INFO: Processing standard module hook 'hook-scipy.special._ufuncs.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+9081 INFO: Processing standard module hook 'hook-scipy.spatial._ckdtree.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+9484 INFO: Processing standard module hook 'hook-scipy.spatial.transform.rotation.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+10202 INFO: Processing standard module hook 'hook-scipy.stats._stats.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+10633 INFO: Processing standard module hook 'hook-scipy.sparse.csgraph.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11186 INFO: Processing standard module hook 'hook-scipy.special._ellip_harm_2.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+11514 INFO: Processing standard module hook 'hook-pyarrow.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+13087 INFO: Processing standard module hook 'hook-pandas.io.formats.style.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+14973 INFO: Processing standard module hook 'hook-pandas.plotting.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+15401 INFO: Processing standard module hook 'hook-dateutil.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+15495 INFO: Processing pre-safe-import-module hook 'hook-six.moves.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/pre_safe_import_module'
+16385 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+16390 INFO: Processing standard module hook 'hook-xml.dom.domreg.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+16769 INFO: Processing standard module hook 'hook-sqlite3.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+16908 INFO: Processing standard module hook 'hook-pandas.io.clipboard.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+17068 INFO: Processing standard module hook 'hook-scipy.io.matlab.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks'
+17243 INFO: Processing standard module hook 'hook-h5py.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/_pyinstaller_hooks_contrib/stdhooks'
+17602 INFO: Processing module hooks (post-graph stage)...
+17677 WARNING: Hidden import "scipy.special._cdflib" not found!
+17680 WARNING: Hidden import "jinja2" not found!
+17712 INFO: Performing binary vs. data reclassification (631 entries)
+17797 INFO: Looking for ctypes DLLs
+17868 WARNING: Library user32 required via ctypes not found
+17873 WARNING: Library msvcrt required via ctypes not found
+17887 INFO: Analyzing run-time hooks ...
+17893 INFO: Including run-time hook 'pyi_rth_inspect.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+17895 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+17896 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from '/Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/hooks/rthooks'
+17921 INFO: Creating base_library.zip...
+17937 INFO: Looking for dynamic libraries
+19098 INFO: Warnings written to /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/multiconverter/warn-multiconverter.txt
+19156 INFO: Graph cross-reference written to /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/multiconverter/xref-multiconverter.html
+19342 INFO: checking PYZ
+19342 INFO: Building PYZ because PYZ-00.toc is non existent
+19342 INFO: Building PYZ (ZlibArchive) /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/multiconverter/PYZ-00.pyz
+20667 INFO: Building PYZ (ZlibArchive) /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/build/multiconverter/PYZ-00.pyz completed successfully.
+20683 INFO: EXE target arch: arm64
+20683 INFO: Code signing identity: None
+20702 INFO: checking PKG
+20702 INFO: Building PKG because PKG-00.toc is non existent
+20702 INFO: Building PKG (CArchive) multiconverter.pkg
+46158 INFO: Building PKG (CArchive) multiconverter.pkg completed successfully.
+46170 INFO: Bootloader /Users/ochiba/newspace/life/factory/panel-y/tools/.venv/lib/python3.12/site-packages/PyInstaller/bootloader/Darwin-64bit/run
+46171 INFO: checking EXE
+46171 INFO: Building EXE because EXE-00.toc is non existent
+46171 INFO: Building EXE from EXE-00.toc
+46171 INFO: Copying bootloader EXE to /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/multiconverter
+46172 INFO: Converting EXE to target arch (arm64)
+46199 INFO: Removing signature(s) from EXE
+46222 INFO: Modifying Mach-O image UUID(s) in EXE
+46293 INFO: Appending PKG archive to EXE
+46330 INFO: Fixing EXE headers for code signing
+46338 INFO: Rewriting the executable's macOS SDK version (26.2.0) to match the SDK version of the Python library (15.0.0) in order to avoid inconsistent behavior and potential UI issues in the frozen application.
+46338 INFO: Re-signing the EXE
+46486 INFO: Building EXE from EXE-00.toc completed successfully.
+46499 INFO: Build complete! The results are available in: /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist
+test_csv_time_normalization_filter_and_interpolation (tools.tests.test_tools.ToolIntegrationTests.test_csv_time_normalization_filter_and_interpolation) ... ok
+test_mat_classic_and_hdf5_conversion (tools.tests.test_tools.ToolIntegrationTests.test_mat_classic_and_hdf5_conversion) ... ok
+test_parquet_input (tools.tests.test_tools.ToolIntegrationTests.test_parquet_input) ... ok
+test_single_file_default_unit_is_seconds (tools.tests.test_tools.ToolIntegrationTests.test_single_file_default_unit_is_seconds) ... ok
+test_explicit_time_units_single_and_batch (tools.tests.test_tools.ToolIntegrationTests.test_explicit_time_units_single_and_batch) ... ok
+test_batch_skip_force_and_continue_after_failure (tools.tests.test_tools.ToolIntegrationTests.test_batch_skip_force_and_continue_after_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 134.448s
+
+OK
+
+Package: /Users/ochiba/newspace/life/factory/panel-y/tools/preprocess/dist/panel-y-converters-macos-arm64.zip
+Size: 150,578,700 bytes

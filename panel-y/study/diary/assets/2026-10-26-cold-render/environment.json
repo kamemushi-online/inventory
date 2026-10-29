@@ -1,0 +1,150 @@
+{
+  "date_jst": "2026-10-26",
+  "baseline_commit": "1f109300bf1a88b2481bccd29c4d432169afe59b",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434\n",
+  "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "memory_bytes": 17179869184,
+  "logical_cpus": 10,
+  "executables_sha256": {
+    "baseline": "9bc4aa19bf1c93c0a9781758e9c47b232fae674ffafde907e5426ada07a3053f",
+    "candidate": "76d9226a933df7cb176d63205a640711971f7f566963a53cf90ad2083dbf5691"
+  },
+  "benchmark_source_sha256": "6c2ad03b17230775b6ac4bc1a5db8be3608cffdee4d6a7b74930295c03d4cf63",
+  "candidate_main_sha256": "625cf06614959d26b53b19dc4d575d7e564a6f8e086285e9e8f27f2ba91ce774",
+  "baseline_instrumented_main_sha256": "cfc47770ace1f599470103afd73b0a548ca9b5f77eb10f38d6f175ef2fc92a39",
+  "inputs": [
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_1_10m.parquet",
+      "size_bytes": 292253842,
+      "sha256": "bc0afb0d87a3be4c525fef9cba3d60321f1800d28175bffc6f9343392818c8bb"
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_2_8m.parquet",
+      "size_bytes": 175284108,
+      "sha256": "b3f7f147d381b0503082680b034cbf40ece993c31a3706afe99800f03bb1a552"
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_3_12m.parquet",
+      "size_bytes": 328606289,
+      "sha256": "e56c3df5066f653b30748dc8471e719d3c7ea46e7f186dd6999f5dd0c6ac66ca"
+    },
+    {
+      "path": "code/proto_3_1b/data/panely_interval_source_4_6m.parquet",
+      "size_bytes": 113501308,
+      "sha256": "8fcfba72526865a84d5bea1bc4cd7fa2e82b6474ad021ba36591f48e3164945d"
+    }
+  ],
+  "runs": [
+    {
+      "file": "baseline-4-sources-1.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 7.076030457996239
+    },
+    {
+      "file": "candidate-4-sources-1.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.428558416999294
+    },
+    {
+      "file": "candidate-4-sources-2.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.126933166997333
+    },
+    {
+      "file": "baseline-4-sources-2.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.771340999999666
+    },
+    {
+      "file": "baseline-4-sources-3.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 7.050597000001289
+    },
+    {
+      "file": "candidate-4-sources-3.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.261387124999601
+    },
+    {
+      "file": "candidate-4-sources-4.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.319711082993308
+    },
+    {
+      "file": "baseline-4-sources-4.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.815323084003467
+    },
+    {
+      "file": "baseline-4-sources-5.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.734897667003679
+    },
+    {
+      "file": "candidate-4-sources-5.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+      "wall_seconds": 6.178954082999553
+    },
+    {
+      "file": "baseline-1-sources.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-1-sources.json",
+      "wall_seconds": 2.010205708000285
+    },
+    {
+      "file": "candidate-1-sources.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-1-sources.json",
+      "wall_seconds": 1.8324400829951628
+    },
+    {
+      "file": "baseline-2-sources.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-2-sources.json",
+      "wall_seconds": 3.5364436250019935
+    },
+    {
+      "file": "candidate-2-sources.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-25-multi-source-stats/config-2-sources.json",
+      "wall_seconds": 3.2172908339998685
+    },
+    {
+      "file": "baseline-4-sources-tall.json",
+      "variant": "baseline",
+      "config": "study/diary/assets/2026-10-26-cold-render/config-4-sources-tall.json",
+      "wall_seconds": 6.900152957998216
+    },
+    {
+      "file": "candidate-4-sources-tall.json",
+      "variant": "candidate",
+      "config": "study/diary/assets/2026-10-26-cold-render/config-4-sources-tall.json",
+      "wall_seconds": 6.211323416995583
+    }
+  ],
+  "scope": "Sequential release builds; MallocLargeCache=0. Baseline production HEAD plus identical CLI benchmark and edge scan timing counters. Five independent 4-source processes each; alternating order. In-process rebuild/zoom trials recorded separately. CPU egui/tessellation only; no OS/GPU.",
+  "regression_statistics": {
+    "file": "candidate-statistics-4-sources.json",
+    "config": "study/diary/assets/2026-10-25-multi-source-stats/config-4-sources.json",
+    "MallocLargeCache": "0",
+    "PANEL_Y_MEMORY_DIAGNOSTICS": "1",
+    "PANEL_Y_MEMORY_RELOADS": "0"
+  },
+  "independent_validation": {
+    "file": "candidate-statistics-4-sources-numpy.json",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pyarrow": "26.0.0"
+  }
+}

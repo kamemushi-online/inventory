@@ -1,0 +1,278 @@
+{
+  "baseline": {
+    "first_cold_frame": {
+      "total_ms": {
+        "count": 5,
+        "min": 165.772625,
+        "median": 168.181333,
+        "p95": 190.942583,
+        "max": 190.942583
+      },
+      "ui_ms": {
+        "count": 5,
+        "min": 156.165583,
+        "median": 158.131208,
+        "p95": 176.43075,
+        "max": 176.43075
+      },
+      "visible_traces_ms": {
+        "count": 5,
+        "min": 132.077833,
+        "median": 133.762875,
+        "p95": 149.071041,
+        "max": 149.071041
+      },
+      "tile_build_ms": {
+        "count": 5,
+        "min": 102.70349900000001,
+        "median": 103.273919,
+        "p95": 113.27153799999999,
+        "max": 113.27153799999999
+      },
+      "tile_build_wall_ms": {
+        "count": 5,
+        "min": 102.70349900000001,
+        "median": 103.273919,
+        "p95": 113.271538,
+        "max": 113.271538
+      },
+      "edge_scan_ms": {
+        "count": 5,
+        "min": 3.043249,
+        "median": 3.213208,
+        "p95": 4.160251000000001,
+        "max": 4.160251000000001
+      },
+      "tessellation_ms": {
+        "count": 5,
+        "min": 8.736458,
+        "median": 8.796083999999999,
+        "p95": 11.486542,
+        "max": 11.486542
+      }
+    },
+    "rss_after_first_frame_mib": {
+      "count": 5,
+      "min": 1582.78125,
+      "median": 1582.8125,
+      "p95": 1582.890625,
+      "max": 1582.890625
+    },
+    "rss_first_frame_increase_mib": {
+      "count": 5,
+      "min": 58.0625,
+      "median": 58.140625,
+      "p95": 58.265625,
+      "max": 58.265625
+    },
+    "cache_after_first": {
+      "envelopes": 36,
+      "line_tile_mib": 38.62408447265625,
+      "line_tiles": 36,
+      "raw_mib": 1510.6201171875,
+      "step_edge_mib": 0.0,
+      "step_edges": 0,
+      "step_fallback_hints": 4
+    },
+    "zoom_operation_ms": {
+      "0.6": {
+        "count": 5,
+        "min": 58.964459,
+        "median": 61.183625,
+        "p95": 65.75200000000001,
+        "max": 65.75200000000001
+      },
+      "0.3": {
+        "count": 5,
+        "min": 62.7105,
+        "median": 63.867915999999994,
+        "p95": 69.088,
+        "max": 69.088
+      },
+      "0.1": {
+        "count": 5,
+        "min": 53.204958,
+        "median": 53.504041,
+        "p95": 55.164041,
+        "max": 55.164041
+      },
+      "0.01": {
+        "count": 5,
+        "min": 15.234375,
+        "median": 15.422042000000001,
+        "p95": 15.701875000000001,
+        "max": 15.701875000000001
+      },
+      "1.0": {
+        "count": 5,
+        "min": 38.17575,
+        "median": 38.44825,
+        "p95": 39.03475,
+        "max": 39.03475
+      }
+    },
+    "warm_full_range": {
+      "count": 50,
+      "min": 10.940667,
+      "median": 11.531,
+      "p95": 13.441375,
+      "max": 14.739125000000001
+    },
+    "cache_rebuild_same_context": {
+      "count": 25,
+      "min": 136.206083,
+      "median": 137.408209,
+      "p95": 156.76125,
+      "max": 157.70279200000002
+    },
+    "cache_rebuild_fresh_context": {
+      "count": 25,
+      "min": 151.443625,
+      "median": 156.617334,
+      "p95": 157.576208,
+      "max": 157.75162500000002
+    }
+  },
+  "candidate": {
+    "first_cold_frame": {
+      "total_ms": {
+        "count": 5,
+        "min": 91.667833,
+        "median": 95.241208,
+        "p95": 95.987667,
+        "max": 95.987667
+      },
+      "ui_ms": {
+        "count": 5,
+        "min": 83.092833,
+        "median": 86.656542,
+        "p95": 86.93325,
+        "max": 86.93325
+      },
+      "visible_traces_ms": {
+        "count": 5,
+        "min": 60.012082,
+        "median": 61.627292,
+        "p95": 63.681292000000006,
+        "max": 63.681292000000006
+      },
+      "tile_build_ms": {
+        "count": 5,
+        "min": 107.202043,
+        "median": 107.678043,
+        "p95": 111.972292,
+        "max": 111.972292
+      },
+      "tile_build_wall_ms": {
+        "count": 5,
+        "min": 35.139167,
+        "median": 35.467458,
+        "p95": 36.495042,
+        "max": 36.495042
+      },
+      "edge_scan_ms": {
+        "count": 5,
+        "min": 2.848958,
+        "median": 2.8979169999999996,
+        "p95": 2.965917,
+        "max": 2.965917
+      },
+      "tessellation_ms": {
+        "count": 5,
+        "min": 7.8612079999999995,
+        "median": 7.9995829999999994,
+        "p95": 8.150791,
+        "max": 8.150791
+      }
+    },
+    "rss_after_first_frame_mib": {
+      "count": 5,
+      "min": 1582.90625,
+      "median": 1582.984375,
+      "p95": 1583.09375,
+      "max": 1583.09375
+    },
+    "rss_first_frame_increase_mib": {
+      "count": 5,
+      "min": 58.359375,
+      "median": 58.421875,
+      "p95": 58.515625,
+      "max": 58.515625
+    },
+    "cache_after_first": {
+      "envelopes": 36,
+      "line_tile_mib": 38.62408447265625,
+      "line_tiles": 36,
+      "raw_mib": 1510.6201171875,
+      "step_edge_mib": 0.0,
+      "step_edges": 0,
+      "step_fallback_hints": 4
+    },
+    "zoom_operation_ms": {
+      "0.6": {
+        "count": 5,
+        "min": 54.073583,
+        "median": 54.293459000000006,
+        "p95": 54.966083,
+        "max": 54.966083
+      },
+      "0.3": {
+        "count": 5,
+        "min": 64.27149999999999,
+        "median": 64.628584,
+        "p95": 66.256625,
+        "max": 66.256625
+      },
+      "0.1": {
+        "count": 5,
+        "min": 48.988208,
+        "median": 53.536375,
+        "p95": 53.599083,
+        "max": 53.599083
+      },
+      "0.01": {
+        "count": 5,
+        "min": 15.042084000000001,
+        "median": 15.510292,
+        "p95": 15.618208,
+        "max": 15.618208
+      },
+      "1.0": {
+        "count": 5,
+        "min": 38.09475,
+        "median": 38.425417,
+        "p95": 39.760583000000004,
+        "max": 39.760583000000004
+      }
+    },
+    "warm_full_range": {
+      "count": 50,
+      "min": 10.534333,
+      "median": 11.3940005,
+      "p95": 12.208,
+      "max": 12.372208
+    },
+    "cache_rebuild_same_context": {
+      "count": 25,
+      "min": 66.6795,
+      "median": 67.245375,
+      "p95": 80.96641699999999,
+      "max": 82.118333
+    },
+    "cache_rebuild_fresh_context": {
+      "count": 25,
+      "min": 84.847167,
+      "median": 86.006708,
+      "p95": 86.57579199999999,
+      "max": 86.932417
+    }
+  },
+  "validation": {
+    "matched_pairs": 8,
+    "input_geometry_prepared_channels_draw_points_shapes_tile_builds_match": true,
+    "cold_cache_state_verified": true,
+    "cache_memory_unchanged": true,
+    "tile_wall_timing_and_worker_cap_verified": true
+  },
+  "scope": "Cold: five independent process samples per variant. Rebuild and warm distributions pool correlated frames within those same five processes, not independent process samples. All times are milliseconds; RSS is MiB."
+}

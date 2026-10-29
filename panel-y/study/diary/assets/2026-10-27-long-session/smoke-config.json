@@ -1,0 +1,8 @@
+{
+  "plot_config_path": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-26-motor-session/saved-motor.pyc.json",
+  "output_jsonl": "/Users/ochiba/newspace/life/factory/panel-y/study/diary/assets/2026-10-27-long-session/smoke-events.jsonl",
+  "duration_seconds": 20,
+  "cycles": 2,
+  "final_quiet_seconds": 2,
+  "close_when_done": false
+}
